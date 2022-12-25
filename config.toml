@@ -155,6 +155,22 @@ enableRobotsTXT = true
     url = "/categories/"
     title = ""
     weight = 3
+  [[menu.main]]
+    identifier = "projects"
+    pre = ""
+    post = ""
+    name = "Projects"
+    url = "/projects/"
+    title = ""
+    weight = 4
+  [[menu.main]]
+    identifier = "about"
+    pre = ""
+    post = ""
+    name = "About"
+    url = "/about/"
+    title = ""
+    weight = 5
 
 # Markup related configuration in Hugo
 [markup]
