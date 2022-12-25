@@ -16,13 +16,15 @@ have been submitted upstream.
 [:(fab fa-linkedin fa-fw):](https://linkedin.com/in/stefan-roesch-65a749)
 [:(fab fa-facebook fa-fw):](https://facebook.com/100018057780127)
 [:(fab far fa-envelope fa-fw):](mailto:shr@devkernel.io)
-  
+
+<br/>
+
 ## CV
 
 ### Facebook / Meta (since 08/2021)
 I'm currently working as a kernel developer for Meta.
 
 ### Google (2017 - 2021)
-I worked for the kernel group at Google. At google I worked on the prod kernel in the memory management layer.
+I worked for the Linux kernel group at Google. At google I worked on the prod kernel in the memory management layer.
 One of the projects I worked on was to provide "guaranteed" low-latency memory allocations for andromeda
 (Google's network virtualization stack).
