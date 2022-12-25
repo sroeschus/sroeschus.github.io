@@ -235,4 +235,8 @@ enableRobotsTXT = true
     useExtendedSearch = false
     ignoreFieldNorm = false
 
-
+# Author config
+[author]
+  name = "Stefan Roesch"
+  email = "shr@devkernel.io"
+  link = "https://github.com/sroeschus"
