@@ -10,8 +10,27 @@ theme = "DoIt"
 enableRobotsTXT = true
 
 [params]
+  # website title
+  title = "/dev/kernel"
   # DoIt theme version
   version = "0.2.X"
+  # site default theme ("light", "dark", "black", "auto")
+  defaultTheme = "dark"
+  # public git repo url only then enableGitInfo is true
+  gitRepo = "https://github.com/HEIGE-PCloud/DoIt"
+  # which hash function used for SRI, when empty, no SRI is used ("sha256", "sha384", "sha512", "md5")
+  fingerprint = ""
+  # date format
+  dateFormat = "2006-01-02"
+  # website images for Open Graph and Twitter Cards
+  # images = ["/images/avatar.webp"]
+  images = ["/images/avatar.jpg"]
+  # enable PWA
+  enablePWA = false
+  # license information
+  license = '<a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>'
+  # [Experimental] Bundle js
+  bundle = false
 
 [menu]
   [[menu.main]]
