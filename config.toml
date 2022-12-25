@@ -32,6 +32,44 @@ enableRobotsTXT = true
   # [Experimental] Bundle js
   bundle = false
 
+  [params.home]
+    # amount of RSS pages
+    rss = 10
+    # Home page profile
+    [params.home.profile]
+      enable = true
+      # Gravatar Email for preferred avatar in home page
+      gravatarEmail = ""
+      # URL of avatar shown in home page
+      # avatarURL = "/images/avatar.webp"
+      avatarURL = "/images/avatar.jpg"
+      # title shown in home page (HTML format is supported)
+      title = "Stefan Roesch"
+      # subtitle shown in home page
+      subtitle = "Kernel Developer"
+      # whether to use typeit animation for subtitle
+      typeit = false
+      # whether to show social links
+      social = true
+      # disclaimer (HTML format is supported)
+      disclaimer = "<p>"
+    # Home page posts
+    [params.home.posts]
+      enable = true
+      # special amount of posts in each home posts page
+      paginate = 7
+    [params.social]
+      GitHub = "sroeschus"
+      Linkedin = "stefan-roesch-65a749"
+      # Twitter = "xxxx"
+      Instagram = ""
+      Facebook = "100018057780127"
+      # Telegram = "xxxx"
+      Gitlab = ""
+      Whatsapp = ""
+      Email = "shr@devkernel.io"
+      RSS = true
+ 
 [menu]
   [[menu.main]]
     identifier = "posts"
