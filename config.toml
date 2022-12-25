@@ -114,6 +114,19 @@ enableRobotsTXT = true
     # amount of RSS pages
     rss = 10
 
+  [params.page]
+    # Page style ("normal", "wide")
+    pageStyle = "wide"
+    # whether to enable the fontawesome extended syntax
+    fontawesome = true
+    [params.page.toc]
+      # whether to enable the table of the contents
+      enable = true
+      # whether to keep the static table of the contents in front of the post
+      keepStatic = false
+      # whether to make the table of the contents in the sidebar automatically collapsed
+      auto = true
+
 [menu]
   [[menu.main]]
     identifier = "posts"
