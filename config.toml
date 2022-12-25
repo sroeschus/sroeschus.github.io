@@ -6,6 +6,9 @@ title = "devkernel.io"
 # Change the default theme to be use when building the site with Hugo
 theme = "DoIt"
 
+# Use robots.txt
+enableRobotsTXT = true
+
 [params]
   # DoIt theme version
   version = "0.2.X"
