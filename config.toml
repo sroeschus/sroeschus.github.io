@@ -105,6 +105,15 @@ enableRobotsTXT = true
       days = 30
       maxCount = 10
 
+  # List (category or tag) page config
+  [params.list]
+    # special amount of posts in each list page
+    paginate = 20
+    # date format (month and day)
+    dateFormat = "01-02"
+    # amount of RSS pages
+    rss = 10
+
 [menu]
   [[menu.main]]
     identifier = "posts"
