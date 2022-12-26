@@ -13,6 +13,7 @@ The list is ordered in chronological order. In parentheses it contains the date 
 of the patch series was submitted and which subsystems were part of the patch series. The subsystem names are
 abbreviated with the commmon short names from the kernel directory names:
 - block = block layer
+- btrfs
 - mm = memory management
 - nvme
 
@@ -41,10 +42,33 @@ Jens Axboe on upstreaming this patch series.
 
 ## Support async buffered writes for io-uring on btrfs (Sep 2022, mm, btrfs)
 
-This adds the async buffered write support for btrfs to io-uring. So far the async buffered writes couldn't be
-processed in the fast path; instead they were processed by the IO-workers. With this change the performance of
-async buffered writes is better than the performance of aio.
+This patch series adds support for async buffered writes when using both
+btrfs and io-uring. Currently io-uring only supports buffered writes (for btrfs)
+in the slow path, by processing them in the io workers. With this patch series
+it is now possible to support buffered writes in the fast path. To be able to use
+the fast path, the required pages must be in the page cache, the required locks
+in btrfs can be granted immediately and no additional blocks need to be read
+form disk.
+
+This patch series makes use of the changes that have been introduced by a
+previous patch series: "io-uring/xfs: support async buffered writes"
+
+#### Performance results
+
+The new patch improves throughput by over two times (compared to the exiting
+behavior, where buffered writes are processed by an io-worker process) and also
+the latency is considerably reduced. Detailled results are part of the changelog
+of the first commit.
 
 This patch series is based on the earlier patch series, that provided async buffered writes for XFS.
 
 [P1](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=611df5d6616d80a22906c352ccd80c395982fbd9), [P2](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=857bc13f857aea957ae038b2b43c28560976024a), [P3](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=26ce91144631a402ff82c93358d8880326a7caa3), [P4](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=1daedb1d6bf24c7185e00cd341404f262f8de7c8), [P5](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=d2c7a19f5c82ace6ea0ec00ae53c6dd97ee8e274), [P6](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=80f9d24130e45b01984a918d6b2006c10687b138), [P7](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=fc2260001232766c1836d5a6053913194ce23f88), [P8](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=2fcab928ccc2bac0c22e3b3b04f5acf0dc8de96b), [P9](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=304e45acdb8f68a974e8a64a6296803530bb851f), [P10](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=965f47aeb5deddc59a1ace28e99b2a578df57305), [P11](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=c922b016f353eafb69997d8c0f06efdf945315ce), [P12](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=926078b21db91b72b444277fdc2166914cf113fc)
+
+## btrfs: sysfs: set / query btrfs chunk size (Aug 2022, btrfs)
+
+The btrfs allocator is currently not ideal for all workloads. It tends
+to suffer from overallocating data block groups and underallocating
+metadata block groups. This results in filesystems becoming read-only
+even though there is plenty of "free" space.
+
+[P1](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=f6fca3917b4d99d8c13901738afec35f570a3c2f), [P2](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=19fc516a516f624fa3b0c329929561186247537e), [P3](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=22c55e3bbb20c60846812ea2b8ea0f3153c0df73)
