@@ -143,3 +143,16 @@ filesystem entry.
 
 [P1](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=7a51e5b44b92686eebd3e1b46b86e1eb4db975db), [P2](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=4e5bc0a9a1d0be5b20a0366fbfbe5a99d61c6003), [P3](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=baf9cb643b485d57c404b0ea9c1865036dde9eb7), [P4](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=916587984facd01a2f4a2e327d721601a94ed1ed), [P5](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=effcf8bdeb03aa726e9db834325c650e1700b041), [P6](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=2fee6bc6407848043798698116b8fd81d1fe470a), [P7](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=0e2e5c47fed68ce203f2c6978188cc49a2a96e26), [P8](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=e45a3e05008d52c6db63a3a01a9cdc7d89cd133a), [P9](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=c4bb964fa092fb68645a852365dfe9855fef178a), [P10](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=f9b3dfcc68a502ef82e50274e2e7e9e91f6bf4e2), [P11](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=76c68fbf1a1f97afed0c8f680ee4e3f4da3e720d), [P12](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=2bb04df7c2af9dad5d28771c723bc39b01cf7df4)
 
+## Add xattr support to io-uring (Mar 2022, fs, xattr)
+
+This adds the xattr support to io_uring. The intent is to have a more
+complete support for file operations in io_uring.
+
+This change adds support for the following functions to io_uring:
+- fgetxattr
+- fsetxattr
+- getxattr
+- setxattr
+
+[P1](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=1a91794ce8481a293c5ef432feb440aee1455619), [P2](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=c975cad931570004b5f51248424a2a696fb65630), [P3](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=e9621e2bec80fe63f677a759066a5089b292f43a), [P4](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=a56834e0fafe0adf7f22a28a5dbec3e8c3031a0e)
+
