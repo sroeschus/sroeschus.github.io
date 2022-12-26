@@ -1,7 +1,7 @@
 ---
 title: "Stefan Roesch"
 date: 2022-11-27T19:27:34-08:00
-draft: true
+draft: false
 fontawesome: true
 ---
 
