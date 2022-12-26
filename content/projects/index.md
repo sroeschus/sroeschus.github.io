@@ -14,8 +14,12 @@ of the patch series was submitted and which subsystems were part of the patch se
 abbreviated with the commmon short names from the kernel directory names:
 - block = block layer
 - btrfs
+- fs = filesystem layer
+- iomap
+- io-uring
 - mm = memory management
 - nvme
+- xfs
 
 ## Backing device information changes (Nov 2022, mm)
 
@@ -72,3 +76,70 @@ metadata block groups. This results in filesystems becoming read-only
 even though there is plenty of "free" space.
 
 [P1](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=f6fca3917b4d99d8c13901738afec35f570a3c2f), [P2](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=19fc516a516f624fa3b0c329929561186247537e), [P3](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=22c55e3bbb20c60846812ea2b8ea0f3153c0df73)
+
+## Support async buffered writes on XFS for io-uring (Jun 2022, mm, iomap, fs, xfs, io-uring)
+
+This patch series adds support for async buffered writes when using both
+xfs and io-uring. Currently io-uring only supports buffered writes in the
+slow path, by processing them in the io workers. With this patch series it is
+now possible to support buffered writes in the fast path. To be able to use
+the fast path the required pages must be in the page cache, the required locks
+in xfs can be granted immediately and no additional blocks need to be read
+form disk.
+
+Updating the inode can take time. An optimization has been implemented for
+the time update. Time updates will be processed in the slow path. While there
+is already a time update in process, other write requests for the same file,
+can skip the update of the modification time.
+
+#### Performance results
+For fio the following results have been obtained with a queue depth of
+1 and 4k block size for sequential writes (runtime 600 secs):
+
+| Metric       | without patch       |   with patch   |  libaio   |  psync     |
+| :---         |             ---:    |         ---:   |      ---: |       ---: |
+| iops:        |     77k             |      209k      |   195K    |  233K      |
+| bw:          |    314MB/s          |      854MB/s   |   790MB/s |  953MB/s   |
+| clat:        |   9600ns            |      120ns     |   540ns   | 3000ns     |
+
+
+For an io depth of 1, the new patch improves throughput by over three times
+(compared to the exiting behavior, where buffered writes are processed by an
+io-worker process) and also the latency is considerably reduced. To achieve the
+same or better performance with the exisiting code an io depth of 4 is required.
+Increasing the iodepth further does not lead to improvements.
+
+In addition the latency of buffered write operations is reduced considerably.
+
+[P1](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=ea6813be07dcdc072aa9ad18099115a74cecb5e1), [P2](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=e92eebbb09218e128e559cf12b65317721309324), [P3](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=fe6c9c6e3e3e332b998393d214fba9d09ab0acb0), [P4](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=9753b868fda48330ce358df203c0069ac0788ac0), [P5](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=cae2de6978915991a564e3c5c69b66b629c031af), [P6](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=18e419f6e80a6d3c8aaab94abd55c3b41741d8df), [P7](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=8017553980d0bbfef3e66c583363828565afd6da), [P8](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=faf99b563558f74188b7ca34faae1c1da49a7261), [P9](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=6a2aa5d85de534471dd023773236f113eaef26f0), [P10](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=66fa3cedf16abc82d19b943e3289c82e685419d5), [P11](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=4e17aaab54359fa2cdeb0080c822a08f2980f979), [P12](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=1c849b481b3e4f8c36f297cd3aa88ef52a19cee9), [P13](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=9641506b2deed1bb6be7464a95d62c472eca0e8e), [P14](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=1aa91d9c993397858a50c433933ea119903fdea2)
+
+## Add large CQE support for io-uring (April 2022, io-uring)
+
+This adds the large CQE support for io-uring. Large CQE's are 16 bytes longer.
+To support the longer CQE's the allocation part is changed and when the CQE is
+accessed.
+The allocation of the large CQE's is twice as big, so the allocation size is
+doubled. The ring size calculation needs to take this into account.
+
+All accesses to the large CQE's need to be shifted by 1 to take the bigger size
+of each CQE into account. The existing index manipulation does not need to be
+changed and can stay the same.
+
+The setup and the completion processing needs to take the new fields into
+account and initialize them. For the completion processing these fields need
+to be passed through.
+
+The flush completion processing needs to fill the additional CQE32 fields.
+
+The code for overflows needs to be adapted accordingly: the allocation needs to
+take large CQE's into account. This means that the order of the fields in the io
+overflow structure needs to be changed and the allocation needs to be enlarged
+for big CQE's.
+In addition the two new fields need to be copied for large CQE's.
+
+The new fields are added to the tracing statements, so the extra1 and extra2
+fields are exposed in tracing. The new fields are also exposed in the /proc
+filesystem entry.
+
+[P1](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=7a51e5b44b92686eebd3e1b46b86e1eb4db975db), [P2](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=4e5bc0a9a1d0be5b20a0366fbfbe5a99d61c6003), [P3](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=baf9cb643b485d57c404b0ea9c1865036dde9eb7), [P4](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=916587984facd01a2f4a2e327d721601a94ed1ed), [P5](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=effcf8bdeb03aa726e9db834325c650e1700b041), [P6](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=2fee6bc6407848043798698116b8fd81d1fe470a), [P7](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=0e2e5c47fed68ce203f2c6978188cc49a2a96e26), [P8](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=e45a3e05008d52c6db63a3a01a9cdc7d89cd133a), [P9](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=c4bb964fa092fb68645a852365dfe9855fef178a), [P10](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=f9b3dfcc68a502ef82e50274e2e7e9e91f6bf4e2), [P11](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=76c68fbf1a1f97afed0c8f680ee4e3f4da3e720d), [P12](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=2bb04df7c2af9dad5d28771c723bc39b01cf7df4)
+
