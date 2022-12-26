@@ -156,7 +156,7 @@ This change adds support for the following functions to io_uring:
 
 [P1](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=1a91794ce8481a293c5ef432feb440aee1455619), [P2](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=c975cad931570004b5f51248424a2a696fb65630), [P3](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=e9621e2bec80fe63f677a759066a5089b292f43a), [P4](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=a56834e0fafe0adf7f22a28a5dbec3e8c3031a0e)
 
-## Make statx api io io-uring stable (Feb 2022, fs, io-uring)
+## Make statx api for io-uring stable (Feb 2022, fs, io-uring)
 
 One of the key architectual tenets of io-uring is to keep the
 parameters for io-uring stable. After the call has been submitted,
@@ -164,3 +164,15 @@ its value can be changed.  Unfortunaltely this is not the case for
 the current statx implementation.
 
 [P1](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=1b6fe6e0dfecf8c82a64fb87148ad9333fa2f62e)
+
+## Make io-uring tracepoints consistent (Feb 2022, io-uring)
+
+This makes the io-uring tracepoints consistent. Where it makes sense
+the tracepoints start with the following four fields:
+- context (ring)
+- request
+- user_data
+- opcode.
+
+[P1](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=502c87d65564cbfd65b1621309bcd900390eca81)
+
