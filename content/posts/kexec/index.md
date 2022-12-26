@@ -2,7 +2,7 @@
 title: "Kexec: Booting into another kernel"
 featuredImage: "kexec.jpg"
 date: 2022-11-27T22:32:21-08:00
-draft: true
+draft: false
 toc:
   enable: true
 tags: ["kexec", "tools"]
