@@ -1,7 +1,7 @@
 ---
 title: "Projects"
 date: 2022-12-24T22:29:52-08:00
-draft: true
+draft: false
 ---
 
 For the reader who wants to get an overview over the patches that I have submitted
@@ -9,7 +9,7 @@ For the reader who wants to get an overview over the patches that I have submitt
 
 # List of patch series
 The following is a list of the more important patch series that I developed and that have been upstreamed.
-The list is ordered in chronological order. In parentheses it contains the date when the most current version
+The list is ordered in chronological order. After the title it contains the linux release when the most current version
 of the patch series was submitted and which subsystems were part of the patch series. The subsystem names are
 abbreviated with the commmon short names from the kernel directory names:
 - block = block layer
@@ -21,7 +21,8 @@ abbreviated with the commmon short names from the kernel directory names:
 - nvme
 - xfs
 
-## Backing device information changes (Nov 2022, mm)
+## Backing device information changes
+{{< version 6.2 >}} `mm`
 
 This patch provides new knobs to influence the behavior of the size and management of the
 dirty pagecache. In addition it also changes the internal calculation to use part of 1000000
@@ -31,7 +32,8 @@ instead of percentage values.
 
 [P1](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=8e9d5ead865a1a7af74a444d2f00f1ef4539bfba), [P2](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=27bbe9d48d4e298864e18b39f091342c68b81637), [P3](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=16b837eb84e6948f92411eb32e97a05f89733ddc), [P4](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=ae82291e9ca47c3d6da6b77a00f427754aca413e), [P5](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=00df7d51263b46ed93f7572e2d09579746f7b1eb), [P6](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=efc3e6ad53ea14225b434fddca261c9a1c56c707), [P7](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=1bf27e98d26d1e62166a456ef17460be085cbe0b), [P8](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=c56e049a5e401a177c7c9b39a3bcc973ff5cec0b), [P9](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=c354d9268d7825eb8643f658c5091079d4f11a4a), [P10](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=712c00d66a342a3ed375df41c3df7d3d2abad2c0), [P11](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=8021fb3232f265b81c7e4e7aba15bc3a04ff1fd3), [P12](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=803c98050569850be5fd51a2025c67622de887d9), [P13](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=9c84819bd64ec15cb15d041c45ebe4725e9d4f3b), [P14](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=9c832a8d571784c998d0f9f5df480c62f7f3064c), [P15](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=4e230b406eda9bdf7f8a71e2cc3df18a824abcb0), [P16](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=bca52dcbadc583f4db6435599c44a79f97293f06), [P17](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=54790f30fea74247e2f38b4a632ee3dc2fe42d86), [P18](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=2c44af4f2aaa260199f218f11920c406e688693c), [P19](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=ad3e6dabf6f7d9ffd68eb711191ef16cdbdd25f0), [P20](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=eba39236f18da7a50b6c51df5d902ee72c43e760)
 
-## Enable batched completions of passthrough I/O (Sep 2022, block, nvme)
+## Enable batched completions of passthrough I/O
+{{< version 6.2 >}} `mm` `block` 
 
 The filesystem IO path can take advantage of allocating batches of
 requests, if the underlying submitter tells the block layer about it
@@ -44,7 +46,8 @@ Jens Axboe on upstreaming this patch series.
 
 [P1](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=ab3e1d3bbab9e973aeb4dd4603251578658a47ff), [P2](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=c0a7ba77e81b8440d10f38559a5e1d219ff7e87c), [P3](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=851eb780decb7180bcf09fad0035cba9aae669df)
 
-## Support async buffered writes for io-uring on btrfs (Sep 2022, mm, btrfs)
+## Support async buffered writes for io-uring on btrfs
+{{< version 6.1 >}} `mm` `btrfs` 
 
 This patch series adds support for async buffered writes when using both
 btrfs and io-uring. Currently io-uring only supports buffered writes (for btrfs)
@@ -68,7 +71,8 @@ This patch series is based on the earlier patch series, that provided async buff
 
 [P1](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=611df5d6616d80a22906c352ccd80c395982fbd9), [P2](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=857bc13f857aea957ae038b2b43c28560976024a), [P3](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=26ce91144631a402ff82c93358d8880326a7caa3), [P4](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=1daedb1d6bf24c7185e00cd341404f262f8de7c8), [P5](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=d2c7a19f5c82ace6ea0ec00ae53c6dd97ee8e274), [P6](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=80f9d24130e45b01984a918d6b2006c10687b138), [P7](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=fc2260001232766c1836d5a6053913194ce23f88), [P8](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=2fcab928ccc2bac0c22e3b3b04f5acf0dc8de96b), [P9](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=304e45acdb8f68a974e8a64a6296803530bb851f), [P10](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=965f47aeb5deddc59a1ace28e99b2a578df57305), [P11](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=c922b016f353eafb69997d8c0f06efdf945315ce), [P12](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=926078b21db91b72b444277fdc2166914cf113fc)
 
-## btrfs: sysfs: set / query btrfs chunk size (Aug 2022, btrfs)
+## btrfs: sysfs: set / query btrfs chunk size
+{{< version 6.0 >}} `btrfs` 
 
 The btrfs allocator is currently not ideal for all workloads. It tends
 to suffer from overallocating data block groups and underallocating
@@ -77,7 +81,8 @@ even though there is plenty of "free" space.
 
 [P1](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=f6fca3917b4d99d8c13901738afec35f570a3c2f), [P2](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=19fc516a516f624fa3b0c329929561186247537e), [P3](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=22c55e3bbb20c60846812ea2b8ea0f3153c0df73)
 
-## Support async buffered writes on XFS for io-uring (Jun 2022, mm, iomap, fs, xfs, io-uring)
+## Support async buffered writes on XFS for io-uring
+{{< version 6.0 >}} `mm` `iomap` `fs` `xfs` `io-uring`
 
 This patch series adds support for async buffered writes when using both
 xfs and io-uring. Currently io-uring only supports buffered writes in the
@@ -114,6 +119,7 @@ In addition the latency of buffered write operations is reduced considerably.
 [P1](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=ea6813be07dcdc072aa9ad18099115a74cecb5e1), [P2](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=e92eebbb09218e128e559cf12b65317721309324), [P3](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=fe6c9c6e3e3e332b998393d214fba9d09ab0acb0), [P4](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=9753b868fda48330ce358df203c0069ac0788ac0), [P5](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=cae2de6978915991a564e3c5c69b66b629c031af), [P6](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=18e419f6e80a6d3c8aaab94abd55c3b41741d8df), [P7](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=8017553980d0bbfef3e66c583363828565afd6da), [P8](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=faf99b563558f74188b7ca34faae1c1da49a7261), [P9](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=6a2aa5d85de534471dd023773236f113eaef26f0), [P10](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=66fa3cedf16abc82d19b943e3289c82e685419d5), [P11](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=4e17aaab54359fa2cdeb0080c822a08f2980f979), [P12](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=1c849b481b3e4f8c36f297cd3aa88ef52a19cee9), [P13](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=9641506b2deed1bb6be7464a95d62c472eca0e8e), [P14](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=1aa91d9c993397858a50c433933ea119903fdea2)
 
 ## Add large CQE support for io-uring (April 2022, io-uring)
+{{< version 5.19 >}} `io-uring`
 
 This adds the large CQE support for io-uring. Large CQE's are 16 bytes longer.
 To support the longer CQE's the allocation part is changed and when the CQE is
@@ -143,7 +149,8 @@ filesystem entry.
 
 [P1](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=7a51e5b44b92686eebd3e1b46b86e1eb4db975db), [P2](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=4e5bc0a9a1d0be5b20a0366fbfbe5a99d61c6003), [P3](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=baf9cb643b485d57c404b0ea9c1865036dde9eb7), [P4](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=916587984facd01a2f4a2e327d721601a94ed1ed), [P5](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=effcf8bdeb03aa726e9db834325c650e1700b041), [P6](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=2fee6bc6407848043798698116b8fd81d1fe470a), [P7](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=0e2e5c47fed68ce203f2c6978188cc49a2a96e26), [P8](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=e45a3e05008d52c6db63a3a01a9cdc7d89cd133a), [P9](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=c4bb964fa092fb68645a852365dfe9855fef178a), [P10](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=f9b3dfcc68a502ef82e50274e2e7e9e91f6bf4e2), [P11](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=76c68fbf1a1f97afed0c8f680ee4e3f4da3e720d), [P12](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=2bb04df7c2af9dad5d28771c723bc39b01cf7df4)
 
-## Add xattr support to io-uring (Mar 2022, fs, xattr)
+## Add xattr support to io-uring
+{{< version 5.18 >}} `fs` `io-uring`
 
 This adds the xattr support to io_uring. The intent is to have a more
 complete support for file operations in io_uring.
@@ -157,6 +164,7 @@ This change adds support for the following functions to io_uring:
 [P1](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=1a91794ce8481a293c5ef432feb440aee1455619), [P2](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=c975cad931570004b5f51248424a2a696fb65630), [P3](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=e9621e2bec80fe63f677a759066a5089b292f43a), [P4](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=a56834e0fafe0adf7f22a28a5dbec3e8c3031a0e)
 
 ## Make statx api for io-uring stable (Feb 2022, fs, io-uring)
+{{< version 5.18 >}} `fs` `io-uring`
 
 One of the key architectual tenets of io-uring is to keep the
 parameters for io-uring stable. After the call has been submitted,
@@ -166,6 +174,7 @@ the current statx implementation.
 [P1](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=1b6fe6e0dfecf8c82a64fb87148ad9333fa2f62e)
 
 ## Make io-uring tracepoints consistent (Feb 2022, io-uring)
+{{< version 5.17 >}} `io-uring`
 
 This makes the io-uring tracepoints consistent. Where it makes sense
 the tracepoints start with the following four fields:
