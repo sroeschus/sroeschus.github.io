@@ -1,4 +1,4 @@
-baseURL = "http://sroeschus.github.io/"
+baseURL = "https://sroeschus.github.io/"
 defaultContentLanguage = "en"
 languageCode = "en-us"
 title = "devkernel.io"
