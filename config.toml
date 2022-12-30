@@ -36,6 +36,15 @@ enableRobotsTXT = true
   # [Experimental] Bundle js
   bundle = false
 
+  [params.page.math]
+    enable = true
+    blockLeftDelimiter = ""
+    blockRightDelimiter = ""
+    inlineLeftDelimiter = ""
+    inlineRightDelimiter = ""
+    copy_text = true
+    mhchem = true
+
   [params.home]
     # amount of RSS pages
     rss = 10
