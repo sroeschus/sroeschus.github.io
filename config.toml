@@ -10,14 +10,18 @@ theme = "DoIt"
 enableRobotsTXT = true
 
 [params]
-  # website title
-  title = "/dev/kernel"
   # DoIt theme version
   version = "0.2.X"
+  # website title
+  title = "Linux kernel developer information"
+  # site description
+  description = "Linux kernel developer information"
+  # site keywords
+  keywords = ["linux", "kernel", "developer", "hacker"]
   # site default theme ("light", "dark", "black", "auto")
   defaultTheme = "dark"
   # public git repo url only then enableGitInfo is true
-  gitRepo = "https://github.com/HEIGE-PCloud/DoIt"
+  gitRepo = ""
   # which hash function used for SRI, when empty, no SRI is used ("sha256", "sha384", "sha512", "md5")
   fingerprint = ""
   # date format
