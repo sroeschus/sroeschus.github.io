@@ -353,7 +353,7 @@ struct gendisk *__alloc_disk_node(struct request_queue *q, int node_id,
 
 ## Kernel tracing
 
-The write-back to the storage device can be traced. The function 
+When the write-back to the storage device has to wait, it can be traced. The function 
 [balance_dirty_pages()](https://elixir.bootlin.com/linux/v6.1/source/mm/page-writeback.c#L1557) has
 a tracepoint defined, that can be used for this purpose.
 
