@@ -1,6 +1,7 @@
 ---
 title: "Projects"
 date: 2022-12-24T22:29:52-08:00
+tags: ["stefan", "roesch", "projects"]
 draft: false
 ---
 
