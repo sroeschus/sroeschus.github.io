@@ -1,5 +1,5 @@
 ---
-title: "Limiting dirty write-back cache size for nbd volumes"
+title: "Limiting dirty writeback cache size for nbd volumes"
 date: 2022-12-26T20:23:05-08:00
 featuredImage: "bdi.jpg"
 math: true
@@ -23,8 +23,8 @@ During testing the following problems have been identified:
 ## Investigation
 
 While investigating the high memory pressure, it was discovered that with the default settings
-for dirty_ratio (20) and dirty_background_ratio (10), the write-back dirty cache can consume
-considerable amounts of write-back cache. The dirty settings can be queried from the proc filesystem:
+for dirty_ratio (20) and dirty_background_ratio (10), the writeback dirty cache can consume
+considerable amounts of writeback cache. The dirty settings can be queried from the proc filesystem:
 - [/proc/sys/vm/dirty_ratio](https://docs.kernel.org/admin-guide/sysctl/vm.html?highlight=dirty_ratio#dirty-ratio),
 - [/proc/sys/vm/dirty_background_ratio](https://docs.kernel.org/admin-guide/sysctl/vm.html?highlight=dirty_ratio#dirty-background-ratio).
 
@@ -34,13 +34,13 @@ The amount of the dirty writeback cache can be queried with:
   > grep Dirty /proc/meminfo
 ```
 
-On a machine with 64GB main memory, up to 8GB dirty write-back memory have been observed when testing with block devices. On a machine with 256GB of main memory more than 20GB of dirty cache have been observed. To create the dirty memory, the following command was used:
+On a machine with 64GB main memory, up to 8GB dirty writeback memory have been observed when testing with block devices. On a machine with 256GB of main memory more than 20GB of dirty cache have been observed. To create the dirty memory, the following command was used:
 
 ``` shell
 > dd if=/dev/zero of=/dev/nbd1 bs=10G seek=0
 ```
 
-To also evaluate how this effects the write-back cache when using the BTRFS filesystem, the [fio](https://github.com/axboe/fio) program with 
+To also evaluate how this effects the writeback cache when using the BTRFS filesystem, the [fio](https://github.com/axboe/fio) program with 
 the following command has been used:
 
 ``` shell
@@ -49,19 +49,19 @@ the following command has been used:
         --name=throughput-test-job --size=1gb
 ```
 
-When using filesystems up to 3GB of dirty write-back cache have been observed.
+When using filesystems up to 3GB of dirty writeback cache have been observed.
 
-## Limiting the size of the write-back cache
+## Limiting the size of the writeback cache
 
 To be able to make network block device volumes sustain memory pressure situations better,
-the amount of write-back memory needs to be limited. The size of the write-back cache can
+the amount of writeback memory needs to be limited. The size of the writeback cache can
 be limited by setting limits on the backing device info (BDI) of the device or filesystem.
 The backing device info currently supports two knobs:
 - [min_ratio](https://docs.kernel.org/admin-guide/abi-testing.html?highlight=sysfs+class+bdi#abi-sys-class-bdi-bdi-min-ratio) and
 - [max_ratio](https://docs.kernel.org/admin-guide/abi-testing.html?highlight=sysfs+class+bdi#abi-sys-class-bdi-bdi-max-ratio)
 
-The min_ratio allows assigning a minimum percentage of the write-back cache to a device. The max_ratio allows limiting a particular device to use not more than the given percentage of the write-back cache.
-The two above ratio's are only applied once the dirty write-back cache size has reached
+The min_ratio allows assigning a minimum percentage of the writeback cache to a device. The max_ratio allows limiting a particular device to use not more than the given percentage of the writeback cache.
+The two above ratio's are only applied once the dirty writeback cache size has reached
 $$ \frac{dirty\text{\textunderscore}ratio + background\text{\textunderscore}dirty\text{\textunderscore}ratio}{2} $$
 
 The existing [knobs](https://www.kernel.org/doc/Documentation/ABI/testing/sysfs-class-bdi) are documented.
@@ -121,14 +121,14 @@ has been loaded (in case it is a module), the settings have to be set again.
 
 ## Using the new sysctl knobs
 
-Tests have shown that by specifying the new sysctl knobs, the size of the dirty write-back
+Tests have shown that by specifying the new sysctl knobs, the size of the dirty writeback
 cache can be limited accordingly. The following sysctl values have been used for some of the testing:
 ``` shell
   > echo 1 > /sys/class/bdi/btrfs-2/strict_limit
   > echo 1000000000 > /sys/block/nbd1/bdi/max_bytes
 ```
-It should not be expected to reach max_ratio or max_bytes of dirty write-back cache as the
-write-back will start before that limit is reached. By limiting the dirty write-back cache
+It should not be expected to reach max_ratio or max_bytes of dirty writeback cache as the
+writeback will start before that limit is reached. By limiting the dirty writeback cache
 size also the time to write back dirty blocks to the storage device has considerably decreased
 and the write throughput has no more spikes and is more consistent throughput.
 
@@ -353,7 +353,7 @@ struct gendisk *__alloc_disk_node(struct request_queue *q, int node_id,
 
 ## Kernel tracing
 
-When the write-back to the storage device has to wait, it can be traced. The function 
+When the writeback to the storage device has to wait, it can be traced. The function 
 [balance_dirty_pages()](https://elixir.bootlin.com/linux/v6.1/source/mm/page-writeback.c#L1557) has
 a tracepoint defined, that can be used for this purpose.
 
