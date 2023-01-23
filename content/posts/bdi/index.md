@@ -13,7 +13,7 @@ tags: ["block", "fs", "mm", "bdi", "writeback", "btrfs"]
 
 Network block devices ([nbd](https://en.wikipedia.org/wiki/Network_block_device)) are often used to provide
 remote block storage. It is convenient to then create a filesystem on top of the nbd device. For this article
-the BTRFS filesystem is used. This choice has implications how the backing device info gets allocated and is
+the BTRFS filesystem is used. This choice has implications on how the backing device info gets allocated and is
 explained later.
 
 During testing the following problems have been identified:
