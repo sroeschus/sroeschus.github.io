@@ -11,7 +11,7 @@ series: [kernel-development-setup]
 ---
 
 ## Overview
-Kernel development requires a number of packages to be installed. This series documents
+Kernel development requires a number of Linux packages to be installed. This series documents
 the setup process for an arch-based linux system. The general requirements are defined in
 [minimal requirements to compile the kernel](https://www.kernel.org/doc/html/v4.13/process/changes.html).
 
