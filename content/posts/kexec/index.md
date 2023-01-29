@@ -1,5 +1,6 @@
 ---
 title: "Kexec: Booting into another kernel"
+description: "How to use the kexec tool to boot another Linux kernel."
 featuredImage: "kexec.jpg"
 date: 2022-11-27T22:32:21-08:00
 draft: false
@@ -8,6 +9,7 @@ toc:
 tags: ["kexec", "tools"]
 ---
 
+## Overview
 As a kernel developer you often have to test a new kernel. The kexec command allows you to boot into
 another kernel.  The kexec command utilizes the kexec system call and enables you to load and boot into another kernel.
 Kexec performans the function of the boot loader. The major difference is that a kexec boot does not
