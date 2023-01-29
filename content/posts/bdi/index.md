@@ -1,5 +1,6 @@
 ---
 title: "Limiting dirty writeback cache size for nbd volumes"
+description: "How to limit dirty writebach cache size for nbd and other volume types."
 date: 2022-12-26T20:23:05-08:00
 featuredImage: "bdi.jpg"
 math: true
@@ -10,7 +11,6 @@ tags: ["block", "fs", "mm", "bdi", "writeback", "btrfs"]
 ---
 
 ## Overview
-
 Network block devices ([nbd](https://en.wikipedia.org/wiki/Network_block_device)) are often used to provide
 remote block storage. It is convenient to then create a filesystem on top of the nbd device. For this article
 the BTRFS filesystem is used. This choice has implications on how the backing device info gets allocated and is
@@ -21,7 +21,6 @@ During testing the following problems have been identified:
 - under high memory pressure, the nbd network connections can be closed due to high memory pressure.
 
 ## Investigation
-
 While investigating the high memory pressure, it was discovered that with the default settings
 for dirty_ratio (20) and dirty_background_ratio (10), the writeback dirty cache can consume
 considerable amounts of writeback cache. The dirty settings can be queried from the proc filesystem:
@@ -52,7 +51,6 @@ the following command has been used:
 When using filesystems up to 3GB of dirty writeback cache have been observed.
 
 ## Limiting the size of the writeback cache
-
 To be able to make network block device volumes sustain memory pressure situations better,
 the amount of writeback memory needs to be limited. The size of the writeback cache can
 be limited by setting limits on the backing device info (BDI) of the device or filesystem.
@@ -69,7 +67,6 @@ As dirty dirty_ratio and dirty_background_ratio are global settings, changing th
 What is needed is something more fine grained.
 
 ## Patch with more controls
-
 A new [patch](https://lore.kernel.org/all/20221119005215.3052436-1-shr@devkernel.io/T/#u) has been accepted upstream. The patch implements four changes:
 1) Introduce strictlimit knob.
 Currently the max_ratio knob exists to limit the dirty_memory. However this knob only applies once
@@ -99,7 +96,6 @@ The strictlimit knob is exposing exisitng kernel functionality. The knob is alre
 fuse filesystem to always enable the strictlimit flag.
 
 ## How to apply the BDI settings
-
 There are two different ways to apply BDI settings: to the block device and to the BTRFS filesystem.
 For block devices the settings can be directly set in /sys/block/<device>/bdi. The BTRFS filesystem
 creates its own BDI, which is different from the BDI of the block device. Each BTRFS BDI gets the
@@ -120,7 +116,6 @@ The BDI settings are only stored in memory. After a filesystem has been mounted,
 has been loaded (in case it is a module), the settings have to be set again.
 
 ## Using the new sysctl knobs
-
 Tests have shown that by specifying the new sysctl knobs, the size of the dirty writeback
 cache can be limited accordingly. The following sysctl values have been used for some of the testing:
 ``` shell
@@ -133,7 +128,6 @@ size also the time to write back dirty blocks to the storage device has consider
 and the write throughput has no more spikes and is more consistent throughput.
 
 ## Kernel internals
-
 A BDI object gets allocated for all block devices. In addition some filesystems allocate their
 own BDI object. One of these examples is the BTRFS filesystem.
 
@@ -282,7 +276,6 @@ in one batch, [balance_dirty_pages()](https://elixir.bootlin.com/linux/v6.1/sour
 uses the information of the bdi object.
 
 ### Block device code path
-
 For block devices the BDI structure gets allocated when [blk_alloc_disk()](https://elixir.bootlin.com/linux/v6.1/source/include/linux/blkdev.h#L814) is called.
 
 {{< highlight c "linenos=table,linenostart=814,hl_lines=14" >}}
@@ -352,7 +345,6 @@ struct gendisk *__alloc_disk_node(struct request_queue *q, int node_id,
 {{< /highlight >}}
 
 ## Kernel tracing
-
 When the writeback to the storage device has to wait, it can be traced. The function 
 [balance_dirty_pages()](https://elixir.bootlin.com/linux/v6.1/source/mm/page-writeback.c#L1557) has
 a tracepoint defined, that can be used for this purpose.
