@@ -130,6 +130,8 @@ enableRobotsTXT = true
   [params.page]
     # Page style ("normal", "wide")
     pageStyle = "wide"
+    # wether to enable series navigation
+    seriesNavigation = true
     # whether to enable the fontawesome extended syntax
     fontawesome = true
     [params.page.toc]
@@ -163,14 +165,14 @@ enableRobotsTXT = true
     url = "/tags/"
     title = ""
     weight = 2
-  [[menu.main]]
-    identifier = "categories"
-    pre = ""
-    post = ""
-    name = "Categories"
-    url = "/categories/"
-    title = ""
-    weight = 3
+  # [[menu.main]]
+  #   identifier = "categories"
+  #   pre = ""
+  #   post = ""
+  #   name = "Categories"
+  #   url = "/categories/"
+  #   title = ""
+  #   weight = 3
   [[menu.main]]
     identifier = "projects"
     pre = ""
@@ -218,6 +220,10 @@ enableRobotsTXT = true
 
 [outputs]
   home = ["HTML", "RSS", "JSON"]
+
+[taxonomies]
+tag = "tags"
+series = "series"
 
 [params.search]
   enable = true
