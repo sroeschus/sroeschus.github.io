@@ -3,7 +3,7 @@ title: "Setting up the kernel development environment - Editor"
 description: How to setup the editor for basic Linux kernel development environment
 date: 2023-01-24T20:23:05-08:00
 featuredImage: "editor.jpg"
-draft: true
+draft: false
 toc:
   enable: true
 tags: ["kernel", "setup", "editor", "emacs", "doom", "vim"]
