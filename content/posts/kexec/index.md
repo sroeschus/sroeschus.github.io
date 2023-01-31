@@ -9,6 +9,10 @@ toc:
 tags: ["kexec", "tools"]
 ---
 
+This article describes how to use the kexec tool to boot into another kernel.
+It does not require a restart of the system.
+<!--more-->
+
 ## Overview
 As a kernel developer you often have to test a new kernel. The kexec command allows you to boot into
 another kernel.  The kexec command utilizes the kexec system call and enables you to load and boot into another kernel.
