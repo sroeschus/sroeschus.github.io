@@ -10,6 +10,10 @@ tags: ["kernel", "setup", "editor", "emacs", "doom", "vim"]
 series: [kernel-development-setup]
 ---
 
+This article describes how to do the doom emacs setup for your kernel development
+environment.
+<!--more-->
+
 ## Overview
 An important decision for the kernel development is the choice of which editor to pick.
 The two most common choices are vim and emacs. There are certainly other choices

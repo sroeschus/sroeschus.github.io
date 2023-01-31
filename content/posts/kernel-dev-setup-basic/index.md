@@ -10,6 +10,10 @@ tags: ["kernel", "setup", "pacman"]
 series: [kernel-development-setup]
 ---
 
+This article describes how to do the basic setup for your kernel development
+environment.
+<!--more-->
+
 ## Overview
 Kernel development requires a number of Linux packages to be installed. This series documents
 the setup process for an arch-based linux system. The general requirements are defined in
