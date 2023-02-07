@@ -3,7 +3,7 @@ title: "Setting up the kernel development environment - Email"
 description: How to setup email for Linux kernel development environment
 date: 2023-01-24T20:23:05-08:00
 featuredImage: "email.jpg"
-draft: true
+draft: false
 toc:
   enable: true
 tags: ["kernel", "setup", "editor", "emacs", "doom", "vim"]
