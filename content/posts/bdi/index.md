@@ -7,7 +7,7 @@ math: true
 draft: false
 toc:
   enable: true
-tags: ["block", "fs", "mm", "bdi", "writeback", "btrfs"]
+tags: ["kernel", "block", "fs", "mm", "bdi", "writeback", "btrfs"]
 ---
 
 This article describes limitations of controlling the size of the dirty writeback cache

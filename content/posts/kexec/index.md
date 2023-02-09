@@ -6,7 +6,7 @@ date: 2022-11-27T22:32:21-08:00
 draft: false
 toc:
   enable: true
-tags: ["kexec", "tools"]
+tags: ["kernel", "kexec", "tools"]
 ---
 
 This article describes how to use the kexec tool to boot into another kernel.
