@@ -1,12 +1,12 @@
 ---
 title: "Setting up the kernel development environment - Email"
-description: How to setup email for Linux kernel development environment
+description: How to setup email for your Linux kernel development environment
 date: 2023-01-24T20:23:05-08:00
 featuredImage: "email.jpg"
 draft: false
 toc:
   enable: true
-tags: ["kernel", "setup", "editor", "emacs", "doom", "vim"]
+tags: ["kernel", "setup", "email", "emacs", "doom", "mbsync", "msmtp", "mu", "mu4e"]
 series: [kernel-development-setup]
 ---
 
