@@ -8,6 +8,7 @@ toc:
   enable: true
 tags: ["kernel", "setup", "pacman"]
 series: [kernel-development-setup]
+series_weight: 1
 ---
 
 This article describes how to do the basic setup for your kernel development

@@ -8,6 +8,7 @@ toc:
   enable: true
 tags: ["kernel", "setup", "email", "emacs", "doom", "mbsync", "msmtp", "mu", "mu4e"]
 series: [kernel-development-setup]
+series_weight: 3
 ---
 
 This article describes a possible email setup for your kernel development

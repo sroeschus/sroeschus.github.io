@@ -8,6 +8,7 @@ toc:
   enable: true
 tags: ["kernel", "setup", "editor", "emacs", "doom", "vim"]
 series: [kernel-development-setup]
+series_weight: 2
 ---
 
 This article describes how to do the doom emacs setup for your kernel development
