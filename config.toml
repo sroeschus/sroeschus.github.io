@@ -165,6 +165,14 @@ enableRobotsTXT = true
     url = "/tags/"
     title = ""
     weight = 2
+  [[menu.main]]
+    identifier = "series"
+    pre = ""
+    post = ""
+    name = "Series"
+    url = "/series/"
+    title = ""
+    weight = 3
   # [[menu.main]]
   #   identifier = "categories"
   #   pre = ""
