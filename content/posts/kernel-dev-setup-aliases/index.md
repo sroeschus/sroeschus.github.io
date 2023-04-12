@@ -84,7 +84,7 @@ the `cs` alias invokes cscope.
 alias cpl="scripts/checkpatch.pl *.patch"
 alias cs='cscope -k -d'
 alias gen="scripts/clang-tools/gen_compile_commands.py"
-alias m="make -j$(nproc) tar-pkg"
+alias m="make -j$(nproc)"
 alias mc="make clean"
 ```
 
