@@ -3,7 +3,7 @@ title: "Setting up the kernel development environment - VM"
 description: How to setup email for your Linux kernel development environment
 date: 2023-04-09T23:05:20-07:00
 featuredImage: "vm.jpg"
-draft: true
+draft: false
 toc:
   enable: true
 tags: ["kernel", "setup", "virtme", "qemu"]
