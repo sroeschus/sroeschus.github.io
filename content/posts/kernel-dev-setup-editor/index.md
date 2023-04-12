@@ -308,7 +308,7 @@ I also disabled the exit confirmation question.
 ### Linux kernel coding style
 Linux kernel development has its development process very well documented on the
 [docs.kernel.org](https://docs.kernel.org) website. Part of the development process
-is the [Linux kernel coding stype](https://docs.kernel.org/process/coding-style.html).
+is the [Linux kernel coding style](https://docs.kernel.org/process/coding-style.html).
 The linux kernel coding style defines among other things how the source code
 needs to be formatted. This section describes how the editor is configured to
 enforce this style guide.
