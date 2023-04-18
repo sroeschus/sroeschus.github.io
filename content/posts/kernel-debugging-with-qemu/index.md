@@ -90,11 +90,12 @@ Hardware assisted breakpoint 1 at 0xffffffff83046940: file init/main.c, line 881
 Thread 1 hit Breakpoint 1, start_kernel () at init/main.c:881
 881     {
 ```
-The kernel.gdb script defines a breakpoint at the start_kernel() function and stops the
-execution of the kernel at that function. This is very early in the boot sequence of the
+The [kernel.gdb](https://github.com/sroeschus/kernel-gdb/blob/main/kernel.gdb) script
+defines a breakpoint at the [start_kernel()](https://elixir.bootlin.com/linux/latest/source/init/main.c#L940)
+function and stops the execution of the kernel at that function. This is very early in the boot sequence of the
 kernel and allows to define additional breakpoints.
 
-With the c command (continue), the startup sequence can be resumed. In the first window
+With the `c` command (continue), the startup sequence can be resumed. In the first window
 one can see how the startup log statements are printed until the command prompt is
 available.
 
@@ -139,7 +140,8 @@ lx-version -- Report the Linux Version of the current kernel.
 ```
 
 The commands itself should be pretty self explanatory. Especially useful are the
-`lx-ps` and the `lx-dmesg` commands. But this depends on the use case.
+`lx-ps` and the `lx-dmesg` commands. But this depends on the use case. Additional
+documentation to the scripts and functions is available on [kernel.org](https://www.kernel.org/doc/html/v4.10/dev-tools/gdb-kernel-debugging.html).
 
 ## Extending GDB
 This only provides the standard gdb experience. Most of the time you are also
