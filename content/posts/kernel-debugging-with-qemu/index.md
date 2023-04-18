@@ -6,7 +6,7 @@ featuredImage: "bug.jpg"
 draft: false
 toc:
   enable: true
-tags: ["kernel", "gdb", "virtme", "qemu"]
+tags: ["kernel", "gdb", "virtme", "qemu", "vmlinux-gdb.py", "vmlinux-gdb", "nokaslr", "lx-ps", "lx-dmesg"]
 ---
 This article describes how to debug the Linux kernel with qemu, virtme and gdb.
 <!--more-->
