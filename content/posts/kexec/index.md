@@ -1,5 +1,5 @@
 ---
-title: "Kexec: Booting into another kernel"
+title: "Kexec - Booting into another kernel"
 description: "How to use the kexec tool to boot another Linux kernel."
 featuredImage: "kexec.jpg"
 date: 2022-11-27T22:32:21-08:00
