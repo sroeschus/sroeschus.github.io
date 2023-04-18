@@ -23,7 +23,8 @@ have been submitted upstream.
 ## CV
 
 ### Facebook / Meta (since 08/2021)
-I'm currently working as a kernel developer for Meta.
+I'm currently working as a kernel developer for Meta. My work is currently focused on the storage, io-uring
+(kernel and liburing) and memory management layer.
 
 ### Google (2017 - 2021)
 I worked for the Linux kernel group at Google. At google I worked on the prod kernel in the memory management layer.
