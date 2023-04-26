@@ -6,7 +6,7 @@ featuredImage: "email.jpg"
 draft: false
 toc:
   enable: true
-tags: ["kernel", "setup", "email", "emacs", "doom", "mbsync", "msmtp", "mu", "mu4e"]
+tags: ["kernel", "setup", "email", "emacs", "doom", "mbsync", "msmtp", "mu", "mu4e", "systemd"]
 series: [kernel-development-setup]
 series_weight: 3
 ---
@@ -95,13 +95,19 @@ configuration. The mbsync program also supports setting up configurations with
 multiple accounts.
 
 ``` shell
+CopyArrivalDate yes   # Don't mess up message timestamps
+Sync All
+Create Both           # Automatically create near folders in the local copy
+Remove Both           # Autmatically remove deleted folders from the local copy
+Expunge Both          # Expunge delete messages locally and remote
+
 IMAPAccount fastmail
 Host imap.fastmail.com
 Port 993
 User your-account@your-domain
-PassCmd "gpg -q --for-your-eyes-only --no-tty -d ~/.mbsync-pw.gpg"
+PassCmd "gpg --batch -q --for-your-eyes-only --no-tty -d ~/.mbsync-pw.gpg"
 SSLType IMAPS
-CertificateFile /home/stefan/fm.crt
+CertificateFile ~/fm.crt
 
 IMAPStore fastmail-remote
 Account fastmail
@@ -115,10 +121,6 @@ Channel fastmail
 Far :fastmail-remote:
 Near :fastmail-local:
 Patterns *
-Expunge None
-CopyArrivalDate yes
-Sync All
-Create Near
 SyncState *
 ```
 In case your email service provider requires a certificate file, the file
@@ -319,12 +321,6 @@ gpg agent with ssh support. Then it configures how to send the email, and
 the key folders. The list of folders can easily be changed and extended
 as needed.
 ``` elisp
-;; Enable loopback so that pinentry will pop up in emacs
-(pinentry-start)
-
-;; Start GPG agent with SSH support
-(shell-command "gpg-connect-agent /bye")
-
 ;; Set sendmail properties and use msmtp.
 ;;
 (setq sendmail-program "/usr/bin/msmtp"
@@ -333,26 +329,40 @@ as needed.
       message-sendmail-extra-arguments '("--read-envelope-from")
       message-send-mail-function 'message-send-mail-with-sendmail)
 (setq smtpmail-smtp-server "smtp.fastmail.us)
+(setq smtpmail-default-smtp-server "smtp.fastmail.com")
 (setq smtpmail-smtp-service 587)
+(setq smtpmail-stream-type 'starttls)
 
+;; Set timeouts
+(after! mu4e
+  (setq mu4e-get-mail-command "true")
+  (setq mu4e-update-interval 60))
 
 ;; Set sendmail shortcuts for different folders.
 ;;
 (setq mu4e-maildir-shortcuts
-  '( (:maildir "/inbox"     :key  ?i)
-     (:maildir "/drafts"    :key  ?d)
-     (:maildir "/patches"   :key  ?p)
-     (:maildir "/archive"   :key  ?a)
-     (:maildir "/sent"      :key  ?s)))
+  '( (:maildir "/Inbox"     :key  ?i)
+     (:maildir "/Drafts"    :key  ?d)
+     (:maildir "/Patches"   :key  ?p)
+     (:maildir "/Archive"   :key  ?a)
+     (:maildir "/Spam"      :key  ?x)
+     (:maildir "/Sent"      :key  ?s)))
 
 ;; Map different email folders.
 ;;
-(set-email-account! "your-account"
+(set-email-account! "shr@devkernel.io"
   '((mu4e-sent-folder       . "/Sent")
     (mu4e-drafts-folder     . "/Drafts")
     (mu4e-trash-folder      . "/Trash")
     (mu4e-refile-folder     . "/Archive")
     (smtpmail-smtp-user     . "your-account@your-domain"))
+  t)
+
+(set-email-account! "your-account"
+  '((mu4e-sent-folder       . "/Sent")
+    (mu4e-drafts-folder     . "/Drafts")
+    (mu4e-trash-folder      . "/Trash")
+    (mu4e-refile-folder     . "/Archive")
   t)
 ```
 In case you are behind a proxy, the settings for smtpmail-smtp-server and
@@ -363,139 +373,86 @@ Update the emacs configuration with:
 doom sync
 ```
 
-#### Add help screen for keybindings
-This step is optional and is not required. When the hydra key `.` is pressed, it will
-display the key bindings at the bottom of the screen. This can be helpful as mu4e
-supports a lot of different commands and makes using the package easier.
-``` elisp
-(defhydra hydra-mu4e-main (:color blue :hint nil)
-  "
-_C_: compose             _b_: search bookmark    _u_: update    _m_ toogle mail send
-_J_: jump maildir        _s_: search             _$_: log
-_f_: send queued mail    _B_: edit bookmark
-_q_: quit                _S_: edit search
-"
+## Download new mails in the background
+To be able to automatically download emails in the background, two systemd user
+services are defined: a timer service and a mbsync service. Let's first create the
+timer service. Create the file mbsync.timer in the directory ~/.config/systemd/user.
 
-  ;; general
-  ("C" mu4e-compose-new)
-  ("J" mu4e~headers-jump-to-maildir)
-  ("f" smtp-mail-send-queued-mail)
-  ("q" mu4e-quit)
+```shell
+[Unit]
+Description=Mailbox synchronization timer
 
-  ;; search
-  ("b" mu4e-search-bookmark)
-  ("s" mu4e-search)
-  ("S" mu4e-search-edit)
-  ("B" mu4e-search-bookmark-edit)
+[Timer]
+OnBootSec=2m
+OnUnitActiveSec=1m
+Unit=mbsync.service
 
-  ;; miscellany
-  ("A" mu4e-about)
-  ("H" mu4e-display-manual)
-  ("N" mu4e-news)
+[Install]
+WantedBy=timers.target
+```
+Now lets create the file to define the mbsync service. The service definition file
+is called mbsync.service and is also stored in the directory ~/.config/systemd/user.
 
-  ;; switches
-  ("m" mu4e--main-toggle-mail-sending-mode)
+```shell
+[Unit]
+Description=Mailbox synchronization service
+AssertPathExists=%h/.mbsyncrc
 
-  ;; more miscellany
-  ("u" mu4e-update-mail-and-index)
-  ("$" mu4e-show-log)
+[Service]
+Environment=XAUTHORITY=%h/.Xauthority
+Environment=DISPLAY=:0
+Type=oneshot
+ExecStart=/usr/bin/mbsync -a
 
-  ("." nil))
+[Install]
+WantedBy=default.target
+```
+In addition also a post script can be defined that creates a desktop notification
+once new mail arrives. This should be added in the [Service] definition above after
+the ExecStart clause.
+```shell
+ExecStartPost=%h/mail_notify.sh
+```
+As an example a very simple script could look like this. The path to icon most
+likely needs to be adapted on your system.
+```shell
+#!/usr/bin/bash
 
-(defhydra hydra-mu4e-headers (:color blue :hint nil)
-  "
-_C_: compose           _s_: search             _j_ : next            _a_: action       _A_: mark action       _zr_: incl related       _u_: update
-_E_: edit              _S_: edit search        _k_ : prev            _m_: move         _*_: mark something    _zt_: threading          _$_: log
-_F_: forward           _b_: search bookmark                        _r_: refile       _&_: mark custom       _zd_: skip duplicates
-_R_: reply             _B_: edit bookmark      _gj_: next unread     _d_: trash        _!_: mark read
-                                           _gk_: prev unread     _D_: delete       _%_: mark pattern
-_J_: jump maildir      _/_: narrow search                          _x_: execute      _+_: mark flag
-_q_: quit              _o_: change sort        _gv_: other view
-                                                                               _u_: unmark
-                                                                               _U_: unmark all
+MAILDIR=~/Maildir/Inbox/new
+NEW_MAILS="$(find $MAILDIR -type f | wc -l)"
+NEW_MAILS_LAST_UPDATE="$(find $MAILDIR -type f -mmin -2 | wc -l)"
 
-                                                                               _=_: mark untrash
-                                                                               _?_: mark unread
-                                                                               _-_: mark unflag
-"
-
-  ;; general
-  ("C" mu4e-compose-new)
-  ("E" mu4e-compose-edit)
-  ("F" mu4e-compose-forward)
-  ("R" mu4e-compose-reply)
-  ("q" mu4e~headers-quit-buffer)
-
-  ;; search
-  ("b" mu4e-search-bookmark)
-  ("s" mu4e-search)
-  ("S" mu4e-search-edit)
-  ("B" mu4e-search-bookmark-edit)
-  ("o" mu4e-headers-change-sorting)
-  ("/" mu4e-search-narrow)
-
-  ;; move
-  ("j" mu4e-headers-next)
-  ("k" mu4e-headers-prev)
-  ("gj" mu4e-headers-next-unread)
-  ("gk" mu4e-headers-prev-unread)
-  ("gv" mu4e-select-other-view)
-
-  ;; action
-  ("a" mu4e-headers-action)
-  ("d" mu4e-headers-mark-for-trash)
-  ("m" mu4e-headers-mark-for-move)
-  ("r" mu4e-headers-mark-for-refile)
-  ("u" mu4e-headers-mark-for-unmark)
-  ("x" mu4e-mark-execute-all)
-  ("A" mu4e-headers-mark-for-action)
-  ("D" mu4e-headers-mark-for-delete)
-  ("U" mu4e-mark-unmark-all)
-  ("*" mu4e-headers-mark-for-something)
-  ("&" mu4e-headers-mark-custom)
-  ("=" mu4e-headers-mark-for-untrash)
-  ("?" mu4e-headers-mark-for-unread)
-  ("!" mu4e-headers-mark-for-read)
-  ("%" mu4e-headers-mark-pattern)
-  ("+" mu4e-headers-mark-for-flag)
-  ("-" mu4e-headers-mark-for-unflag)
-
-  ;; more miscellany
-  ("u" mu4e-update-mail-and-index)
-  ("J" mu4e~headers-jump-to-maildir)
-  ("$" mu4e-show-log)
-
-  ;; switches
-  ("zr" mu4e-headers-toggle-include-related)
-  ("zt" mu4e-headers-toggle-threading)
-  ("zd" mu4e-headers-toggle-skip-duplicates)
-
-  ("." nil))
-
-(map! :after mu4e
-      :map mu4e-headers-mode-map
-      :nv "." #'hydra-mu4e-headers/body)
+export DISPLAY=:0
+if [ $NEW_MAILS_LAST_UPDATE -gt 0 ]
+then
+	/usr/bin/notify-send --icon="/usr/share/plasma/desktoptheme/Dr460nized/icons/mail.svg" \
+      -a "mbsync" "New mail" "$NEW_MAILS new mails"
+fi
 ```
 
-#### Change gpg agent configuration
-Add the following environment variable to your shell startup file. For bash the file
-is called .bash_profile, for fish it is called .fish_profile.
-``` shell
-export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+Now its time to create the new services:
+```shell
+systemctl --user restart mbsync.timer 
+systemctl --user restart mbsync.service
+
+systemctl --user enable mbsync.timer
+systemctl --user enable mbsync.service
+
+systemctl --user daemon-reload
 ```
-Add the following settings to the gpg agent config file ~/.gnupg/gpg-agent.conf.
-If the file does not exist, create it.
-``` shell
-pinentry-program /usr/local/bin/pinentry-emacs # or we the path is
-enable-ssh-support
+Depending on your linux version you might have to enable an entry in /etc/pinentry/prexec.
+On Arch Linux I have enabled pinentry-qt:
+```shell
+#!/hint/sh
+
+# Define additional functionality for pinentry. For example
+#test -e /usr/lib/libgcr-base-3.so.1 && exec /usr/bin/pinentry-gnome3 "$@"
+test -e /usr/lib/libQt5Widgets.so.5 && exec /usr/bin/pinentry-qt     "$@"
 ```
-Execute the following command and add the reported keygrip to the file
-~/.gnupg/sshcontrol.
-``` shell
-gpg2 --list-secret-keys --keyid-format LONG --with-keygrip
-```
-At this point it might be necessary to restart the gpg agent process so the new
-setting take effect.
+
+At this point new email should be downloaded automatically. When the user logs in
+first, a dialog will be displayed to enter the passphrase. After the the credentials
+are cached.
 
 ## Using mu4e
 This only gives a very brief overview of mu4e. The documentation does a very
@@ -525,4 +482,23 @@ by pressing the `.` key.
 When answering to emails
 use bottom posting. To make it obvious what your message is in response to, your
 message should be placed underneath the corresponding part in the previous email.
+
+## Colorize patches in emails
+To make it easier to review patches, it helps to automatically colorize patches:
+removed lines are displayed in red and new lines are displayed in green. This is
+an example:
+
+<img src="mu4e-patch-colorize.png"/>
+
+The following line needs to be added to the packages.el file:
+```elisp
+(package! message-view-patch :recipe (:host github :repo "seanfarley/message-view-patch"))
+```
+and the following hook needs to be added to the config.el file:
+```elisp
+;; Display diff patches in color.
+;;
+(use-package! message-view-patch)
+(add-hook 'gnus-part-display-hook 'message-view-patch-highlight)
+```
 
