@@ -450,8 +450,8 @@ On Arch Linux I have enabled pinentry-qt:
 test -e /usr/lib/libQt5Widgets.so.5 && exec /usr/bin/pinentry-qt     "$@"
 ```
 
-At this point new email should be downloaded automatically. When the user logs in
-first, a dialog will be displayed to enter the passphrase. After the the credentials
+At this point new emails should be downloaded automatically. Once the user logs in,
+a dialog will be displayed to enter the passphrase. After that the credentials
 are cached.
 
 ## Using mu4e
@@ -463,7 +463,7 @@ can be opened with `space` `o` `m`. It displays a screen similar to the followin
 
 New messages can be created and sent by pressing `C`. Remember that vim key
 bindings are enabled. Once you have created the email, it can be sent with the
-key combination `ctrl-c` `ctrl-c`. To abort email sending `ctrl-c` `ctrl-k` can be
+key combination `ctrl-c` `ctrl-c`. To abort sending an email, `ctrl-c` `ctrl-k` can be
 pressed.
 
 To retrieve the curent list of emails, the `J` key can be used. This shows
@@ -475,13 +475,10 @@ If you want to reply to an email, press `R`. It will ask you if you want to repl
 to all users or only the sender. Once the reply has been composed, the email
 can be sent with ctrl-c ctrl-c. A reply can be aborted with `ctrl-c` `ctrl-k`.
 
-mu4e provides a lot of commands. A list of available commands can be dispayed
-by pressing the `.` key.
-
 ## Discussing review comments
-When answering to emails
-use bottom posting. To make it obvious what your message is in response to, your
-message should be placed underneath the corresponding part in the previous email.
+When answering to emails use bottom posting. To make it obvious what your message
+is in response to, your message should be placed underneath the corresponding part
+in the previous email.
 
 ## Colorize patches in emails
 To make it easier to review patches, it helps to automatically colorize patches:
