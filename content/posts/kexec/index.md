@@ -6,7 +6,7 @@ date: 2022-11-27T22:32:21-08:00
 draft: false
 toc:
   enable: true
-tags: ["kernel", "kexec", "tools"]
+tags: ["kernel", "kexec", "tools", "boot"]
 ---
 
 This article describes how to use the kexec tool to boot into another kernel.
@@ -45,7 +45,9 @@ An example would be for instance:
 
 <pre class="command-line language-bash" data-user="root" data-host="localhost">
 <code>
-> sudo kexec -l /boot/vmlinuz-5.12.0-0_fbk8 --initrd=/boot/initramfs-5.12.0-0_fbk8_hardened_6656_gc85768aa64da.img --command-line="$(cat /proc/cmdline)"
+> sudo kexec -l /boot/vmlinuz-5.12.0 \
+             --initrd=/boot/initramfs-5.12.0-0_6656_gc85768aa64da.img \
+             --command-line="$(cat /proc/cmdline)"
 > sudo kexec -e
 </code>
 </pre>
@@ -55,3 +57,12 @@ has completed and the new kernel is no longer needed, the same procedure can be 
 makes sure that the same kernel is active as before the test.
 
 For more detailed information about the kexec command you can check the [kexec man page](https://man7.org/linux/man-pages/man8/kexec.8.html).
+
+{{< admonition type=tip title="" open=true >}}
+Sometimes the kexec -l command returns the error "Ramdisks not supported with generic elf arguments".
+If that happens, appending the program option
+```shell
+   --args-linux
+```
+resolves the problem.
+{{< /admonition >}}
