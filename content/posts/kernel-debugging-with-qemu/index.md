@@ -44,8 +44,10 @@ alias vdbg 'virtme-run --kimg arch/x86_64/boot/bzImage  -a "nokaslr"
   --qemu-opts -m 16384 -smp 4 -qmp tcp:localhost:4444,server,nowait -s -S'
 ```
 The command disables kaslr (kernel address space randomization), uses 16GB of memory, 4 CPU's,
-and defines the port on how to communicate with qemu. It also specifies to wait for the
-debugger to attach.
+and defines the port on how to communicate with qemu. Disabling kaslr (nokaslr) can be helpful when
+debugging. It also specifies to wait for the debugger to attach (-S). The option -s is a
+shorthand for specifying `-gdb tcp::1234`. The various qemu options are described in
+the [qemu documentation](https://www.qemu.org/docs/master/system/invocation.html).
 
 ## Building the kernel
 To be able to see the symbols the kernel needs to be built with symbols. The easiest is
@@ -101,7 +103,7 @@ available.
 
 ## Linux kernel debug commands
 If the vmlinux-gdb.py script has been successfully loaded with the kernel.gdb script, additional
-gdb commands and functions get defined. The list of additional commands can be queried with the following
+gdb commands and functions get defined. The list of additional commands can be queried with the `apropos`
 command:
 ```gdb
 apropos lx
@@ -139,9 +141,11 @@ lx-timerlist -- Print /proc/timer_list
 lx-version -- Report the Linux Version of the current kernel.
 ```
 
-The commands itself should be pretty self explanatory. Especially useful are the
-`lx-ps` and the `lx-dmesg` commands. But this depends on the use case. Additional
-documentation to the scripts and functions is available on [kernel.org](https://www.kernel.org/doc/html/v4.10/dev-tools/gdb-kernel-debugging.html).
+The commands itself should be pretty self explanatory. The `lx-ps` shows the current
+list of processes. The `lx-dmesg` command prints the current contents of the kernel log
+buffer. For debugging it is important to have symbol information. With the `lx-symbols`
+command, the symbol information can be loaded.
+Additional documentation to the scripts and functions is available on [kernel.org](https://www.kernel.org/doc/html/v4.10/dev-tools/gdb-kernel-debugging.html).
 
 ## Extending GDB
 This only provides the standard gdb experience. Most of the time you are also
