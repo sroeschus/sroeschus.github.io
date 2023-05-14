@@ -8,6 +8,7 @@ theme = "DoIt"
 
 # Use robots.txt
 enableRobotsTXT = true
+disableKinds = ["taxonomy-terms"]
 
 [params]
   # DoIt theme version
@@ -230,8 +231,8 @@ enableRobotsTXT = true
   home = ["HTML", "RSS", "JSON"]
 
 [taxonomies]
-tag = "tags"
-series = "series"
+  tag = "tags"
+  series = "series"
 
 [params.search]
   enable = true
