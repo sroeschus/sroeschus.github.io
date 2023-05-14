@@ -230,8 +230,7 @@ enableRobotsTXT = true
   home = ["HTML", "RSS", "JSON"]
 
 [taxonomies]
-# tag = "tags"
-tag = ""
+tag = "tags"
 series = "series"
 
 [params.search]
