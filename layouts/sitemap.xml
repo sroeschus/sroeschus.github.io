@@ -2,7 +2,10 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     >
-    {{- range (where .Data.Pages "Section" "!=" "tags") -}}
+    {{ $v1 := where .Data.Pages "Section" "!=" "tags" }}
+    {{ $v2 := where .Data.Pages "Section" "!=" "series" }}
+    {{ $filtered := $v1 | intersect $v2 }}
+    {{- range $filtered -}}
         <url>
             <loc>
                 {{- .Permalink -}}
