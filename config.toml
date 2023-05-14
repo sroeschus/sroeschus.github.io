@@ -13,11 +13,11 @@ enableRobotsTXT = true
   # DoIt theme version
   version = "0.2.X"
   # website title
-  title = "Linux kernel developer information"
+  title = "Linux kernel development information"
   # site description
-  description = "Linux kernel developer information"
+  description = "Linux kernel development information"
   # site keywords
-  keywords = ["linux", "kernel", "developer", "hacker"]
+  keywords = ["linux", "kernel", "developer", "hacker", "development"]
   # site default theme ("light", "dark", "black", "auto")
   defaultTheme = "dark"
   # public git repo url only then enableGitInfo is true
@@ -230,7 +230,8 @@ enableRobotsTXT = true
   home = ["HTML", "RSS", "JSON"]
 
 [taxonomies]
-tag = "tags"
+# tag = "tags"
+tag = ""
 series = "series"
 
 [params.search]
