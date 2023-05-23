@@ -21,7 +21,7 @@ alignment and to understand false sharing scenarios. There are two different way
 determine the data structure layout.
 
 ## GDB ptype command
-With the `ptype` command GDB can show the storage layout of a c struct. The following output
+With the [ptype](https://sourceware.org/gdb/onlinedocs/gdb/Symbols.html) command GDB can show the storage layout of a c struct. The following output
 shows the layout of the file struct.
 
 ```shell
@@ -140,7 +140,7 @@ The `ptype` command can also print the struct offsets.
 
 
 ## pahole command
-The `pahole` command can be used from the command line. It displays the
+The [pahole](https://man.archlinux.org/man/extra/pahole/pahole.1.en) command can be used from the command line. It displays the
 data layout of c structs. It also shows the holes in the storage layout.
 
 ```shell
