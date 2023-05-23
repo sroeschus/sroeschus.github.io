@@ -24,7 +24,7 @@ determine the data structure layout.
 With the [ptype](https://sourceware.org/gdb/onlinedocs/gdb/Symbols.html) command GDB can show the storage layout of a c struct. The following output
 shows the layout of the file struct.
 
-```shell
+```c
 (gdb) ptype struct file
 type = struct file {
   union {
@@ -55,7 +55,7 @@ type = struct file {
 ```
 
 The `ptype` command can also print the struct offsets.
-```shell
+```c
 (gdb) ptype /o struct file
 /* offset      |    size */  type = struct file {
 /*      0      |      16 */    union {
@@ -143,7 +143,7 @@ The `ptype` command can also print the struct offsets.
 The [pahole](https://man.archlinux.org/man/extra/pahole/pahole.1.en) command can be used from the command line. It displays the
 data layout of c structs. It also shows the holes in the storage layout.
 
-```shell
+```c
 struct file {
   union {
     struct llist_node  f_llist;              /*     0     8 */
