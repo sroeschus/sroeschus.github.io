@@ -144,6 +144,8 @@ The [pahole](https://man.archlinux.org/man/extra/pahole/pahole.1.en) command can
 data layout of c structs. It also shows the holes in the storage layout.
 
 ```c
+> pahole file
+
 struct file {
   union {
     struct llist_node  f_llist;              /*     0     8 */
