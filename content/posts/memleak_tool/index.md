@@ -46,11 +46,13 @@ are performed by the kernel on behalf of the process. The user space memory mana
 the process might process a lot more memory allocation and memory de-allocation requests.
 The memleak tool does not report the user-space requests.
 
-The tool can be invoked with
+The tool can be invoked with:
 
 ```shell
 sudo memleak -tp 11748
 ```
+The `-t` flags specifies tracing of individual allocations and the `-p` flag specifies
+which process to trace.
 
 The following gives an impression of the typical output:
 
@@ -62,10 +64,11 @@ The following gives an impression of the typical output:
 (b'top', 11748, 8, b'...11', 3393.638453, b'alloc exited, size = 5, result = 56140ebc92b0')
 ```
 
-For each allocation it shows the two lines: alloc entered and alloc exited. For the de-allocation
-operation it only shows the free entered entry. For the allocations as well as for the de-allocation
-it reports the address as well as the size of the request. This makes it very easy to write
-scripts on top of the output to see which memory addresses do not get freed.
+The format of the output is: task, pid, cpu#, flags, timestamp and allocation / de-allocation
+message. For each allocation it shows the two lines: alloc entered and alloc exited. For the
+de-allocation operation it only shows the free entered entry. For the allocations as well as
+for the de-allocation it reports the address as well as the size of the request. This makes it
+very easy to write scripts on top of the output to see which memory addresses do not get freed.
 
 In addition it also shows the process id and the name of the process. If the process starts
 new threads or child processes they are also traced.
@@ -112,4 +115,6 @@ addr = 560cdc846820 size = 32
 0x00007fc75f6a33ef      __strdup+0x1f [libc.so.6]
 0x0000746174732f00      [unknown]
 ```
-
+Once potential leaks have been identified, this makes it easier to identify what code is reponsible
+for the allocation or de-allocation. There are additional flags to the memleak tool, which allow to
+report only allocations / de-allocations of a certain size.
