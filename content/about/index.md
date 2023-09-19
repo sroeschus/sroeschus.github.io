@@ -8,10 +8,10 @@ fontawesome: true
 
 ## Bio
 
-Stefan Roesch is a Linux kernel developer with more than 20 years experience as a software developer. The current work
-is focused on storage, io-uring and the memory layer of the Linux kernel. The projects link at
-the top of the page contains more detailed information and also includes link to patches that
-have been submitted upstream.
+Stefan Roesch is a Linux kernel developer with more than 20 years experience as a
+software developer. The current work is focused on storage, io-uring and the memory
+layer of the Linux kernel. The projects link at the top of the page contains more
+detailed information and also includes link to patches that have been submitted upstream.
 
 [:(fab fa-github fa-fw):](https://github.com/sroeschus)
 [:(fab fa-linkedin fa-fw):](https://linkedin.com/in/stefan-roesch-65a749)
@@ -23,10 +23,10 @@ have been submitted upstream.
 ## CV
 
 ### Facebook / Meta (since 08/2021)
-I'm currently working as a kernel developer for Meta. My work is currently focused on the storage, io-uring
-(kernel and liburing) and memory management layer.
+I'm currently working as a kernel developer for Meta. My work is currently focused on
+the storage, io-uring (kernel and liburing) and recently on the memory management layer.
 
 ### Google (2017 - 2021)
-I worked for the Linux kernel group at Google. At google I worked on the prod kernel in the memory management layer.
-One of the projects I worked on was to provide "guaranteed" low-latency memory allocations for andromeda
-(Google's network virtualization stack).
+I worked for the Linux kernel group at Google. At google I worked on the prod kernel in
+the memory management layer. One of the projects I worked on was to provide "guaranteed"
+low-latency memory allocations for andromeda (Google's network virtualization stack).
