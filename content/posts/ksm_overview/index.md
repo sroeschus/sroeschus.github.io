@@ -1,7 +1,7 @@
 ---
 title: "Linux Kernel Samepage Merging (KSM) Overview"
 description: "Using Linux Kernel Samepage Merging"
-date: 2023-09-18T20:03:53-07:00
+date: 2023-10-04T20:03:53-07:00
 featuredImage: "memory.jpg"
 toc:
   enable: true
