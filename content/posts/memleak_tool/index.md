@@ -2,7 +2,7 @@
 title: "How to use the memleak tool"
 description: "How to use the memleak tool to find memory bugs"
 date: 2023-09-17T21:57:44-07:00
-featuredImage: "leak.jpg"
+featuredImage: "leak.jpg?width=20pc"
 toc:
   enable: true
 tags: ["linux", "memory", "memleak", "bcc", "bcc-tools"]
