@@ -6,7 +6,7 @@ featuredImage: "versions.jpg"
 toc:
   enable: true
 tags: ["linux", "memory", "ksm", "kernel samepage merging", "versions"]
-draft: true
+draft: false 
 ---
 
 This article describes how Linux Kernel Samepage Merging (KSM) has changed.
