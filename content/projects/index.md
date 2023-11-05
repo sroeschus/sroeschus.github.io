@@ -1,6 +1,6 @@
 ---
 title: "Projects"
-date: 2022-12-24T22:29:52-08:00
+date: 2023-11-05T10:38:52-08:00
 tags: ["stefan", "roesch", "projects"]
 draft: false
 ---
@@ -21,6 +21,44 @@ abbreviated with the commmon short names from the kernel directory names:
 - mm = memory management
 - nvme
 - xfs
+
+## Add ksm stats to /proc/\<pid>/smaps
+{{< version 6.6 >}} `mm`
+
+So far KSM statistics have only been available at the global level. To analyze and investigate
+which VMA's benefit from KSM was difficult. This adds KSM statistics at the VMA level. The new
+KSM statistics are exposed in /proc/\<pid>/smaps and /proc/\<pid>/smaps_rollups.
+
+[P1](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=8b47933544a68a62a9c4e35f8d8a6d2a2c935823)
+
+## Add pages_scanned metric to KSM
+{{< version 6.6 >}} `mm`
+
+This adds the pages_scanned metric to /sys/kernel/mm/ksm. This metric is cumulative and allows to analyze
+how much work KSM is doing per scan.
+
+[P1](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=b348b5fe2b5f14ac8bb64fe271d7a027db8cc674)
+
+## Adding process control API to enable KSM per process
+{{< version 6.4 >}} `mm`
+
+So far KSM could only be enabled per VMA. With this patch KSM can be enabled for all
+compatible VMA's of a process. In addition the setting gets also inherited when the
+process gets forked.
+
+[Cover letter](https://lore.kernel.org/all/20230418051342.1919757-1-shr@devkernel.io/)
+
+[P1](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=d7597f59d1d33e9efbffa7060deb9ee5bd119e62),
+[P2](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=d21077fbc2fc987c2e593c34dc3b4d84e546dc9f),
+[P2](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=07115fcc15b4aa5c268fb80b82ad15868a82a285)
+
+## Adding tracepoints to KSM
+{{< version 6.4 >}} `mm`
+
+This patch adds tracepoints to the Kernel Samepage Merging (KSM) component. This
+allows to trace the start, stop of a scan and the merging of pages itself.
+
+[P1](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=739100c88f49a67c6487bb2d826b0b5a2ddc80e2)
 
 ## Backing device information changes
 {{< version 6.2 >}} `mm`
