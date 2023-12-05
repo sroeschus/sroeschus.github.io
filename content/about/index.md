@@ -8,10 +8,11 @@ fontawesome: true
 
 ## Bio
 
-Stefan Roesch is a Linux kernel developer with more than 20 years experience as a
-software developer. The current work is focused on storage, io-uring and the memory
-layer of the Linux kernel. The projects link at the top of the page contains more
-detailed information and also includes link to patches that have been submitted upstream.
+Stefan Roesch is a Database kernel and Linux kernel developer with more than 20 years
+experience as a software developer. The current work is focused on storage, io-uring
+and the memory layer of the Linux kernel. The projects link at the top of the page
+contains more detailed information and also includes link to patches that have been
+submitted upstream.
 
 [:(fab fa-github fa-fw):](https://github.com/sroeschus)
 [:(fab fa-linkedin fa-fw):](https://linkedin.com/in/stefan-roesch-65a749)
