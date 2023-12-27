@@ -23,11 +23,11 @@ submitted upstream.
 
 ## CV
 
-### Facebook / Meta (since 08/2021)
+### Facebook / Meta (August 2021 - December 2023)
 I'm currently working as a kernel developer for Meta. My work is currently focused on
 the storage, io-uring (kernel and liburing) and recently on the memory management layer.
 
-### Google (2017 - 2021)
+### Google (February 2018 - July 2021)
 I worked for the Linux kernel group at Google. At google I worked on the prod kernel in
 the memory management layer. One of the projects I worked on was to provide "guaranteed"
 low-latency memory allocations for andromeda (Google's network virtualization stack).
