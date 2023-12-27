@@ -1,5 +1,5 @@
 ---
-title: "Linux Plumbers 2023 Kernel Samepage Merging (KSM) presentation"
+title: "Linux Plumbers 2023 conference: Kernel Samepage Merging (KSM) presentation"
 description: "Kernel Samepage Merging presentation at Linux Plumbers 2023 conference"
 date: 2023-12-05T10:59:25-08:00
 featuredImage: "plumbers.jpg"
