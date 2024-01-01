@@ -17,7 +17,7 @@ Once a patch or a patch series has been upstreamed, it is run on the Intel test 
 test farm runs tests with the new patch. This also includes running the new kernel on different
 platforms. This is generally a mix of 32 and 64 bit platforms. Before running the patch
 on the different platforms, it is build. During the build it is possible that errors like the
-one below is raised:
+one below are raised:
 
 ```
 All errors (new ones prefixed by >>):
