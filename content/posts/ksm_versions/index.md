@@ -1,7 +1,7 @@
 ---
 title: "Breakdown of changes to Kernel Samepage Merging (KSM) by Kernel Version"
 description: "Kernel Samepage Merging changes by kernel version"
-date: 2023-11-01T09:30:53-07:00
+date: 2024-01-07T15:54:53-07:00
 featuredImage: "versions.jpg"
 toc:
   enable: true
@@ -16,6 +16,14 @@ This article describes how Linux Kernel Samepage Merging (KSM) has changed.
 Kernel Samepage Merging has changed over the last couple of versions. This
 document provides an overview of the changes by version.
 The document will be updated as new kernel versions become available.
+
+## 6.7
+- [e5a689912689](https://git.kernel.org/torvalds/p/e5a689912689) mm/ksm: add pages_skipped metric
+- [b0540208a59e](https://git.kernel.org/torvalds/p/b0540208a59e) mm/ksm: document pages_skipped sysfs knob
+> Add new metric pages scanned in /sys/kernel/mm/ksm/pages_scanned.
+- [5e924ff54d08](https://git.kernel.org/torvalds/p/5e924ff54d08) mm/ksm: add "smart" page scanning mode
+- [75d7dd4138ed](https://git.kernel.org/torvalds/p/75d7dd4138ed) mm/ksm: document smart scan mode
+> Add "smart scan" mode to skip pages that have not been de-duplicated in previous scans.
 
 ## 6.6
 - [8b47933544a6](https://git.kernel.org/torvalds/p/8b47933544a6) proc/ksm: add ksm stats to /proc/pid/smaps
