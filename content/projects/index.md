@@ -22,14 +22,22 @@ abbreviated with the commmon short names from the kernel directory names:
 - nvme
 - xfs
 
-## Add ksm stats to /proc/\<pid>/smaps
-{{< version 6.6 >}} `mm`
+## Add "smart scan" mode to KSM
+{{< version 6.7 >}} `mm`
 
-So far KSM statistics have only been available at the global level. To analyze and investigate
-which VMA's benefit from KSM was difficult. This adds KSM statistics at the VMA level. The new
-KSM statistics are exposed in /proc/\<pid>/smaps and /proc/\<pid>/smaps_rollups.
+This adds the "smart scan" mode to KSM. Smart scanning skips pages on the next scan that have not been
+de-duplicated in the previous scans.
 
-[P1](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=8b47933544a68a62a9c4e35f8d8a6d2a2c935823)
+[P1](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=5e924ff54d088828794d9f1a4d5bf17808f7270e),
+[P2](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=75d7dd4138edd54f3b539698cb4c78a8494d305c)
+
+## Add pages_skipped metric
+{{< version 6.7 >}} `mm`
+
+This adds the pages_skipped metric to KSM. This allows to measure how effective the "smart scan" mode is.
+
+[P1](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=e5a68991268906a6989f1bf273580c2218662ad6),
+[P2](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=b0540208a59e11ab55c9b857bf521d8846e515bf)
 
 ## Add pages_scanned metric to KSM
 {{< version 6.6 >}} `mm`
@@ -38,6 +46,15 @@ This adds the pages_scanned metric to /sys/kernel/mm/ksm. This metric is cumulat
 how much work KSM is doing per scan.
 
 [P1](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=b348b5fe2b5f14ac8bb64fe271d7a027db8cc674)
+
+## Add ksm stats to /proc/\<pid>/smaps
+{{< version 6.6 >}} `mm`
+
+So far KSM statistics have only been available at the global level. To analyze and investigate
+which VMA's benefit from KSM was difficult. This adds KSM statistics at the VMA level. The new
+KSM statistics are exposed in /proc/\<pid>/smaps and /proc/\<pid>/smaps_rollups.
+
+[P1](https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=8b47933544a68a62a9c4e35f8d8a6d2a2c935823)
 
 ## Adding process control API to enable KSM per process
 {{< version 6.4 >}} `mm`
