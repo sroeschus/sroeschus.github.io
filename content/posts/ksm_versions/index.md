@@ -17,6 +17,21 @@ Kernel Samepage Merging has changed over the last couple of versions. This
 document provides an overview of the changes by version.
 The document will be updated as new kernel versions become available.
 
+## 6.10
+> Several commits to transition to folios.
+- [c2dc78b86e08](https://git.kernel.org/torvalds/p/c2dc78b86e08) mm/ksm: fix ksm_zero_pages accounting
+- [730cdc2c72c6](https://git.kernel.org/torvalds/p/730cdc2c72c6) mm/ksm: fix ksm_pages_scanned accounting
+
+## 6.9
+- No changes.
+
+## 6.8
+- [4e5fa4f5eff6](https://git.kernel.org/torvalds/p/4e5fa4f5eff6) mm/ksm: add ksm advisor
+> Adds KSM advisor to dynamically adjust KSM settings.
+- [66790e9a735b](https://git.kernel.org/torvalds/p/66790e9a735b) mm/ksm: add sysfs knobs for advisor 
+- [5088b49730af](https://git.kernel.org/torvalds/p/5088b49730af) mm/ksm: add tracepoint for ksm advisor
+> Start of work to transition to folios with several commits.
+
 ## 6.7
 - [e5a689912689](https://git.kernel.org/torvalds/p/e5a689912689) mm/ksm: add pages_skipped metric
 - [b0540208a59e](https://git.kernel.org/torvalds/p/b0540208a59e) mm/ksm: document pages_skipped sysfs knob
