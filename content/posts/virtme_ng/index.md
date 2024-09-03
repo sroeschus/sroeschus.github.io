@@ -6,7 +6,7 @@ featuredImage: "virtme-ng.png"
 toc:
   enable: true
 tags: ["linux", "kernel", "testing", "virtme", "virtme-ng", "qemu", "arch"]
-draft: true
+draft: false
 ---
 
 This article describes how to use virtme-ng for Linux kernel development.
