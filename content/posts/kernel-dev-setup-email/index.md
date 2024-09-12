@@ -1,7 +1,7 @@
 ---
 title: "Setting up the kernel development environment - Email"
 description: How to setup email for your Linux kernel development environment
-date: 2023-01-24T20:23:05-08:00
+date: 2024-09-11T20:23:05-08:00
 featuredImage: "email.jpg"
 draft: false
 toc:
@@ -22,6 +22,11 @@ patches are sent with [git send-email](https://git-scm.com/docs/git-send-email).
 The patches need to be sent as inline text in the body and should have a content
 type of text/plain. The email requirements are discussed in the
 [kernel doc](https://docs.kernel.org/process/email-clients.html?highlight=editor+configuration).
+
+{{< admonition type=danger title="Warning" open=true >}}
+The previous version of the article was using TLS to configure email. This version
+of the article uses SSL. TLS settings are added at the end of the article.
+{{< /admonition >}}
 
 ### Install packages for email retrieval and email sending
 The first step is to install the required Linux packages. To download the emails
@@ -142,16 +147,20 @@ emails. Future invocations will be faster and only download the new emails.
 Mails are sent with the msmptp program. It is configured by default with the
 ~/.msmtprc configuration file.
 ``` shell
+defaults
+auth on
+tls  on
+
 account default
 host smtp.fastmail.com
-port 587
+port 465
 from your-account@your-domain
 auth login
 user your-account@your-domain
 passwordeval "gpg -q --for-your-eyes-only --no-tty -d ~/.mbsync-pw.gpg"
-tls on
+tls           on
 tls_certcheck off
-tls_starttls on
+tls_starttls  off
 logfile ~/.msmtp.log
 ```
 In the above examples the values host and from need to be changed to the valid
@@ -323,20 +332,24 @@ as needed.
 ``` elisp
 ;; Set sendmail properties and use msmtp.
 ;;
-(setq sendmail-program "/usr/bin/msmtp"
-      send-mail-function 'smtpmail-send-it
-      message-sendmail-f-is-evil t
-      message-sendmail-extra-arguments '("--read-envelope-from")
-      message-send-mail-function 'message-send-mail-with-sendmail)
-(setq smtpmail-smtp-server "smtp.fastmail.us)
-(setq smtpmail-default-smtp-server "smtp.fastmail.com")
-(setq smtpmail-smtp-service 587)
-(setq smtpmail-stream-type 'starttls)
 
-;; Set timeouts
+(setq sendmail-program "/usr/bin/msmtp")
+(setq send-mail-function 'smtpmail-send-it)
+
+(setq auth-sources '("~/.authinfo" "~/.authinfo.gpg" "~/.netrc"))
+
+(setq smtpmail-smtp-user           "<user>@fastmail.us")
+(setq smtpmail-default-smtp-server "smtp.fastmail.com")
+(setq smtpmail-smtp-server         "smtp.fastmail.us")
+(setq smtpmail-smtp-service        465)
+(setq smtpmail-stream-type         'ssl)
+
+;; Set configuration after loading mu4e
 (after! mu4e
-  (setq mu4e-get-mail-command "true")
-  (setq mu4e-update-interval 60))
+  (setq mu4e-get-mail-command  "true")
+  (setq mu4e-update-interval   60)
+  (setq smtpmail-smtp-service  465)
+  (setq smtpmail-stream-type   'ssl))
 
 ;; Set sendmail shortcuts for different folders.
 ;;
@@ -499,3 +512,52 @@ and the following hook needs to be added to the config.el file:
 (add-hook 'gnus-part-display-hook 'message-view-patch-highlight)
 ```
 
+### Debugging
+It is possible that there are problems with sending mails and mu4e. The
+following two variables can be set to create debugging information:
+
+```elisp
+(setq smtpmail-debug info t)
+(setq auth-source-debug   t)
+```
+This will write additional debugging information to the messages buffer of
+emacs.
+
+### Configure msmtp for TLS
+Mails are sent with the msmptp program. It is configured by default with the
+~/.msmtprc configuration file.
+``` shell
+account default
+host smtp.fastmail.com
+port 587
+from your-account@your-domain
+auth login
+user your-account@your-domain
+passwordeval "gpg -q --for-your-eyes-only --no-tty -d ~/.mbsync-pw.gpg"
+tls on
+tls_certcheck off
+tls_starttls on
+logfile ~/.msmtp.log
+```
+In the above examples the values host and from need to be changed to the valid
+values for your email service provider. At this point you are able to send and
+retrieve emails.
+
+#### Change config.el file for TLS
+Finally configure the package in the file config.el. It firsts starts the
+pinentry program to be able to read the encrypted password and enables the
+gpg agent with ssh support. Then it configures how to send the email, and
+the key folders. The list of folders can easily be changed and extended
+as needed.
+``` elisp
+;; Set sendmail properties and use msmtp.
+;;
+(setq sendmail-program "/usr/bin/msmtp"
+      send-mail-function 'smtpmail-send-it
+      message-sendmail-f-is-evil t
+      message-sendmail-extra-arguments '("--read-envelope-from")
+      message-send-mail-function 'message-send-mail-with-sendmail)
+(setq smtpmail-smtp-server "smtp.fastmail.us)
+(setq smtpmail-default-smtp-server "smtp.fastmail.com")
+(setq smtpmail-smtp-service 587)
+(setq smtpmail-stream-type 'starttls)
