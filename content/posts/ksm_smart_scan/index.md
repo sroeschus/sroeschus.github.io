@@ -29,7 +29,7 @@ started. Once the workload has stabilized, the amount of pages that need
 to be analyzed is generally reduced.
 
 Not all workloads have this behavior, but it can be observed for a lot of
-workloads and especially the workloads that have a bigger working set.
+workloads and especially workloads that have a bigger working set.
 
 What does this mean for KSM? It implies that when an application or an
 application suite is started, it has its advantages to scan more aggresively.
@@ -37,18 +37,20 @@ Once the application enters "steady state", it makes sense to reduce the
 scan rate.
 
 ## Smart Scan
-The above is the foundation of "smart scan". The user specifies a target scan
-time and the Smart Scan feature adapts the `pages_to_scan` setting accordingly.
+The above is the foundation of "smart scan". What is needed is a system that
+automatically adapts the scan rate based on demand. The smart scan feature
+implements this capability. The user specifies a target scan time and the
+Smart Scan feature adapts the `pages_to_scan` setting accordingly.
 The target scan time parameter is called `advisor_target_scan_time`.
 
 ## Algorithm
-The algorithm to automatically calculate the scan rate is using a exponentially
+The algorithm that automatically calculates the scan rate is using a exponentially
 weighted moving average. In simple terms the formula is the following:
 
 > new_pages_to_scan = pages_to_scan * (scan_time / target_scan_time)
 
-To avoid pertubations, it calculates a new change factor to the previous value. 
-The new change factor is subject to the exponentially weighted moving average.
+To avoid pertubations, it calculates a new change factor to the previous change
+value. The new change factor is subject to the exponentially weighted moving average.
 
 Once the new value for pages_to_scan has been calculated, it is limited by
 the max values for CPU cost and pages_to_scan, which are explained below.
@@ -73,12 +75,12 @@ KSM can be very CPU intensive. The KSM advisor provides additional knobs in
 
 ## Optimizations
 The smart scan feature also adds an optimization: it takes the history of
-scanning pages into account and skips the pages scanning, if de-duplication
+page scanning into account and skips pages , if de-duplication
 was not successful at previous attempts.
 
 How often a page is skipped is dependent on how often de-deduplication has
-been tried so far. The number of skips is calculated dynamically and is
-currently limited to 8. This value has shown to be effective with different
+been tried unsuccessfully so far. The number of skips is calculated dynamically
+and is currently limited to 8. This value has shown to be effective with different
 workloads.
 
 | Current skip value | New value |
@@ -89,8 +91,10 @@ workloads.
 | 4                  | 8         |
 | 8                  | 8         |
 
+If a page has been de-duplicated the counter is reset.
+
 The optimization helps with CPU and memory resource comsumption. Workloads
-have shown a reduction in page scan of up to 35%. This has resulted in 20%
+have shown a reduction in page scans of up to 35%. This has resulted in 20%
 less CPU consumption. This is very application dependent and your findings
 might be different.
 
