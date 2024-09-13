@@ -24,9 +24,9 @@ How aggressive the candidate pages are scanned is dependent on several parameter
 The most important parameter is `pages_to_scan`.
 
 ### Changing parameter values over time
-What can be observed with most workloads is that just after the process has
-started, KSM needs to process more pages. Once the workload has stabilized,
-the amount of pages that need to be analyzed is generally reduced.
+Most workloads consist of a huge number of pages after the process has
+started. Once the workload has stabilized, the amount of pages that need
+to be analyzed is generally reduced.
 
 Not all workloads have this behavior, but it can be observed for a lot of
 workloads and especially the workloads that have a bigger working set.
