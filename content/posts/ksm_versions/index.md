@@ -1,7 +1,7 @@
 ---
 title: "Breakdown of changes to Kernel Samepage Merging (KSM) by Kernel Version"
 description: "Kernel Samepage Merging changes by kernel version"
-date: 2024-08-01T00:02:53-07:00
+date: 2024-12-14T00:02:53-07:00
 featuredImage: "versions.jpg"
 toc:
   enable: true
@@ -16,6 +16,13 @@ This article describes how Linux Kernel Samepage Merging (KSM) has changed.
 Kernel Samepage Merging has changed over the last couple of versions. This
 document provides an overview of the changes by version.
 The document will be updated as new kernel versions become available.
+
+## 6.12
+- [32f51ead3d77](https://git.kernel.org/torvalds/p/32f51ead3d77) mm: remove PageSwapCache 
+
+## 6.11
+> Optimization for fast changing pages
+- [d58a361b0350](https://git.kernel.org/torvalds/p/d58a361b0350) mm/ksm: don't waste time searching stable tree for fast changing page
 
 ## 6.10
 > Several commits to transition to folios.
