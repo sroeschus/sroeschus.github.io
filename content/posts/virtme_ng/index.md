@@ -1,7 +1,7 @@
 ---
 title: "How to use virtme-ng for Linux Kernel development"
 description: "Using virtme-ng for Linux Kernel development"
-date: 2024-09-11T21:50:04-07:00
+date: 2024-12-14T21:50:04-07:00
 featuredImage: "virtme-ng.png"
 toc:
   enable: true
@@ -25,7 +25,16 @@ The repository has been [forked](https://github.com/arighi/virtme) by Andea Righ
 However this fork is also no longer maintained. Andrea has created
 [virtme-ng](https://github.com/arighi/virtme-ng) for all new development.
 
-## Installation
+## Installation from binary
+Until a few months ago only installation from source was possible. However Arch
+Linux, Debian and Ubuntu now offer packages. This makes the installation easier.
+
+On Arch Linux the package can now be installed with:
+```shell
+sudo pacman -S virtme-ng
+```
+
+## Installation from source
 The github repository does a good job for explaining how to install the software.
 However for Arch Linux a few additional steps are required. Additional packages
 are needed
