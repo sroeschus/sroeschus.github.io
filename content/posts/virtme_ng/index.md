@@ -26,8 +26,9 @@ However this fork is also no longer maintained. Andrea has created
 [virtme-ng](https://github.com/arighi/virtme-ng) for all new development.
 
 ## Installation from binary
-Until a few months ago only installation from source was possible. However Arch
-Linux, Debian and Ubuntu now offer packages. This makes the installation easier.
+Until a few months ago only the installation from source was possible. However Arch
+Linux, Debian and Ubuntu and other Linux distributions now offer packages. This makes
+the installation easier.
 
 On Arch Linux the package can now be installed with:
 ```shell
