@@ -43,18 +43,18 @@ after applying the patch. Sometimes it is necessary to dump the object file with
 to compare the differences.
 
 ## stackusage 
-In the scripts directory there is the stackusage script. The stackusage script allows to
+In the scripts directory there is the `stackusage` script. The stackusage script allows to
 recompile the kernel and create an output file. The output file contains a line for each
 function with its stack size.
 
-The script can be invoked like this. The -o option specifies the output file.
+The script can be invoked like this. The `-o` option specifies the output file.
 ```shell
 > scripts/stackusage -o ~/su.txt
 ```
 
-Let's assume we are interested in the functions in the file ksm.c in the memory
+Let's assume we are interested in the functions in the file `ksm.c` in the memory
 management layer, we can run the following command. It will search for all the functions
-in the file ksm.c, sort them in ascending order by the third column (the stack size) and
+in the file `ksm.c`, sort them in ascending order by the third column (the stack size) and
 then format them in tabular format. The functions with the biggest stack sizes are
 reported last.
 ```shell
@@ -79,7 +79,7 @@ that needs to recompile the kernel to be able to produce the stack usage report.
 run for a while
 
 ## stackdelta
-The stackdelta utility allows to compare to stackusage reports. This allows to analyze which
+The `stackdelta` utility allows to compare to stackusage reports. This allows to analyze which
 functions have changed in terms of stack frame size. Assuming I have two different stackusage
 report su.txt and su2.txt, a diff report of the two can be created. The report only includes
 functions that are part of both kernels and whose stack size has changed.
@@ -101,8 +101,8 @@ functions that are part of both kernels and whose stack size has changed.
  ```
 
 ## checkstack.pl
-The checkstack.pl script is a quicker way to produce a stack usage report. It uses the
-objdump tool to create the stack usage breakdown. Here is an example:
+The `checkstack.pl` script is a quicker way to produce a stack usage report. It uses the
+`objdump` tool to create the stack usage breakdown. Here is an example:
 ```shell
 
 ╭─shr@shr in repo: linux on  master [$?] took 4s
@@ -118,13 +118,13 @@ objdump tool to create the stack usage breakdown. Here is an example:
 
 ## gcc options
 ### frame-larger-than
-The gcc compiler provides the option -Wframe-larger-than=<len>. This can be used to warn
+The gcc compiler provides the option `-Wframe-larger-than=<len>`. This can be used to warn
 if a function uses more than len bytes stack space.
 
 ### stack-usage
-The gcc compiler now also contains -fstack-usage option. If files get compiled with this
+The gcc compiler now also contains `-fstack-usage` option. If files get compiled with this
 option and additional file per translation unit gets created. The file has the extension
-.su. It contains the stack usage per file. The output is pretty similar to the above
+`.su`. It contains the stack usage per file. The output is pretty similar to the above
 output of the stackusage command.
 
 ## Analyzing the stack usage in a live system
@@ -150,14 +150,14 @@ Depth    Size   Location    (11 entries)
  10)      176     176   entry_SYSCALL_64_after_hwframe+0x76/0x7e
 ```
 
-The stack tracer has one configuration option: stack_trace_filter. If stack_trace_filter
+The stack tracer has one configuration option: `stack_trace_filter`. If `stack_trace_filter`
 is specified it will only include these functions that have been stored in the
 stack_trace_filter file.
 
-The file stack_max_size reports the maximum stack size.
+The file `stack_max_size` in the same directory reports the maximum stack size.
 
 ## Specifying CONFIG_FRAME_WARN
-The kernel can be configured with the CONFIG_FRAME_WARN option. In that case it will create
+The kernel can be configured with the `CONFIG_FRAME_WARN` option. In that case it will create
 warnings for all functions that use use more than the specified allocation size.
 ```
  Symbol: FRAME_WARN [=2048]
@@ -171,10 +171,10 @@ warnings for all functions that use use more than the specified allocation size.
  (1)     -> Warn for stack frames larger than (FRAME_WARN [=2048])
 
 ```
-Under the covers it uses the above described gcc option -Wframe-larger-than.
+Under the covers it uses the above described gcc option `-Wframe-larger-than`.
 
 ## Stack size debugging with /proc/vmstat
-The Linux kernel 6.12 introduces a new configuration option called CONFIG_DEBUG_STACK_USAGE.
+The Linux kernel 6.12 introduces a new configuration option called `CONFIG_DEBUG_STACK_USAGE`.
 The new configuration option needs to be enabled when building a kernel. It can be found
 under:
 ```
@@ -189,7 +189,7 @@ under:
  (1)     -> Stack utilization instrumentation (DEBUG_STACK_USAGE [=n])
 
 ```
-Once the kernel is built with the stack usage option, we can query the vmstat file for the 
+Once the kernel is built with the stack usage option, we can query the `vmstat` file for the 
 size of the kernel stacks.
 ```shell
 
