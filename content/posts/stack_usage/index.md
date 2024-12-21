@@ -6,7 +6,7 @@ featuredImage: "stack.jpg"
 toc:
   enable: true
 tags: ["linux", "kernel", "stack", "stackusage", "stackdelta", "gcc", "CONFIG_FRAME_WARN", "CONFIG_DEBUG_STACK_USAGE", "checkstack.pl", "stack_tracer_enabled", "frame-larger-than"]
-draft: true
+draft: false
 ---
 
 This article describes how to measure the stack usage of kernel functions and how to
