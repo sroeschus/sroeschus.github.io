@@ -43,20 +43,21 @@ after applying the patch. Sometimes it is necessary to dump the object file with
 to compare the differences.
 
 ## stackusage 
-In the scripts directory there is the `stackusage` script. The stackusage script allows to
-recompile the kernel and create an output file. The output file contains a line for each
-function with its stack size.
+In the scripts directory there is the [stackusage](https://elixir.bootlin.com/linux/v6.12/source/scripts/stackusage) script.
+The stackusage script allows to recompile the kernel and create an output file. The
+output file contains a line for each function with its stack size.
 
 The script can be invoked like this. The `-o` option specifies the output file.
 ```shell
 > scripts/stackusage -o ~/su.txt
 ```
 
-Let's assume we are interested in the functions in the file `ksm.c` in the memory
+Let's assume we are interested in the functions in the file
+[ksm.c](https://elixir.bootlin.com/linux/v6.12/source/mm/ksm.c) in the memory
 management layer, we can run the following command. It will search for all the functions
-in the file `ksm.c`, sort them in ascending order by the third column (the stack size) and
-then format them in tabular format. The functions with the biggest stack sizes are
-reported last.
+in the file [ksm.c](https://elixir.bootlin.com/linux/v6.12/source/mm/ksm.c), sort them
+in ascending order by the third column (the stack size) and then format them in tabular
+format. The functions with the biggest stack sizes are reported last.
 ```shell
 > grep "ksm.c" ~/su.txt | sort -k 3 -n | expand -t 32
 ...
@@ -79,10 +80,11 @@ that needs to recompile the kernel to be able to produce the stack usage report.
 run for a while
 
 ## stackdelta
-The `stackdelta` utility allows to compare to stackusage reports. This allows to analyze which
-functions have changed in terms of stack frame size. Assuming I have two different stackusage
-report su.txt and su2.txt, a diff report of the two can be created. The report only includes
-functions that are part of both kernels and whose stack size has changed.
+The [stackdelta](https://elixir.bootlin.com/linux/v6.12/source/scripts/stackdelta) utility
+allows to compare to stackusage reports. This allows to analyze which functions have changed
+in terms of stack frame size. Assuming I have two different stackusage report su.txt and su2.txt,
+a diff report of the two can be created. The report only includes functions that are part of
+both kernels and whose stack size has changed.
 
 ```shell
 ╭─shr@shr in repo: linux on  master [$?] took 0s
@@ -101,8 +103,10 @@ functions that are part of both kernels and whose stack size has changed.
  ```
 
 ## checkstack.pl
-The `checkstack.pl` script is a quicker way to produce a stack usage report. It uses the
-`objdump` tool to create the stack usage breakdown. Here is an example:
+The [checkstack.pl](https://elixir.bootlin.com/linux/v6.12/source/scripts/checkstack.pl)
+script is a quicker way to produce a stack usage report. It uses the
+[objdump](https://man7.org/linux/man-pages/man1/objdump.1.html) tool to create the stack
+usage breakdown. Here is an example:
 ```shell
 
 ╭─shr@shr in repo: linux on  master [$?] took 4s
