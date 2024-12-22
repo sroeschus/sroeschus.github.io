@@ -118,11 +118,10 @@ The `checkstack.pl` script is a quicker way to produce a stack usage report. It 
 
 ## gcc options
 ### frame-larger-than
-The gcc compiler provides the option `-Wframe-larger-than=<len>`. This can be used to warn
-if a function uses more than len bytes stack space.
+The gcc compiler provides the option [-Wframe-larger-than=<len>](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Warning-Options.html#index-Wframe-larger-than_003d). This can be used to warn if a function uses more than len bytes stack space.
 
 ### stack-usage
-The gcc compiler now also contains `-fstack-usage` option. If files get compiled with this
+The gcc compiler now also contains [-fstack-usage](https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Developer-Options.html#index-fstack-usage) option. If files get compiled with this
 option and additional file per translation unit gets created. The file has the extension
 `.su`. It contains the stack usage per file. The output is pretty similar to the above
 output of the stackusage command.
