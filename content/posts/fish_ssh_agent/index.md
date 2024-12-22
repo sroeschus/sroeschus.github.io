@@ -41,3 +41,17 @@ to start the ssh agent:
 ╰─λ alias --save agent="eval \$(ssh-agent -c)"
 funcsave: wrote /home/shr/.config/fish/functions/agent.fish
 ```
+
+## Automatic start of ssh agent
+Some developers might prefer to automatically start the ssh agent if its not already
+started. There is a great solution in this [github repo](https://github.com/ivakyb/fish_ssh_agent).
+
+Just follow the install instructions or do the following:
+```shell
+wget https://gitlab.com/kyb/fish_ssh_agent/raw/master/functions/fish_ssh_agent.fish \
+      -P ~/.config/fish/functions/
+
+```
+This adds two functions to your `~/.config/fish/functions` file. To load the agent when
+your shell starts, just add the following to your `~/.config/fish/config.fish` file. This
+will automatically start the ssh agent.
