@@ -6,7 +6,7 @@ featuredImage: "ftrace.jpg"
 toc:
   enable: true
 tags: ["linux", "kernel", "tracing", "ftrace"]
-draft: true
+draft: false
 ---
 
 This article describes how to use the ftrace kernel framework for tracing.
