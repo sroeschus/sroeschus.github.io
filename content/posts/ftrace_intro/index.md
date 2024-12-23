@@ -1,7 +1,7 @@
 ---
 title: "Introduction to kernel tracing with ftrace"
 description: "Using ftrace for Linux Kernel tracing"
-date: 2024-12-18T21:13:23-08:00
+date: 2024-12-21T21:13:23-08:00
 featuredImage: "ftrace.jpg"
 toc:
   enable: true
