@@ -22,6 +22,13 @@ abbreviated with the commmon short names from the kernel directory names:
 - nvme
 - xfs
 
+## Updating UKSM patches
+I'm still updating the UKSM (Ulta Kernel samepage merging patches). While the patch never made it into
+the upstream kernel, I have used the patches at my previous work at Meta for a comparison to KSM. As
+the patch is still used by some people and depending on the workload might provide some advantages in
+comparison to KSM, I continued to update them to support newer kernel versions. The patches can be
+accessed [here](https://github.com/sroeschus/uksm).
+
 ## Add "smart scan" mode to KSM
 {{< version 6.7 >}} `mm`
 
