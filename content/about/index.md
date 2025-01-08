@@ -24,7 +24,7 @@ submitted upstream.
 ## CV
 
 ### Currently
-I have availability to work on new kernel projects.
+I have availability to work on new kernel projects. Contact details are above.
 
 ### Facebook / Meta (August 2021 - December 2023)
 I'm currently working as a kernel developer for Meta. My work is currently focused on
