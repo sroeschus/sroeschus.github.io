@@ -23,6 +23,9 @@ submitted upstream.
 
 ## CV
 
+### Currently
+I have availability to work on new kernel projects.
+
 ### Facebook / Meta (August 2021 - December 2023)
 I'm currently working as a kernel developer for Meta. My work is currently focused on
 the storage, io-uring (kernel and liburing) and recently on the memory management layer.
