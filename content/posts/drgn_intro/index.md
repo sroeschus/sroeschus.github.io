@@ -215,6 +215,11 @@ data structures. Among them are:
 The API documentation covers all the helper functions. In addition there are addtional
 helpers for other kernel structures and subsystems.
 
+The following two paragraphs give two example on how to use these helpers. These are
+only two short examples, however they show how easy it is to query and iterate over
+data structures. The helper documentation is available [here](https://drgn.readthedocs.io/en/latest/helpers.html).
+
+### Example 1: Iterate over the task list
 The following shows an example of how to iterate over the task list:
 ```Linux
 >>> for p in for_each_task(prog):
@@ -223,6 +228,16 @@ The following shows an example of how to iterate over the task list:
 (pid_t)1
 (pid_t)2
 ...
+```
+
+### Example 2: Iterate over the list of memory nodes
+To iterate over all the memory_nodes the for_each_node() function can be used:
+```Linux
+>>> for i in for_each_node():
+...     node = prog['node_data'][i]
+...     print("NID: {0}, #Zones: {1}".format(node.node_id.value_(), node.nr_zones.value_()))
+...
+NID: 0, #Zones: 3
 ```
 
 ## Getting the call stack
