@@ -167,6 +167,30 @@ is returned with the address_of_() function:
 '0xffff88810533b9c0'
 ```
 
+## Printing values
+If drgn is used in interactive mode, it is generally enough to use the prog object
+to print its contents. However when writing scripts it can be necessary to print
+values. Values can be printed with the print command.
+
+To print the contents of references it is necessary to use the value_() function.
+```Linux
+>>> print(prog["init_task"].min_flt)
+(unsigned long)0
+>>> print(prog["init_task"].min_flt.value_())
+0
+```
+To print string values they need to be first converted to strings and then decoded:
+```Linux
+>>> print(prog["init_task"].comm.string_().decode())
+swapper/0
+>>> print(prog["init_task"].comm)
+(char [16])"swapper/0"
+>>> print(prog["init_task"].comm.string_())
+b'swapper/0'
+>>> print(prog["init_task"].comm.string_().decode())
+swapper/0
+```
+
 ## Constructing objects at an address
 Sometimes it is necessary to construct an object at a specific address. This can be
 achieved by constructing a drgn object at the requested address. The following example
