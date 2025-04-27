@@ -205,6 +205,8 @@ The following shows an example of how to iterate over the task list:
 The call stack of a process can be obtained with the stack_trace command. The pid
 of the process has to be specified as the first parameter.
 
+### Getting the call stack for an individual process
+The call stack of a process can be reported with the following command:
 ```Linux
 >>> stack_trace(304)
 #0  context_switch (kernel/sched/core.c:5369:2)
@@ -272,6 +274,47 @@ ffffc90000427f58: 0000000000000000
 ```
 The annotated call stack does not only contain the function information, but also the local
 variables and their addresses.
+
+### Get the callstack for all processes.
+This is where drgn shines. Based on the earlier information, we use the task helper to
+iterate over all the tasks, obtain the pid of each task and then report the stack trace
+for each task:
+
+```Linux
+>>> for p in for_each_task(prog):
+...     pid = p.pid.value_()
+...     print("\nCall stack for PID {0}".format(pid))
+...     try:
+...         stack_trace(pid)
+...     except ValueError:
+...         print("\tCannot unwind current task")
+...
+
+Call stack for PID 1
+#0  context_switch (kernel/sched/core.c:5369:2)
+#1  __schedule (kernel/sched/core.c:6756:8)
+#2  __schedule_loop (kernel/sched/core.c:6833:3)
+#3  schedule (kernel/sched/core.c:6848:2)
+#4  do_wait (kernel/exit.c:1696:3)
+#5  kernel_wait4 (kernel/exit.c:1850:8)
+#6  do_syscall_x64 (arch/x86/entry/common.c:52:14)
+#7  do_syscall_64 (arch/x86/entry/common.c:83:7)
+#8  entry_SYSCALL_64+0xab/0x148 (arch/x86/entry/entry_64.S:121)
+#9  0x7f2ddcb89be2
+
+Call stack for PID 2
+#0  context_switch (kernel/sched/core.c:5369:2)
+#1  __schedule (kernel/sched/core.c:6756:8)
+#2  __schedule_loop (kernel/sched/core.c:6833:3)
+#3  schedule (kernel/sched/core.c:6848:2)
+#4  kthreadd (kernel/kthread.c:755:4)
+#5  ret_from_fork (arch/x86/kernel/process.c:147:3)
+#6  ret_from_fork_asm+0x1a/0x1f (arch/x86/entry/entry_64.S:244)
+...
+```
+The code contains a try-except block. This is required to guard against a possible
+exception: we can't get the current stack of the running process. This can happen
+if we debug the live kernel.
 
 ## Summary
 
