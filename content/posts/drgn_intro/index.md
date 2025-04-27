@@ -1,6 +1,6 @@
 ---
 title: "Introduction to Linux Kernel debugging with drgn"
-date: 2025-04-26T22:02:25-07:00
+date: 2025-04-26T22:02:25
 featuredImage: "drgn.jpg"
 toc:
   enable: true
