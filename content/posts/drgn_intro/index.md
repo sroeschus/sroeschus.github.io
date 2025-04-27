@@ -13,8 +13,9 @@ This article describes how to use the drgn debugger for Linux Kernel debugging.
 
 ## Overview
 Debugging Linux kernel code can be challenging. There are existing solutions with
-GDB for live kernel debugging and crash to debug core dumps. While these solutions
-have been very helpful in the past, for some type of problems they are not
+[GDB](https://sourceware.org/gdb/) for live kernel debugging and
+[crash](https://github.com/crash-utility/crash) to debug core dumps. While these
+solutions have been very helpful in the past, for some type of problems they are not
 flexible enough. This is where drgn can be very useful. Drgn is a newer debugger
 that has been introduced by Omar Sandoval, a former colleague at Meta.
 
