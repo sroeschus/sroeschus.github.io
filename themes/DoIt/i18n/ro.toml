@@ -77,12 +77,6 @@ other = "Anulare"
 [noResultsFound]
 other = "Nici un rezultat gasit"
 
-[lunrLanguageCode]
-other = "ro"
-
-[lunrLanguageLib]
-other = "lib/lunr/lunr.ro.js"
-
 [copyToClipboard]
 other = "Copiați în clipboard"
 
@@ -197,3 +191,9 @@ other = "SCHIMBAT"
 [deleted]
 other = "ȘTERS"
 # === shortcodes/version.html ===
+
+[prefixPageNumber]
+other = "Pagină"
+
+[suffixPageNumber]
+other = " "

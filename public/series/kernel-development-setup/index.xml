@@ -1,0 +1,57 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Getting started with Linux kernel development setup - Series - devkernel.io</title>
+        <link>http://localhost:56759/series/kernel-development-setup/</link>
+        <description>Getting started with Linux kernel development setup - Series - devkernel.io</description>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 11 Sep 2024 20:23:05 -0800</lastBuildDate><atom:link href="http://localhost:56759/series/kernel-development-setup/" rel="self" type="application/rss+xml" /><item>
+    <title>Setting up the kernel development environment - Basic</title>
+    <link>http://localhost:56759/posts/kernel-dev-setup-basic/</link>
+    <pubDate>Tue, 24 Jan 2023 20:23:05 -0800</pubDate><author>
+        <name>Author</name>
+    </author><guid>http://localhost:56759/posts/kernel-dev-setup-basic/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/kernel-dev-setup-basic/setup.jpg" referrerpolicy="no-referrer">
+            </div><p>This article describes how to do the basic setup for your kernel development
+environment.</p>]]></description>
+</item><item>
+    <title>Setting up the kernel development environment - Editor</title>
+    <link>http://localhost:56759/posts/kernel-dev-setup-editor/</link>
+    <pubDate>Tue, 24 Jan 2023 20:23:05 -0800</pubDate><author>
+        <name>Author</name>
+    </author><guid>http://localhost:56759/posts/kernel-dev-setup-editor/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/kernel-dev-setup-editor/editor.jpg" referrerpolicy="no-referrer">
+            </div><p>This article describes how to do the doom emacs setup for your kernel development
+environment.</p>]]></description>
+</item><item>
+    <title>Setting up the kernel development environment - Email</title>
+    <link>http://localhost:56759/posts/kernel-dev-setup-email/</link>
+    <pubDate>Wed, 11 Sep 2024 20:23:05 -0800</pubDate><author>
+        <name>Author</name>
+    </author><guid>http://localhost:56759/posts/kernel-dev-setup-email/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/kernel-dev-setup-email/email.jpg" referrerpolicy="no-referrer">
+            </div><p>This article describes a possible email setup for your kernel development
+environment.</p>]]></description>
+</item><item>
+    <title>Setting up the kernel development environment - VM</title>
+    <link>http://localhost:56759/posts/kernel-dev-setup-vm/</link>
+    <pubDate>Sun, 09 Apr 2023 23:05:20 -0700</pubDate><author>
+        <name>Author</name>
+    </author><guid>http://localhost:56759/posts/kernel-dev-setup-vm/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/kernel-dev-setup-vm/vm.jpg" referrerpolicy="no-referrer">
+            </div><p>This article describes how to setup a virtual machine for your kernel development
+environment.</p>]]></description>
+</item><item>
+    <title>Setting up the kernel development environment - Shell Aliases</title>
+    <link>http://localhost:56759/posts/kernel-dev-setup-aliases/</link>
+    <pubDate>Tue, 11 Apr 2023 20:58:11 -0700</pubDate><author>
+        <name>Author</name>
+    </author><guid>http://localhost:56759/posts/kernel-dev-setup-aliases/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/kernel-dev-setup-aliases/alias.jpg" referrerpolicy="no-referrer">
+            </div><p>This article describes how to define useful shell aliases for your kernel development
+environment.</p>]]></description>
+</item></channel>
+</rss>

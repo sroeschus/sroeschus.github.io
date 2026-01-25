@@ -77,9 +77,6 @@ other = "Поништи"
 [noResultsFound]
 other = "Без резултата"
 
-[lunrLanguageCode]
-other = "sr"
-
 [copyToClipboard]
 other = "Копирај на радну таблу"
 
@@ -194,3 +191,9 @@ other = "ПРОМЕЊЕНО"
 [deleted]
 other = "ОБРИСАНО"
 # === shortcodes/version.html ===
+
+[prefixPageNumber]
+other = "Страница"
+
+[suffixPageNumber]
+other = " "

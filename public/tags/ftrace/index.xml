@@ -1,0 +1,26 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Ftrace - Tag - devkernel.io</title>
+        <link>http://localhost:56759/tags/ftrace/</link>
+        <description>Ftrace - Tag - devkernel.io</description>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 07 Jan 2025 19:33:05 -0800</lastBuildDate><atom:link href="http://localhost:56759/tags/ftrace/" rel="self" type="application/rss+xml" /><item>
+    <title>Introduction to kernel tracing using trace-cmd</title>
+    <link>http://localhost:56759/posts/ftrace_trace_cmd/</link>
+    <pubDate>Tue, 07 Jan 2025 19:33:05 -0800</pubDate><author>
+        <name>Author</name>
+    </author><guid>http://localhost:56759/posts/ftrace_trace_cmd/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/ftrace_trace_cmd/trace-cmd.jpg" referrerpolicy="no-referrer">
+            </div><p>This article describes how to use the ftrace kernel framework with the trace-cmd client
+program.</p>]]></description>
+</item><item>
+    <title>Introduction to kernel tracing with ftrace</title>
+    <link>http://localhost:56759/posts/ftrace_intro/</link>
+    <pubDate>Sat, 21 Dec 2024 21:13:23 -0800</pubDate><author>
+        <name>Author</name>
+    </author><guid>http://localhost:56759/posts/ftrace_intro/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/ftrace_intro/ftrace.jpg" referrerpolicy="no-referrer">
+            </div><p>This article describes how to use the ftrace kernel framework for tracing.</p>]]></description>
+</item></channel>
+</rss>

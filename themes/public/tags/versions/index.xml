@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Versions - Tag - devkernel.io</title>
+        <link>http://localhost:1313/tags/versions/</link>
+        <description>Versions - Tag - devkernel.io</description>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 14 Dec 2024 00:02:53 -0700</lastBuildDate><atom:link href="http://localhost:1313/tags/versions/" rel="self" type="application/rss+xml" /><item>
+    <title>Breakdown of changes to Kernel Samepage Merging (KSM) by Kernel Version</title>
+    <link>http://localhost:1313/posts/ksm_versions/</link>
+    <pubDate>Sat, 14 Dec 2024 00:02:53 -0700</pubDate><author>
+        <name>Author</name>
+    </author><guid>http://localhost:1313/posts/ksm_versions/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/ksm_versions/versions.jpg" referrerpolicy="no-referrer">
+            </div><p>This article describes how Linux Kernel Samepage Merging (KSM) has changed.</p>]]></description>
+</item></channel>
+</rss>

@@ -1,0 +1,39 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Stefan - Tag - devkernel.io</title>
+        <link>http://localhost:1313/tags/stefan/</link>
+        <description>Stefan - Tag - devkernel.io</description>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 05 Nov 2023 10:38:52 -0800</lastBuildDate><atom:link href="http://localhost:1313/tags/stefan/" rel="self" type="application/rss+xml" /><item>
+    <title>Projects</title>
+    <link>http://localhost:1313/projects/</link>
+    <pubDate>Sun, 05 Nov 2023 10:38:52 -0800</pubDate><author>
+        <name>Author</name>
+    </author><guid>http://localhost:1313/projects/</guid>
+    <description><![CDATA[<p>For the reader who wants to get an overview over the patches that I have submitted
+<a href="https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/log/?qt=grep&amp;q=stefan&#43;roesch" target="_blank" rel="noopener noreferrer">upstream</a> (be patient, loading git.kernel.org takes a while).</p>
+<h1 id="list-of-patch-series" class="headerLink">
+    <a href="#list-of-patch-series" class="header-mark"></a>List of patch series</h1><p>The following is a list of the more important patch series that I developed and that have been upstreamed.
+The list is ordered in chronological order. After the title it contains the linux release when the most current version
+of the patch series was submitted and which subsystems were part of the patch series. The subsystem names are
+abbreviated with the commmon short names from the kernel directory names:</p>]]></description>
+</item><item>
+    <title>Stefan Roesch</title>
+    <link>http://localhost:1313/about/</link>
+    <pubDate>Sun, 27 Nov 2022 19:27:34 -0800</pubDate><author>
+        <name>Author</name>
+    </author><guid>http://localhost:1313/about/</guid>
+    <description><![CDATA[<h2 id="bio" class="headerLink">
+    <a href="#bio" class="header-mark"></a>Bio</h2><p>Stefan Roesch is a Database kernel and Linux kernel developer with more than 20 years
+experience as a software developer. The current work is focused on storage, io-uring
+and the memory layer of the Linux kernel. The projects link at the top of the page
+contains more detailed information and also includes link to patches that have been
+submitted upstream.</p>
+<p><a href="https://github.com/sroeschus" target="_blank" rel="noopener noreferrer">Gihub</a>
+<a href="https://github.com/sroeschus" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+<a href="mailto:shr@devkernel.io" rel="">Mail</a></p>
+<br/>
+<h2 id="cv" class="headerLink">
+    <a href="#cv" class="header-mark"></a>CV</h2><h3 id="currently" class="headerLink">
+    <a href="#currently" class="header-mark"></a>Currently</h3><p>I have availability to work on new kernel projects. Contact details are above.</p>]]></description>
+</item></channel>
+</rss>

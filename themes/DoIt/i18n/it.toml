@@ -77,12 +77,6 @@ other = "Annulla"
 [noResultsFound]
 other = "Nessun risultato trovato"
 
-[lunrLanguageCode]
-other = "it"
-
-[lunrLanguageLib]
-other = "lib/lunr/lunr.it.js"
-
 [copyToClipboard]
 other = "Copia negli appunti"
 
@@ -197,3 +191,9 @@ other = "CAMBIATO"
 [deleted]
 other = "CANCELLATO"
 # === shortcodes/version.html ===
+
+[prefixPageNumber]
+other = "Pagina"
+
+[suffixPageNumber]
+other = " "

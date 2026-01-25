@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>__Divdi3 - Tag - devkernel.io</title>
+        <link>http://localhost:56759/tags/__divdi3/</link>
+        <description>__Divdi3 - Tag - devkernel.io</description>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 31 Dec 2023 13:57:11 -0800</lastBuildDate><atom:link href="http://localhost:56759/tags/__divdi3/" rel="self" type="application/rss+xml" /><item>
+    <title>Link error: undefined reference to __divdi3</title>
+    <link>http://localhost:56759/posts/divdi_undefined/</link>
+    <pubDate>Sun, 31 Dec 2023 13:57:11 -0800</pubDate><author>
+        <name>Author</name>
+    </author><guid>http://localhost:56759/posts/divdi_undefined/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/divdi_undefined/error.jpg" referrerpolicy="no-referrer">
+            </div><p>This article describes how to solve the linker error &ldquo;undefined referenc to __divdi3&rdquo;.</p>]]></description>
+</item></channel>
+</rss>

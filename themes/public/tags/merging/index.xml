@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Merging - Tag - devkernel.io</title>
+        <link>http://localhost:1313/tags/merging/</link>
+        <description>Merging - Tag - devkernel.io</description>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 13 Sep 2024 11:51:50 -0700</lastBuildDate><atom:link href="http://localhost:1313/tags/merging/" rel="self" type="application/rss+xml" /><item>
+    <title>Kernel Samepage Merging Smart Scan feature</title>
+    <link>http://localhost:1313/posts/ksm_smart_scan/</link>
+    <pubDate>Fri, 13 Sep 2024 11:51:50 -0700</pubDate><author>
+        <name>Author</name>
+    </author><guid>http://localhost:1313/posts/ksm_smart_scan/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/ksm_smart_scan/smart_scan.jpg" referrerpolicy="no-referrer">
+            </div><p>This article describes the Smart Scan feature of Linux Kernel Samepage Merging (KSM).</p>]]></description>
+</item></channel>
+</rss>

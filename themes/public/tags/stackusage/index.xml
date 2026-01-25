@@ -1,0 +1,17 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Stackusage - Tag - devkernel.io</title>
+        <link>http://localhost:1313/tags/stackusage/</link>
+        <description>Stackusage - Tag - devkernel.io</description>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 20 Dec 2024 17:17:37 -0800</lastBuildDate><atom:link href="http://localhost:1313/tags/stackusage/" rel="self" type="application/rss+xml" /><item>
+    <title>Measure stack usage of kernel functions</title>
+    <link>http://localhost:1313/posts/stack_usage/</link>
+    <pubDate>Fri, 20 Dec 2024 17:17:37 -0800</pubDate><author>
+        <name>Author</name>
+    </author><guid>http://localhost:1313/posts/stack_usage/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/stack_usage/stack.jpg" referrerpolicy="no-referrer">
+            </div><p>This article describes how to measure the stack usage of kernel functions and how to
+apprach the dreaded &ldquo;Stack frame exceeds limit message&rdquo;.</p>]]></description>
+</item></channel>
+</rss>

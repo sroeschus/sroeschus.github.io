@@ -1,0 +1,17 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>2023 - Tag - devkernel.io</title>
+        <link>http://localhost:1313/tags/2023/</link>
+        <description>2023 - Tag - devkernel.io</description>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 05 Dec 2023 10:59:25 -0800</lastBuildDate><atom:link href="http://localhost:1313/tags/2023/" rel="self" type="application/rss+xml" /><item>
+    <title>Linux Plumbers 2023 conference: Kernel Samepage Merging (KSM) presentation</title>
+    <link>http://localhost:1313/posts/plumbers_2023/</link>
+    <pubDate>Tue, 05 Dec 2023 10:59:25 -0800</pubDate><author>
+        <name>Author</name>
+    </author><guid>http://localhost:1313/posts/plumbers_2023/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/plumbers_2023/plumbers.jpg" referrerpolicy="no-referrer">
+            </div><p>This article references the Linux Kernel Samepage Merging (KSM) presentation at the
+Linux Plumbers 2023 conference.</p>]]></description>
+</item></channel>
+</rss>

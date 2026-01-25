@@ -13,7 +13,7 @@ categories: ["documentation"]
 series: ["getting-start"]
 series_weight: 1
 lightgallery: true
-license: '<a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>'
+license: '<a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>'
 toc:
   auto: false
 ---
@@ -26,14 +26,14 @@ Discover what the Hugo - **DoIt** theme is all about and the core-concepts behin
 
 Thanks to the simplicity of Hugo, [Hugo](https://gohugo.io/) is the only dependency of this theme.
 
-Just install latest version of [:(far fa-file-archive fa-fw): Hugo (> 0.83.0)](https://gohugo.io/getting-started/installing/) for your OS (**Windows**, **Linux**, **macOS**).
+Just install latest version of [{{< fa-icon regular file-archive >}} Hugo (> 0.122.0)](https://gohugo.io/getting-started/installing/) for your OS (**Windows**, **Linux**, **macOS**).
 
 {{< admonition note "Why not support earlier versions of Hugo?" >}}
-Since [WebP Image Processing](https://gohugo.io/content-management/image-processing/#jpeg-and-webp-quality) was introduced in the [Hugo 0.83.0](https://gohugo.io/news/0.83.0-relnotes/), this theme only supports Hugo versions above **0.83.0**.
+Since [WebP Image Processing](https://gohugo.io/content-management/image-processing/#quality) was introduced in the [Hugo 0.122.0](https://github.com/gohugoio/hugo/releases/tag/v0.122.0), this theme only supports Hugo versions above **0.122.0**.
 {{< /admonition >}}
 
 {{< admonition tip "Hugo extended version is recommended" >}}
-Since some features of this theme need to processes :(fab fa-sass fa-fw): SCSS to :(fab fa-css3 fa-fw): CSS, it is recommended to use Hugo **extended** version for better experience.
+Since some features of this theme need to processes {{< fa-icon brands sass >}} SCSS to {{< fa-icon brands css3 >}} CSS, it is recommended to use Hugo **extended** version for better experience.
 {{< /admonition >}}
 
 ## Installation
@@ -53,7 +53,7 @@ cd my_website
 
 The **DoIt** theme’s repository is: [https://github.com/HEIGE-PCloud/DoIt](https://github.com/HEIGE-PCloud/DoIt).
 
-You can download the [latest release :(far fa-file-archive fa-fw): .zip file](https://github.com/HEIGE-PCloud/DoIt/releases) of the theme and extract it in the `themes` directory.
+You can download the [latest release {{< fa-icon regular file-archive >}} .zip file](https://github.com/HEIGE-PCloud/DoIt/releases) of the theme and extract it in the `themes` directory.
 
 Alternatively, clone this repository to the `themes` directory:
 
@@ -187,14 +187,14 @@ Alternatively, you can use [AWS Amplify](https://gohugo.io/hosting-and-deploymen
 
 ### Site Configuration {#site-configuration}
 
-In addition to [Hugo global configuration](https://gohugo.io/overview/configuration/) and [menu configuration](#basic-configuration), **DoIt** lets you define the following parameters in your site configuration (here is a `config.toml`, whose values are default).
+In addition to [Hugo global configuration](https://gohugo.io/configuration/) and [menu configuration](#basic-configuration), **DoIt** lets you define the following parameters in your site configuration (here is a `config.toml`, whose values are default).
 
-Please open the code block below to view the complete sample configuration :(far fa-hand-point-down fa-fw)::
+Please open the code block below to view the complete sample configuration {{< fa-icon regular hand-point-down >}}:
 
 ```toml
 [params]
   # {{< version 0.2.0 changed >}} DoIt theme version
-  version = "0.2.X"
+  version = "0.4.X"
   # website title
   title = "My New Hugo Site"
   # site description
@@ -214,9 +214,24 @@ Please open the code block below to view the complete sample configuration :(far
   images = ["/logo.png"]
   # {{< version 0.2.11 >}} enable PWA support
   enablePWA = false
+  # [Experimental] cache remote images in markdown, more info: https://github.com/HEIGE-PCloud/DoIt/pull/860#issue-1574342372
+  cacheRemoteImages = true
+  # [Experimental] generate image srcset attribute with hugo image processing feature.
+  optimizeImages = true
+  # [Experimental] resize method for srcset attribute in optimizeImages, more info: https://gohugo.io/content-management/image-processing/#image-processing-options
+  srcsetSmallResizeMethod = "700x webp Lanczos q75"
+  srcsetDefaultResizeMethod = "1200x webp Lanczos q75"
+  srcsetLargeResizeMethod = "2000x webp Lanczos q75"
+  # {{< version 0.3.0 >}} License information
+  license = '<a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>'
+  # Author config
+  [params.author]
+    name = "xxxx"
+    email = ""
+    link = ""
+    avatar = ""
+    gravatarEmail = ""
   # {{< version 0.2.0 >}} App icon config
-  # {{< version 0.2.14 >}} License information
-  license = '<a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>'
   [params.app]
     # optional site title override for the app when added to an iOS home screen or Android launcher
     title = "DoIt"
@@ -232,7 +247,7 @@ Please open the code block below to view the complete sample configuration :(far
   # {{< version 0.2.0 >}} Search config
   [params.search]
     enable = true
-    # type of search engine ("lunr", "algolia", "fuse")
+    # type of search engine ("algolia", "fuse")
     type = "fuse"
     # max index length of the chunked content
     contentLength = 4000
@@ -261,12 +276,14 @@ Please open the code block below to view the complete sample configuration :(far
       ignoreLocation = false
       useExtendedSearch = false
       ignoreFieldNorm = false
+
+  [params.image]
+    # cache remote images for better optimisations
+    cacheRemote = true
+    # Image resizing and optimisation
+    optimise = true
   # Header config
   [params.header]
-    # desktop header mode ("fixed", "normal", "auto")
-    desktopMode = "fixed"
-    # mobile header mode ("fixed", "normal", "auto")
-    mobileMode = "auto"
     # {{< version 0.2.11 >}} Theme change mode
     # theme change mode ("switch", "select")
     themeChangeMode = "select"
@@ -291,8 +308,8 @@ Please open the code block below to view the complete sample configuration :(far
     # {{< version 0.2.0 >}} whether to show Hugo and theme info
     hugo = true
     # {{< version 0.2.14 >}} Hosted on (HTML format is supported)
-    # <a title="Github Pages" href="https://docs.github.com/en/pages/" target="_blank" rel="noopener noreffer">GitHub Pages</a>
-    hostedOn = '' 
+    # <a title="Github Pages" href="https://docs.github.com/en/pages/" target="_blank" rel="noopener noreferrer">GitHub Pages</a>
+    hostedOn = ''
     # {{< version 0.2.0 >}} whether to show copyright info
     copyright = true
     # {{< version 0.2.0 >}} whether to show the author
@@ -302,7 +319,7 @@ Please open the code block below to view the complete sample configuration :(far
     # ICP info only in China (HTML format is supported)
     icp = ""
     # license info (HTML format is supported)
-    license = '<a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>'
+    license = '<a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>'
 
   # {{< version 0.2.0 >}} Section (all posts) page config
   [params.section]
@@ -341,6 +358,8 @@ Please open the code block below to view the complete sample configuration :(far
       # Place your avatar file under static or assets directory
       # The filepath is relative to the static or assets directory
       avatarURL = "/images/avatar.webp"
+      # URL the avatar links to
+      avatarLinkURL = ""
       # {{< version 0.2.7 changed >}} title shown in home page (HTML format is supported)
       title = ""
       # subtitle shown in home page
@@ -448,8 +467,6 @@ Please open the code block below to view the complete sample configuration :(far
     ruby = true
     # {{< version 0.2.0 >}} whether to enable the fraction extended syntax
     fraction = true
-    # {{< version 0.2.0 >}} whether to enable the fontawesome extended syntax
-    fontawesome = true
     # whether to show link to Raw Markdown content of the content
     linkToMarkdown = true
     # {{< version 0.2.14 >}} configure the link to the source file of the post
@@ -465,10 +482,14 @@ Please open the code block below to view the complete sample configuration :(far
     # "https://github.com/user/repo/issues/new?title=[bug]%20{title}&body=|Field|Value|%0A|-|-|%0A|Title|{title}|%0A|Url|{url}|%0A|Filename|https://github.com/user/repo/blob/main/{path}|"
     # {{< version 0.2.4 >}} whether to show the full text content in RSS
     rssFullText = false
-    # {{< version 0.2.11 >}} page layout style ("normal", "wide")
-    pageStyle = "normal"
     # {{< version 0.2.13 >}} whether to enable series navigation
     seriesNavigation = true
+    # whether to enable last modified time
+    enableLastMod = true
+    # whether to enable word count
+    enableWordCount = true
+    # whether to enable reading time estimation
+    enableReadingTime = true
     # {{< version 0.2.13 >}} outdated article reminder config
     [params.page.outdatedArticleReminder]
       enable = false
@@ -497,12 +518,18 @@ Please open the code block below to view the complete sample configuration :(far
       copyTex = true
       # KaTeX extension mhchem
       mhchem = true
+      # Use MathJax instead of KaTeX
+      mathjax = false
     # {{< version 0.2.0 >}} Code config
     [params.page.code]
-      # whether to show the copy button of the code block
-      copy = true
       # the maximum number of lines of displayed code by default
       maxShownLines = 10
+      # whether to enable line numbers in the code block
+      lineNos = true
+      # whether to enable line wrapping in the code block
+      wrap = false
+      # whether to display the header in the code block
+      header = true
     # {{< version 0.2.14 >}} Table config
     [params.page.table]
       # whether to enable sorting in the tables
@@ -553,6 +580,15 @@ Please open the code block below to view the complete sample configuration :(far
       Skype = false
       Trello = false
       Mix = false
+      Mastodon = false
+    # server for PlantUML online rendering
+    [params.page.plantuml]
+      server = "https://www.plantuml.com/plantuml"
+
+    # instant.page config
+    [params.page.instantpage]
+      enable = false
+
     # {{< version 0.2.0 changed >}} Comment config
     [params.page.comment]
       enable = true
@@ -643,6 +679,7 @@ Please open the code block below to view the complete sample configuration :(far
         envId = ""
         region = ""
         path = ""
+        cloudbase = true # boolean : true / false. #If you deploy your Twikoo on CloudBase, set it to true.
         visitor = true
         commentCount = true
       # {{< version 0.2.12 >}} {{< link "https://vssue.js.org/" "Vssue" >}} comment config
@@ -676,6 +713,17 @@ Please open the code block below to view the complete sample configuration :(far
         lightTheme = "light"
         darkTheme = "dark"
         dataLang = "en"
+        dataLoading = "lazy"
+      # {{< link "https://artalk.js.org/" "artalk" >}} comment config
+      [params.page.comment.artalk]
+        enable = false
+        server = ""
+        site = ""
+        lite = false
+        katex = false
+        lightbox = false
+        pageview = true
+        commentCount = true
     # {{< version 0.2.7 >}} Third-party library config
     [params.page.library]
       [params.page.library.css]
@@ -747,6 +795,9 @@ Please open the code block below to view the complete sample configuration :(far
     image = ""
     # thumbnail URL
     thumbnailUrl = ""
+    # {{< version 0.4.1 >}}
+    # alternate site name in Google search result
+    alternateName = ["Hugo DoIt"]
 
   # {{< version 0.2.0 >}} Analytics config
   [params.analytics]
@@ -798,10 +849,9 @@ Please open the code block below to view the complete sample configuration :(far
 
   # {{< version 0.2.8 >}} Compatibility config
   [params.compatibility]
-    # whether to use Polyfill.io to be compatible with older browsers
+    # whether to use Polyfill.io on cdnjs to be compatible with older browsers
+    # https://blog.cloudflare.com/polyfill-io-now-available-on-cdnjs-reduce-your-supply-chain-risk
     polyfill = false
-    # whether to use object-fit-images to be compatible with older browsers
-    objectFit = false
 
 # Markup related config in Hugo
 [markup]
@@ -832,14 +882,6 @@ Please open the code block below to view the complete sample configuration :(far
     startLevel = 2
     endLevel = 6
 
-# Author config
-[author]
-  name = "xxxx"
-  email = ""
-  link = ""
-  avatar = ""
-  gravatarEmail = ""
-
 # Sitemap config
 [sitemap]
   changefreq = "weekly"
@@ -848,15 +890,15 @@ Please open the code block below to view the complete sample configuration :(far
 
 # {{< link "https://gohugo.io/content-management/urls#permalinks" "Permalinks config" >}}
 [Permalinks]
-  # posts = ":year/:month/:filename"
-  posts = ":filename"
+  # posts = ":year/:month/:contentbasename"
+  posts = ":contentbasename"
 
-# {{< link "https://gohugo.io/about/hugo-and-gdpr/" "Privacy config" >}}
+# {{< link "https://gohugo.io/configuration/privacy/" "Privacy config" >}}
 [privacy]
   # {{< version 0.2.0 deleted >}} privacy of the Google Analytics (replaced by params.analytics.google)
   [privacy.googleAnalytics]
     # ...
-  [privacy.twitter]
+  [privacy.x]
     enableDNT = true
   [privacy.youtube]
     privacyEnhanced = true
@@ -879,7 +921,6 @@ Please open the code block below to view the complete sample configuration :(far
   page = ["HTML", "MarkDown"]
   section = ["HTML", "RSS"]
   taxonomy = ["HTML", "RSS"]
-  taxonomyTerm = ["HTML"]
 
 # Options for taxonomies
 [taxonomies]
@@ -911,6 +952,8 @@ You could enable these features with `hugo serve -e production`.
   gravatarEmail = ""
   # URL of avatar shown in home page
   avatarURL = "/images/avatar.webp"
+  # URL the avatar links to
+  avatarLinkURL = ""
 ````
 
 You can sign up and configure your avatar at [Gravatar](https://en.gravatar.com), the website will automatically obtain and set your avatar through the email address filled in `gravatarEmail`.
@@ -1014,21 +1057,30 @@ In `assets/css/_custom.scss`, you can add some css style code to customize the s
 
 {{< version 0.2.10 changed >}}
 
-| Language             | Hugo Code | HTML `lang` Attribute | Theme Docs                    | Lunr.js Support               |
-|:-------------------- |:---------:|:---------------------:|:-----------------------------:|:-----------------------------:|
-| English              | `en`      | `en`                  | :(far fa-check-square fa-fw): | :(far fa-check-square fa-fw): |
-| Simplified Chinese   | `zh-cn`   | `zh-CN`               | :(far fa-check-square fa-fw): | :(far fa-check-square fa-fw): |
-| French               | `fr`      | `fr`                  | :(far fa-square fa-fw):       | :(far fa-check-square fa-fw): |
-| Polish               | `pl`      | `pl`                  | :(far fa-square fa-fw):       | :(far fa-square fa-fw):       |
-| Brazilian Portuguese | `pt-br`   | `pt-BR`               | :(far fa-square fa-fw):       | :(far fa-check-square fa-fw): |
-| Italian              | `it`      | `it`                  | :(far fa-square fa-fw):       | :(far fa-check-square fa-fw): |
-| Spanish              | `es`      | `es`                  | :(far fa-square fa-fw):       | :(far fa-check-square fa-fw): |
-| German               | `de`      | `de`                  | :(far fa-square fa-fw):       | :(far fa-check-square fa-fw): |
-| German               | `de`      | `de`                  | :(far fa-square fa-fw):       | :(far fa-check-square fa-fw): |
-| Serbian              | `sr`      | `sr`                  | :(far fa-square fa-fw):       | :(far fa-square fa-fw):       |
-| Russian              | `ru`      | `ru`                  | :(far fa-square fa-fw):       | :(far fa-check-square fa-fw): |
-| Romanian             | `ro`      | `ro`                  | :(far fa-square fa-fw):       | :(far fa-check-square fa-fw): |
-| Vietnamese           | `vi`      | `vi`                  | :(far fa-square fa-fw):       | :(far fa-check-square fa-fw): |
+| Language             | Hugo Code | HTML `lang` Attribute | Theme Docs                    |
+|:---------------------|:---------:|:---------------------:|:-----------------------------:|
+| English              | `en`      | `en`                  | {{< fa-icon regular check-square >}} |
+| Simplified Chinese   | `zh-cn`   | `zh-CN`               | {{< fa-icon regular check-square >}} |
+| French               | `fr`      | `fr`                  | {{< fa-icon regular square >}}       |
+| Polish               | `pl`      | `pl`                  | {{< fa-icon regular square >}}       |
+| Brazilian Portuguese | `pt-br`   | `pt-BR`               | {{< fa-icon regular square >}}       |
+| Italian              | `it`      | `it`                  | {{< fa-icon regular square >}}       |
+| Spanish              | `es`      | `es`                  | {{< fa-icon regular square >}}       |
+| German               | `de`      | `de`                  | {{< fa-icon regular square >}}       |
+| German               | `de`      | `de`                  | {{< fa-icon regular square >}}       |
+| Serbian              | `sr`      | `sr`                  | {{< fa-icon regular square >}}       |
+| Russian              | `ru`      | `ru`                  | {{< fa-icon regular square >}}       |
+| Romanian             | `ro`      | `ro`                  | {{< fa-icon regular square >}}       |
+| Vietnamese           | `vi`      | `vi`                  | {{< fa-icon regular square >}}       |
+| Arabic               | `ar`      | `ar`                  | {{< fa-icon regular square >}}       |
+| Catalan              | `ca`      | `ca`                  | {{< fa-icon regular square >}}       |
+| Hindi                | `hi`      | `hi`                  | {{< fa-icon regular square >}}       |
+| Indonesian           | `id`      | `id`                  | {{< fa-icon regular square >}}       |
+| Telugu               | `te`      | `te`                  | {{< fa-icon regular square >}}       |
+| Thai                 | `th`      | `th`                  | {{< fa-icon regular square >}}       |
+| Turkish              | `tr`      | `tr`                  | {{< fa-icon regular square >}}       |
+| Ukrainian            | `uk`      | `uk`                  | {{< fa-icon regular square >}}       |
+| Traditional Chinese  | `zh-tw`   | `zh-tw`               | {{< fa-icon regular square >}}       |
 
 ### Basic Configuration
 
@@ -1126,13 +1178,13 @@ Translations strings are used for common default values used in the theme. Trans
 
 To override these values, create a new file in your local i18n folder `i18n/<languageCode>.toml` and inspire yourself from `themes/DoIt/i18n/en.toml`.
 
-By the way, as these translations could be used by other people, please take the time to propose a translation by [:(fas fa-code-branch fa-fw): making a PR](https://github.com/HEIGE-PCloud/DoIt/pulls) to the theme!
+By the way, as these translations could be used by other people, please take the time to propose a translation by [{{< fa-icon solid code-branch >}} making a PR](https://github.com/HEIGE-PCloud/DoIt/pulls) to the theme!
 
 ## Search
 
 {{< version 0.2.0 >}}
 
-Based on [Lunr.js](https://lunrjs.com/) or [algolia](https://www.algolia.com/), searching is supported in **DoIt** theme.
+Based on [algolia](https://www.algolia.com/), searching is supported in **DoIt** theme.
 
 ### Output Configuration
 
@@ -1152,7 +1204,7 @@ Here is the search configuration in your [site configuration](#site-configuratio
 ```toml
 [params.search]
   enable = true
-  # type of search engine ("lunr", "algolia", "fuse")
+  # type of search engine ("algolia", "fuse")
   type = "fuse"
   # max index length of the chunked content
   contentLength = 4000
@@ -1187,8 +1239,6 @@ Here is the search configuration in your [site configuration](#site-configuratio
 The following is a comparison of two search engines:
 
 * `fuse`: simple, no need to synchronize `index.json`, no limit for `contentLength`, high performance
-* `lunr`: simple, no need to synchronize `index.json`, no limit for `contentLength`,
-  but high bandwidth and low performance (Especially for Chinese which needs a large segmentit library)
 * `algolia`: high performance and low bandwidth, but need to synchronize `index.json` and limit for `contentLength`
 
 {{< version 0.2.3 >}} The content of the post is separated by `h2` and `h3` HTML tag to improve query performance and basically implement full-text search.

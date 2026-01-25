@@ -1,0 +1,73 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Memory - Tag - devkernel.io</title>
+        <link>http://localhost:1313/tags/memory/</link>
+        <description>Memory - Tag - devkernel.io</description>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 14 Dec 2024 00:02:53 -0700</lastBuildDate><atom:link href="http://localhost:1313/tags/memory/" rel="self" type="application/rss+xml" /><item>
+    <title>Breakdown of changes to Kernel Samepage Merging (KSM) by Kernel Version</title>
+    <link>http://localhost:1313/posts/ksm_versions/</link>
+    <pubDate>Sat, 14 Dec 2024 00:02:53 -0700</pubDate><author>
+        <name>Author</name>
+    </author><guid>http://localhost:1313/posts/ksm_versions/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/ksm_versions/versions.jpg" referrerpolicy="no-referrer">
+            </div><p>This article describes how Linux Kernel Samepage Merging (KSM) has changed.</p>]]></description>
+</item><item>
+    <title>Configure virtme/qemu with Numa support</title>
+    <link>http://localhost:1313/posts/qemu_numa/</link>
+    <pubDate>Tue, 05 Dec 2023 11:44:49 -0800</pubDate><author>
+        <name>Author</name>
+    </author><guid>http://localhost:1313/posts/qemu_numa/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/qemu_numa/numa.jpg" referrerpolicy="no-referrer">
+            </div><p>This article describes how to start qemu / virtme with Numa support</p>]]></description>
+</item><item>
+    <title>Linux Plumbers 2023 conference: Kernel Samepage Merging (KSM) presentation</title>
+    <link>http://localhost:1313/posts/plumbers_2023/</link>
+    <pubDate>Tue, 05 Dec 2023 10:59:25 -0800</pubDate><author>
+        <name>Author</name>
+    </author><guid>http://localhost:1313/posts/plumbers_2023/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/plumbers_2023/plumbers.jpg" referrerpolicy="no-referrer">
+            </div><p>This article references the Linux Kernel Samepage Merging (KSM) presentation at the
+Linux Plumbers 2023 conference.</p>]]></description>
+</item><item>
+    <title>Linux Kernel Samepage Merging (KSM) Overview</title>
+    <link>http://localhost:1313/posts/ksm_overview/</link>
+    <pubDate>Wed, 04 Oct 2023 20:03:53 -0700</pubDate><author>
+        <name>Author</name>
+    </author><guid>http://localhost:1313/posts/ksm_overview/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/ksm_overview/memory.jpg" referrerpolicy="no-referrer">
+            </div><p>This article describes how to use the Linux Kernel Samepage Merging (KSM).</p>]]></description>
+</item><item>
+    <title>How to use the memleak tool</title>
+    <link>http://localhost:1313/posts/memleak_tool/</link>
+    <pubDate>Sun, 17 Sep 2023 21:57:44 -0700</pubDate><author>
+        <name>Author</name>
+    </author><guid>http://localhost:1313/posts/memleak_tool/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="leak.jpg?width=20pc" referrerpolicy="no-referrer">
+            </div><p>This article describes how to use the memleak tool to find memory leaks.</p>]]></description>
+</item><item>
+    <title>How to query the size of a struct</title>
+    <link>http://localhost:1313/posts/size-of-struct/</link>
+    <pubDate>Mon, 22 May 2023 21:29:42 -0700</pubDate><author>
+        <name>Author</name>
+    </author><guid>http://localhost:1313/posts/size-of-struct/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/size-of-struct/size.jpg" referrerpolicy="no-referrer">
+            </div><p>This article describes how to query the size of c structs and how to optimize
+their size by changing the field order.</p>]]></description>
+</item><item>
+    <title>Query installed memory hardware information in Linux</title>
+    <link>http://localhost:1313/posts/linux-memory-report/</link>
+    <pubDate>Tue, 11 Apr 2023 22:33:15 -0700</pubDate><author>
+        <name>Author</name>
+    </author><guid>http://localhost:1313/posts/linux-memory-report/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/linux-memory-report/memory.jpg" referrerpolicy="no-referrer">
+            </div><p>This article describes how to query what type of memory hardware chips are
+installed on the Linux machine.</p>]]></description>
+</item></channel>
+</rss>

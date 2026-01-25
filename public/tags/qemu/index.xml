@@ -1,0 +1,44 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Qemu - Tag - devkernel.io</title>
+        <link>http://localhost:56759/tags/qemu/</link>
+        <description>Qemu - Tag - devkernel.io</description>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 14 Dec 2024 21:50:04 -0700</lastBuildDate><atom:link href="http://localhost:56759/tags/qemu/" rel="self" type="application/rss+xml" /><item>
+    <title>How to use virtme-ng for Linux Kernel development</title>
+    <link>http://localhost:56759/posts/virtme_ng/</link>
+    <pubDate>Sat, 14 Dec 2024 21:50:04 -0700</pubDate><author>
+        <name>Author</name>
+    </author><guid>http://localhost:56759/posts/virtme_ng/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/virtme_ng/virtme-ng.png" referrerpolicy="no-referrer">
+            </div><p>This article describes how to use virtme-ng for Linux kernel development.</p>]]></description>
+</item><item>
+    <title>Configure virtme/qemu with Numa support</title>
+    <link>http://localhost:56759/posts/qemu_numa/</link>
+    <pubDate>Tue, 05 Dec 2023 11:44:49 -0800</pubDate><author>
+        <name>Author</name>
+    </author><guid>http://localhost:56759/posts/qemu_numa/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/qemu_numa/numa.jpg" referrerpolicy="no-referrer">
+            </div><p>This article describes how to start qemu / virtme with Numa support</p>]]></description>
+</item><item>
+    <title>Kernel Debugging With Qemu and virtme</title>
+    <link>http://localhost:56759/posts/kernel-debugging-with-qemu/</link>
+    <pubDate>Sun, 16 Apr 2023 21:43:57 -0700</pubDate><author>
+        <name>Author</name>
+    </author><guid>http://localhost:56759/posts/kernel-debugging-with-qemu/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/kernel-debugging-with-qemu/bug.jpg" referrerpolicy="no-referrer">
+            </div><p>This article describes how to debug the Linux kernel with qemu, virtme and gdb.</p>]]></description>
+</item><item>
+    <title>Setting up the kernel development environment - VM</title>
+    <link>http://localhost:56759/posts/kernel-dev-setup-vm/</link>
+    <pubDate>Sun, 09 Apr 2023 23:05:20 -0700</pubDate><author>
+        <name>Author</name>
+    </author><guid>http://localhost:56759/posts/kernel-dev-setup-vm/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/kernel-dev-setup-vm/vm.jpg" referrerpolicy="no-referrer">
+            </div><p>This article describes how to setup a virtual machine for your kernel development
+environment.</p>]]></description>
+</item></channel>
+</rss>

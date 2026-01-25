@@ -30,8 +30,17 @@ other = "Категория"
 
 [categories]
 other = "Категории"
+
+[series]
+other = "Серии"
 # === Taxonomy ===
 
+# === Section ===
+
+[recentlyUpdated]
+other = "Недавно обновлены"
+
+# === Section ===
 # === Pagination ===
 [more]
 other = "Больше"
@@ -43,11 +52,29 @@ other = "Выбор Языка"
 
 [switchTheme]
 other = "Сменить Тему"
+
+[Light]
+other = "Светлая"
+
+[Dark]
+other = "Тёмная"
+
+[Black]
+other = "Чёрная"
+
+[Auto]
+other = "Авто"
 # === partials/header.html ===
 
 # === partials/footer.html ===
-[poweredBySome]
-other = "Сделано {{ .Hugo }} | Тема - {{ .Theme }}"
+[poweredBy]
+other = "Сделано в {{ .Hugo }}"
+
+[hostedOn]
+other = "Размещено в {{ .Host }}"
+
+[theme]
+other = "Тема - {{ .Theme }}"
 # === partials/footer.html ===
 
 # === partials/comment.html ===
@@ -77,12 +104,6 @@ other = "Отменить"
 [noResultsFound]
 other = "Результатов не найдено"
 
-[lunrLanguageCode]
-other = "ru"
-
-[lunrLanguageLib]
-other = "lib/lunr/lunr.ru.js"
-
 [copyToClipboard]
 other = "Копировать в буфер обмена"
 
@@ -93,7 +114,7 @@ other = "Этот сайт использует Cookies для улучшени�
 other = "Согласен"
 
 [cookieconsentLink]
-other = "Учить больше"
+other = "Подробнее"
 # === partials/assets.html ===
 
 # === partials/plugin/share.html ===
@@ -108,8 +129,18 @@ other = "Содержание"
 [publishedOnDate]
 other = "Опубликовано {{ .Date }}"
 
+[includedIn]
+other = "включен в "
+
+[includedInAnd]
+other = "и"
+
 [includedInCategories]
-other = "включен в {{ .Categories }}"
+one = "категорию {{ .Categories }}"
+other = "категории {{ .Categories }}"
+
+[includedInSeries]
+other = "серию {{ .Series }}"
 
 [wordCount]
 one = "Одно слово"
@@ -122,6 +153,9 @@ other = "{{ .Count }} минут"
 [views]
 other = "просмотров"
 
+[comments]
+other = "комментариев"
+
 [author]
 other = "Автор"
 
@@ -131,6 +165,15 @@ other = "Oбновлена {{ .Date }}"
 [readMarkdown]
 other = "Читать Markdown"
 
+[viewSource]
+other = "Посмотреть исходник"
+
+[editThisPage]
+other = "Редактировать страницу"
+
+[reportThisPage]
+other = "Сообщить об ошибке"
+
 [back]
 other = "Назад"
 
@@ -139,6 +182,18 @@ other = "Домой"
 
 [readMore]
 other = "Читать больше"
+
+[outdatedInfoWarningBefore]
+other = "Последний раз статья была обновлена "
+
+[outdatedInfoWarningAfter]
+other = ", возможно, содержимое устарело."
+
+[sponsor]
+other = "Спонсор"
+
+[relatedContent]
+other = "Похожее"
 # === posts/single.html ===
 
 # === 404.html ===
@@ -163,7 +218,7 @@ other = "Инфо"
 other = "Совет"
 
 [success]
-other = "Удачто"
+other = "Успех"
 
 [question]
 other = "Вопрос"
@@ -197,3 +252,9 @@ other = "ИЗМЕНЕН"
 [deleted]
 other = "УДАЛЕН"
 # === shortcodes/version.html ===
+
+[prefixPageNumber]
+other = "Стр."
+
+[suffixPageNumber]
+other = " "

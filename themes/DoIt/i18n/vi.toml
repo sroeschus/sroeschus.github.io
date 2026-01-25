@@ -104,9 +104,6 @@ other = "Huỷ"
 [noResultsFound]
 other = "Không tìm thấy"
 
-[lunrLanguageCode]
-other = "vi"
-
 [copyToClipboard]
 other = "Sao chép vào bộ nhớ tạm"
 
@@ -255,3 +252,9 @@ other = "THAY ĐỔI"
 [deleted]
 other = "XOÁ"
 # === shortcodes/version.html ===
+
+[prefixPageNumber]
+other = "Trang"
+
+[suffixPageNumber]
+other = " "

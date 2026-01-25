@@ -3,41 +3,35 @@
     "dependencies": [
         {
             "name": "twikoo",
-            "version": "1.6.8",
+            "version": "1.6.44",
             "files": [
                 {
                     "remote": "dist/twikoo.all.min.js",
                     "local": "twikoo/twikoo.all.min.js"
+                },
+                {
+                    "remote": "dist/twikoo.min.js",
+                    "local": "twikoo/twikoo.min.js"
                 }
             ]
         },
         {
             "name": "@waline/client",
-            "version": "2.14.1",
+            "version": "3.8.0",
             "files": [
                 {
                     "remote": "dist/waline.css",
                     "local": "waline/waline.css"
                 },
                 {
-                    "remote": "dist/waline.js",
+                    "remote": "dist/waline.umd.min.js",
                     "local": "waline/waline.js"
                 }
             ]
         },
         {
-            "name": "mermaid",
-            "version": "9.3.0",
-            "files": [
-                {
-                    "remote": "dist/mermaid.min.js",
-                    "local": "mermaid/mermaid.min.js"
-                }
-            ]
-        },
-        {
             "name": "katex",
-            "version": "0.16.4",
+            "version": "0.16.27",
             "files": [
                 {
                     "remote": "dist/katex.min.js",
@@ -63,7 +57,7 @@
         },
         {
             "name": "echarts",
-            "version": "5.4.1",
+            "version": "6.0.0",
             "files": [
                 {
                     "remote": "dist/echarts.min.js",
@@ -72,6 +66,92 @@
                 {
                     "remote": "theme/macarons.min.js",
                     "local": "echarts/macarons.min.js"
+                }
+            ]
+        },
+        {
+            "name": "artalk",
+            "version": "2.9.1",
+            "files": [
+                {
+                    "remote": "dist/Artalk.js",
+                    "local": "artalk/Artalk.js"
+                },
+                {
+                    "remote": "dist/Artalk.css",
+                    "local": "artalk/Artalk.css"
+                },
+                {
+                    "remote": "dist/ArtalkLite.js",
+                    "local": "artalk/ArtalkLite.js"
+                },
+                {
+                    "remote": "dist/ArtalkLite.css",
+                    "local": "artalk/ArtalkLite.css"
+                }
+            ]
+        },
+        {
+            "name": "@artalk/plugin-katex",
+            "version": "0.2.4",
+            "files": [
+                {
+                    "remote": "dist/artalk-plugin-katex.js",
+                    "local": "artalk/artalk-plugin-katex.js"
+                }
+            ]
+        },
+        {
+            "name": "@artalk/plugin-lightbox",
+            "version": "0.2.4",
+            "files": [
+                {
+                    "remote": "dist/artalk-plugin-lightbox.js",
+                    "local": "artalk/artalk-plugin-lightbox.js"
+                }
+            ]
+        },
+        {
+            "name": "instant.page",
+            "version": "5.2.0",
+            "files": [
+                {
+                    "remote": "instantpage.min.js",
+                    "local": "instant.page/instantpage.min.js"
+                }
+            ]
+        },
+        {
+            "name": "typeit",
+            "version": "8.8.7",
+            "files": [
+                {
+                    "remote": "dist/index.umd.min.js",
+                    "local": "typeit/typeit.min.js"
+                }
+            ]
+        },
+        {
+            "name": "plantuml-encoder",
+            "version": "1.4.0",
+            "files": [
+                {
+                    "remote": "dist/plantuml-encoder.min.js",
+                    "local": "plantuml-encoder/plantuml-encoder.min.js"
+                }
+            ]
+        },
+        {
+            "name": "wavedrom",
+            "version": "3.5.0",
+            "files": [
+                {
+                    "remote": "dist/wavedrom.min.js",
+                    "local": "wavedrom/wavedrom.min.js"
+                },
+                {
+                    "remote": "dist/skins/default.js",
+                    "local": "wavedrom/skins/default.js"
                 }
             ]
         }

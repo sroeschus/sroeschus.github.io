@@ -57,7 +57,7 @@ DoIt 主题增加了许多新的功能与配置项，查看[变更日志](https:
 * 一些美观的 **CSS 动画**
 * 易用和自动展开的**文章目录**
 * 支持更多的**社交链接**、**网站分享**和**评论系统**
-* 支持基于 [Lunr.js](https://lunrjs.com/) 或 [algolia](https://www.algolia.com/) 或 [Fuse.js](https://fusejs.io/) 的**搜索**
+* 支持基于 [algolia](https://www.algolia.com/) 或 [Fuse.js](https://fusejs.io/) 的**搜索**
 * 一键**复制代码**到剪贴板
 * 支持基于 **[Font Awesome](https://fontawesome.com/) 图标**的扩展 Markdown 语法
 * 支持**上标注释**的扩展 Markdown 语法
@@ -72,7 +72,6 @@ DoIt 主题增加了许多新的功能与配置项，查看[变更日志](https:
 * 支持自定义样式的 shortcode
 * 支持所有第三方库的 **CDN**
 * 支持**多作者分类**
-* 支持 **PJAX**
 * ...
 
 所以，如果你更偏好 DoIt 主题的设计语言和自由度，如果你想便捷地使用扩展的 Font Awesome 图标，如果你想在文章内嵌数学公式、流程图、音乐或是 Bilibili 视频，
@@ -93,7 +92,6 @@ DoIt 主题增加了许多新的功能与配置项，查看[变更日志](https:
 * 支持 **[Splitbee Analytics](https://splitbee.io)**
 * 支持搜索引擎的**网站验证** (Google, Bind, Yandex and Baidu)
 * 支持所有第三方库的 **CDN**
-* 基于 [lazysizes](https://github.com/aFarkas/lazysizes) 自动转换图片为**懒加载**
 
 ### 外观和布局
 
@@ -125,10 +123,11 @@ DoIt 主题增加了许多新的功能与配置项，查看[变更日志](https:
 * 支持 **[Vssue](https://vssue.js.org/)** 评论系统
 * 支持 **[Remark42](https://remark42.com/)** 评论系统
 * 支持 **[giscus](https://giscus.app/)** 评论系统
+* 支持 **[Artalk](https://artalk.js.org/)** 评论系统
 
 ### 扩展功能
 
-* 支持基于 [Lunr.js](https://lunrjs.com/) 或 [algolia](https://www.algolia.com/) 或 [Fuse.js](https://fusejs.io/) 的**搜索**
+* 支持基于 [algolia](https://www.algolia.com/) 或 [Fuse.js](https://fusejs.io/) 的**搜索**
 * 支持 **Twemoji**
 * 支持**代码高亮**
 * 一键**复制代码**到剪贴板
@@ -149,6 +148,7 @@ DoIt 主题增加了许多新的功能与配置项，查看[变更日志](https:
 * 支持基于 [TypeIt](https://typeitjs.com/) 的**打字动画** shortcode
 * 支持基于原生CSS的**滚动动画**
 * 支持基于 [cookieconsent](https://github.com/osano/cookieconsent) 的 **Cookie 许可横幅**
+* 支持本地**缓存远程图床图片**
 * ...
 
 ## [文档](https://hugodoit.pages.dev/zh-cn/categories/documentation/)
@@ -193,19 +193,14 @@ DoIt 根据 **MIT** 许可协议授权。 更多信息请查看 [LICENSE 文件]
 
 DoIt 主题中用到了以下项目，感谢它们的作者：
 
-* [normalize.css](https://github.com/necolas/normalize.css)
 * [Font Awesome](https://fontawesome.com/)
 * [Simple Icons](https://github.com/simple-icons/simple-icons)
-* [Animate.css](https://daneden.github.io/animate.css/)
 * [autocomplete.js](https://github.com/algolia/autocomplete.js)
-* [Lunr.js](https://lunrjs.com/)
 * [algoliasearch](https://github.com/algolia/algoliasearch-client-javascript)
 * [Fuse.js](https://fusejs.io/)
-* [lazysizes](https://github.com/aFarkas/lazysizes)
 * [object-fit-images](https://github.com/fregante/object-fit-images)
 * [Twemoji](https://github.com/twitter/twemoji)
 * [lightgallery.js](https://github.com/sachinchoolur/lightgallery.js)
-* [clipboard.js](https://github.com/zenorocha/clipboard.js)
 * [Sharer.js](https://github.com/ellisonleao/sharer.js)
 * [TypeIt](https://typeitjs.com/)
 * [KaTeX](https://katex.org/)
@@ -220,8 +215,6 @@ DoIt 主题中用到了以下项目，感谢它们的作者：
 * [Twikoo](https://twikoo.js.org/)
 * [Vssue](https://vssue.js.org/)
 * [cookieconsent](https://github.com/osano/cookieconsent)
-* [Pjax](https://github.com/PaperStrike/Pjax)
-* [Topbar](https://github.com/buunguyen/topbar)
 * [Remark42](https://remark42.com/)
 
 ## 作者

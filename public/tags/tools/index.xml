@@ -1,0 +1,17 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Tools - Tag - devkernel.io</title>
+        <link>http://localhost:56759/tags/tools/</link>
+        <description>Tools - Tag - devkernel.io</description>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 27 Nov 2022 22:32:21 -0800</lastBuildDate><atom:link href="http://localhost:56759/tags/tools/" rel="self" type="application/rss+xml" /><item>
+    <title>Kexec - Booting into another kernel</title>
+    <link>http://localhost:56759/posts/kexec/</link>
+    <pubDate>Sun, 27 Nov 2022 22:32:21 -0800</pubDate><author>
+        <name>Author</name>
+    </author><guid>http://localhost:56759/posts/kexec/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/kexec/kexec.jpg" referrerpolicy="no-referrer">
+            </div><p>This article describes how to use the kexec tool to boot into another kernel.
+It does not require a restart of the system.</p>]]></description>
+</item></channel>
+</rss>

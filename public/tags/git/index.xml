@@ -1,0 +1,26 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Git - Tag - devkernel.io</title>
+        <link>http://localhost:56759/tags/git/</link>
+        <description>Git - Tag - devkernel.io</description>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 21 Dec 2024 19:27:16 -0800</lastBuildDate><atom:link href="http://localhost:56759/tags/git/" rel="self" type="application/rss+xml" /><item>
+    <title>How to use ssh-agent with the fish shell</title>
+    <link>http://localhost:56759/posts/fish_ssh_agent/</link>
+    <pubDate>Sat, 21 Dec 2024 19:27:16 -0800</pubDate><author>
+        <name>Author</name>
+    </author><guid>http://localhost:56759/posts/fish_ssh_agent/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/fish_ssh_agent/fish.jpg" referrerpolicy="no-referrer">
+            </div><p>This article describes how to start the ssh-agent when using the fish shell.</p>]]></description>
+</item><item>
+    <title>Splitting earlier commits into several commits with Magit</title>
+    <link>http://localhost:56759/posts/splitting_earlier_commits/</link>
+    <pubDate>Thu, 04 Jan 2024 17:07:36 -0800</pubDate><author>
+        <name>Author</name>
+    </author><guid>http://localhost:56759/posts/splitting_earlier_commits/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/splitting_earlier_commits/split.jpg" referrerpolicy="no-referrer">
+            </div><p>This article describes how to split an earlier commit into several commits
+with Magit and Doom Emacs&quot;.</p>]]></description>
+</item></channel>
+</rss>

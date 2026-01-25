@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Numa - Tag - devkernel.io</title>
+        <link>http://localhost:56759/tags/numa/</link>
+        <description>Numa - Tag - devkernel.io</description>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 05 Dec 2023 11:44:49 -0800</lastBuildDate><atom:link href="http://localhost:56759/tags/numa/" rel="self" type="application/rss+xml" /><item>
+    <title>Configure virtme/qemu with Numa support</title>
+    <link>http://localhost:56759/posts/qemu_numa/</link>
+    <pubDate>Tue, 05 Dec 2023 11:44:49 -0800</pubDate><author>
+        <name>Author</name>
+    </author><guid>http://localhost:56759/posts/qemu_numa/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/qemu_numa/numa.jpg" referrerpolicy="no-referrer">
+            </div><p>This article describes how to start qemu / virtme with Numa support</p>]]></description>
+</item></channel>
+</rss>
