@@ -1,33 +1,33 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Tracing - Tag - devkernel.io</title>
-        <link>http://localhost:56759/tags/tracing/</link>
+        <link>http://localhost:1313/tags/tracing/</link>
         <description>Tracing - Tag - devkernel.io</description>
-        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 07 Jan 2025 19:33:05 -0800</lastBuildDate><atom:link href="http://localhost:56759/tags/tracing/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 07 Jan 2025 19:33:05 -0800</lastBuildDate><atom:link href="http://localhost:1313/tags/tracing/" rel="self" type="application/rss+xml" /><item>
     <title>Introduction to kernel tracing using trace-cmd</title>
-    <link>http://localhost:56759/posts/ftrace_trace_cmd/</link>
+    <link>http://localhost:1313/posts/ftrace_trace_cmd/</link>
     <pubDate>Tue, 07 Jan 2025 19:33:05 -0800</pubDate><author>
         <name>Author</name>
-    </author><guid>http://localhost:56759/posts/ftrace_trace_cmd/</guid>
+    </author><guid>http://localhost:1313/posts/ftrace_trace_cmd/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="/posts/ftrace_trace_cmd/trace-cmd.jpg" referrerpolicy="no-referrer">
             </div><p>This article describes how to use the ftrace kernel framework with the trace-cmd client
 program.</p>]]></description>
 </item><item>
     <title>Introduction to kernel tracing with ftrace</title>
-    <link>http://localhost:56759/posts/ftrace_intro/</link>
+    <link>http://localhost:1313/posts/ftrace_intro/</link>
     <pubDate>Sat, 21 Dec 2024 21:13:23 -0800</pubDate><author>
         <name>Author</name>
-    </author><guid>http://localhost:56759/posts/ftrace_intro/</guid>
+    </author><guid>http://localhost:1313/posts/ftrace_intro/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="/posts/ftrace_intro/ftrace.jpg" referrerpolicy="no-referrer">
             </div><p>This article describes how to use the ftrace kernel framework for tracing.</p>]]></description>
 </item><item>
     <title>Tracing filesystem reads and writes with bpftrace</title>
-    <link>http://localhost:56759/posts/bpftrace_fs_io/</link>
+    <link>http://localhost:1313/posts/bpftrace_fs_io/</link>
     <pubDate>Wed, 04 Oct 2023 22:36:40 -0700</pubDate><author>
         <name>Author</name>
-    </author><guid>http://localhost:56759/posts/bpftrace_fs_io/</guid>
+    </author><guid>http://localhost:1313/posts/bpftrace_fs_io/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="/posts/bpftrace_fs_io/io.jpg" referrerpolicy="no-referrer">
             </div><p>This article describes how to get a breakdown of reads and writes by filesystem.</p>]]></description>

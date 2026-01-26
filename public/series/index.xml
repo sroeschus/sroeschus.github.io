@@ -1,14 +1,14 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Series - Series - devkernel.io</title>
-        <link>http://localhost:56759/series/</link>
+        <link>http://localhost:1313/series/</link>
         <description>Series - Series - devkernel.io</description>
-        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 11 Sep 2024 20:23:05 -0800</lastBuildDate><atom:link href="http://localhost:56759/series/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 11 Sep 2024 20:23:05 -0800</lastBuildDate><atom:link href="http://localhost:1313/series/" rel="self" type="application/rss+xml" /><item>
     <title>Getting started with Linux kernel development setup</title>
-    <link>http://localhost:56759/series/kernel-development-setup/</link>
+    <link>http://localhost:1313/series/kernel-development-setup/</link>
     <pubDate>Wed, 11 Sep 2024 20:23:05 -0800</pubDate><author>
         <name>Author</name>
-    </author><guid>http://localhost:56759/series/kernel-development-setup/</guid>
+    </author><guid>http://localhost:1313/series/kernel-development-setup/</guid>
     <description><![CDATA[]]></description>
 </item></channel>
 </rss>

@@ -1,14 +1,14 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Chips - Tag - devkernel.io</title>
-        <link>http://localhost:56759/tags/chips/</link>
+        <link>http://localhost:1313/tags/chips/</link>
         <description>Chips - Tag - devkernel.io</description>
-        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 11 Apr 2023 22:33:15 -0700</lastBuildDate><atom:link href="http://localhost:56759/tags/chips/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 11 Apr 2023 22:33:15 -0700</lastBuildDate><atom:link href="http://localhost:1313/tags/chips/" rel="self" type="application/rss+xml" /><item>
     <title>Query installed memory hardware information in Linux</title>
-    <link>http://localhost:56759/posts/linux-memory-report/</link>
+    <link>http://localhost:1313/posts/linux-memory-report/</link>
     <pubDate>Tue, 11 Apr 2023 22:33:15 -0700</pubDate><author>
         <name>Author</name>
-    </author><guid>http://localhost:56759/posts/linux-memory-report/</guid>
+    </author><guid>http://localhost:1313/posts/linux-memory-report/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="/posts/linux-memory-report/memory.jpg" referrerpolicy="no-referrer">
             </div><p>This article describes how to query what type of memory hardware chips are

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en-us">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=56759&amp;path=livereload" data-no-instant defer></script>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="robots" content="noodp" /><title>Linux Plumbers 2023 conference: Kernel Samepage Merging (KSM) presentation - devkernel.io</title><meta name="Description" content="Kernel Samepage Merging presentation at Linux Plumbers 2023 conference"><meta property="og:url" content="http://localhost:56759/posts/plumbers_2023/">
+    <meta name="robots" content="noodp" /><title>Linux Plumbers 2023 conference: Kernel Samepage Merging (KSM) presentation - devkernel.io</title><meta name="Description" content="Kernel Samepage Merging presentation at Linux Plumbers 2023 conference"><meta property="og:url" content="http://localhost:1313/posts/plumbers_2023/">
   <meta property="og:site_name" content="devkernel.io">
   <meta property="og:title" content="Linux Plumbers 2023 conference: Kernel Samepage Merging (KSM) presentation">
   <meta property="og:description" content="Kernel Samepage Merging presentation at Linux Plumbers 2023 conference">
@@ -15,14 +15,14 @@
     <meta property="article:modified_time" content="2023-12-05T10:59:25-08:00">
     <meta property="article:tag" content="Linux">
     <meta property="article:tag" content="Memory">
-    <meta property="article:tag" content="Ksm">
+    <meta property="article:tag" content="KSM">
     <meta property="article:tag" content="Kernel Samepage Merging">
     <meta property="article:tag" content="Linux Plumbers Conference">
     <meta property="article:tag" content="2023">
-    <meta property="og:image" content="http://localhost:56759/images/avatar.jpg">
+    <meta property="og:image" content="http://localhost:1313/images/avatar.jpg">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="http://localhost:56759/images/avatar.jpg">
+  <meta name="twitter:image" content="http://localhost:1313/images/avatar.jpg">
   <meta name="twitter:title" content="Linux Plumbers 2023 conference: Kernel Samepage Merging (KSM) presentation">
   <meta name="twitter:description" content="Kernel Samepage Merging presentation at Linux Plumbers 2023 conference">
 <meta name="application-name" content="devkernel.io">
@@ -32,20 +32,20 @@
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 
-<link rel="canonical" href="http://localhost:56759/posts/plumbers_2023/" /><link rel="prev" href="http://localhost:56759/posts/bpftrace_fs_io/" /><link rel="next" href="http://localhost:56759/posts/qemu_numa/" />
+<link rel="canonical" href="http://localhost:1313/posts/plumbers_2023/" /><link rel="prev" href="http://localhost:1313/posts/bpftrace_fs_io/" /><link rel="next" href="http://localhost:1313/posts/qemu_numa/" />
 <link rel="stylesheet" href="/css/main.min.css"><link rel="stylesheet" href="/css/style.min.css"><script type="application/ld+json">{"@context": "https://schema.org","@type": "BlogPosting",
         "headline": "Linux Plumbers 2023 conference: Kernel Samepage Merging (KSM) presentation",
         "inLanguage": "en-us",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "http://localhost:56759/posts/plumbers_2023/"
+            "@id": "http://localhost:1313/posts/plumbers_2023/"
         },"image": [{
                             "@type": "ImageObject",
-                            "url": "http://localhost:56759/posts/plumbers_2023/plumbers.jpg",
+                            "url": "http://localhost:1313/posts/plumbers_2023/plumbers.jpg",
                             "width":  5472 ,
                             "height":  3648 
                         }],"genre": "posts","keywords":["linux","memory","ksm","kernel samepage merging","Linux Plumbers conference","2023"],"wordcount":  51 ,
-        "url": "http://localhost:56759/posts/plumbers_2023/","datePublished": "2023-12-05T10:59:25-08:00","dateModified": "2023-12-05T10:59:25-08:00","publisher": {
+        "url": "http://localhost:1313/posts/plumbers_2023/","datePublished": "2023-12-05T10:59:25-08:00","dateModified": "2023-12-05T10:59:25-08:00","publisher": {
             "@type": "Organization",
             "name": "Author"},"author": {
                 "@type": "Person",
@@ -209,7 +209,7 @@ The video of the presentation can be watched <a href="https://www.youtube.com/wa
 
     <div class="post-info-more">
         <section class="post-tags"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M497.941 225.941L286.059 14.059A48 48 0 0 0 252.118 0H48C21.49 0 0 21.49 0 48v204.118a48 48 0 0 0 14.059 33.941l211.882 211.882c18.744 18.745 49.136 18.746 67.882 0l204.118-204.118c18.745-18.745 18.745-49.137 0-67.882zM112 160c-26.51 0-48-21.49-48-48s21.49-48 48-48 48 21.49 48 48-21.49 48-48 48zm513.941 133.823L421.823 497.941c-18.745 18.745-49.137 18.745-67.882 0l-.36-.36L527.64 323.522c16.999-16.999 26.36-39.6 26.36-63.64s-9.362-46.641-26.36-63.64L331.397 0h48.721a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882z"/></svg>&nbsp;<a href="/tags/linux/">Linux</a>,&nbsp;<a href="/tags/memory/">Memory</a>,&nbsp;<a href="/tags/ksm/">Ksm</a>,&nbsp;<a href="/tags/kernel-samepage-merging/">Kernel Samepage Merging</a>,&nbsp;<a href="/tags/linux-plumbers-conference/">Linux Plumbers Conference</a>,&nbsp;<a href="/tags/2023/">2023</a></section>
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M497.941 225.941L286.059 14.059A48 48 0 0 0 252.118 0H48C21.49 0 0 21.49 0 48v204.118a48 48 0 0 0 14.059 33.941l211.882 211.882c18.744 18.745 49.136 18.746 67.882 0l204.118-204.118c18.745-18.745 18.745-49.137 0-67.882zM112 160c-26.51 0-48-21.49-48-48s21.49-48 48-48 48 21.49 48 48-21.49 48-48 48zm513.941 133.823L421.823 497.941c-18.745 18.745-49.137 18.745-67.882 0l-.36-.36L527.64 323.522c16.999-16.999 26.36-39.6 26.36-63.64s-9.362-46.641-26.36-63.64L331.397 0h48.721a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882z"/></svg>&nbsp;<a href="/tags/linux/">Linux</a>,&nbsp;<a href="/tags/memory/">Memory</a>,&nbsp;<a href="/tags/ksm/">KSM</a>,&nbsp;<a href="/tags/kernel-samepage-merging/">Kernel Samepage Merging</a>,&nbsp;<a href="/tags/linux-plumbers-conference/">Linux Plumbers Conference</a>,&nbsp;<a href="/tags/2023/">2023</a></section>
         <section class="print:!tw-hidden">
             <span><button class="tw-text-fgColor-link-muted hover:tw-text-fgColor-link-muted-hover" onclick="window.history.back();">Back</button></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
         </section>

@@ -1,14 +1,14 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Pacman - Tag - devkernel.io</title>
-        <link>http://localhost:56759/tags/pacman/</link>
+        <link>http://localhost:1313/tags/pacman/</link>
         <description>Pacman - Tag - devkernel.io</description>
-        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 24 Jan 2023 20:23:05 -0800</lastBuildDate><atom:link href="http://localhost:56759/tags/pacman/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 24 Jan 2023 20:23:05 -0800</lastBuildDate><atom:link href="http://localhost:1313/tags/pacman/" rel="self" type="application/rss+xml" /><item>
     <title>Setting up the kernel development environment - Basic</title>
-    <link>http://localhost:56759/posts/kernel-dev-setup-basic/</link>
+    <link>http://localhost:1313/posts/kernel-dev-setup-basic/</link>
     <pubDate>Tue, 24 Jan 2023 20:23:05 -0800</pubDate><author>
         <name>Author</name>
-    </author><guid>http://localhost:56759/posts/kernel-dev-setup-basic/</guid>
+    </author><guid>http://localhost:1313/posts/kernel-dev-setup-basic/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="/posts/kernel-dev-setup-basic/setup.jpg" referrerpolicy="no-referrer">
             </div><p>This article describes how to do the basic setup for your kernel development
