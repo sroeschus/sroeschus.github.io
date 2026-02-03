@@ -1,0 +1,225 @@
+  5560 test-sp  GIO   fd 3 read 35 bytes
+       "includedir /usr/local/etc/libmap.d
+       "
+  5560 test-sp  GIO   fd 4 read 38 bytes
+       "libGLX_indirect.so.0 libGLX_mesa.so.0
+       "
+  5560 test-sp  GIO   fd 3 read 128 bytes
+       0x0000 4568 6e74 0100 0000 8000 0000 3d01 0000 0000 0000 3c01 0000 0000  |Ehnt........=.......<.....|
+       0x001a 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000  |..........................|
+       0x0034 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000  |..........................|
+       0x004e 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000  |..........................|
+       0x0068 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000       |........................|
+
+  5560 test-sp  GIO   fd 3 read 317 bytes
+       "/lib:/usr/lib:/usr/local/lib:/usr/local/lib/compat/pkg:/usr/local/lib/alsa-lib:/usr/local/lib/gcc13:\
+	/usr/local/lib/gcc14:/usr/local/lib/perl5/5.42/mach/CORE:/usr/local/lib/qt6:/usr/local/lib/samba4:/u\
+	sr/local/lib/signon:/usr/local/llvm19/lib:/usr/local/llvm19/lib/x86_64-portbld-freebsd15.0:/usr/loca\
+	l/share/chromium\0"
+  5560 test-sp  GIO   fd 1 wrote 21 bytes
+       "if (4096 == 2097152)
+       "
+  5560 test-sp  GIO   fd 1 wrote 24 bytes
+       "if (2097152 == 2097152)
+       "
+  5560 test-sp  GIO   fd 1 wrote 23 bytes
+       "shm_create_largepage()
+       "
+  5560 test-sp  GIO   fd 1 wrote 12 bytes
+       "ftruncate()
+       "
+  5560 test-sp  GIO   fd 1 wrote 7 bytes
+       "mmap()
+       "
+  5560 test-sp  GIO   fd 1 wrote 17 bytes
+       "Page 0: Resident
+       "
+  5560 test-sp  GIO   fd 1 wrote 27 bytes
+       "  -> Large Page (PSIND: 1)
+       "
+  5560 test-sp  GIO   fd 1 wrote 17 bytes
+       "Page 1: Resident
+       "
+  5560 test-sp  GIO   fd 1 wrote 27 bytes
+       "  -> Large Page (PSIND: 1)
+       "
+  5560 test-sp  GIO   fd 1 wrote 17 bytes
+       "Page 2: Resident
+       "
+  5560 test-sp  GIO   fd 1 wrote 27 bytes
+       "  -> Large Page (PSIND: 1)
+       "
+  5560 test-sp  GIO   fd 1 wrote 17 bytes
+       "Page 3: Resident
+       "
+  5560 test-sp  GIO   fd 1 wrote 27 bytes
+       "  -> Large Page (PSIND: 1)
+       "
+  5560 test-sp  GIO   fd 1 wrote 17 bytes
+       "Page 4: Resident
+       "
+  5560 test-sp  GIO   fd 1 wrote 27 bytes
+       "  -> Large Page (PSIND: 1)
+       "
+  5560 test-sp  GIO   fd 1 wrote 17 bytes
+       "Page 5: Resident
+       "
+  5560 test-sp  GIO   fd 1 wrote 27 bytes
+       "  -> Large Page (PSIND: 1)
+       "
+  5560 test-sp  GIO   fd 1 wrote 17 bytes
+       "Page 6: Resident
+       "
+  5560 test-sp  GIO   fd 1 wrote 27 bytes
+       "  -> Large Page (PSIND: 1)
+       "
+  5560 test-sp  GIO   fd 1 wrote 17 bytes
+       "Page 7: Resident
+       "
+  5560 test-sp  GIO   fd 1 wrote 27 bytes
+       "  -> Large Page (PSIND: 1)
+       "
+  5560 test-sp  GIO   fd 1 wrote 17 bytes
+       "Page 8: Resident
+       "
+  5560 test-sp  GIO   fd 1 wrote 27 bytes
+       "  -> Large Page (PSIND: 1)
+       "
+  5560 test-sp  GIO   fd 1 wrote 17 bytes
+       "Page 9: Resident
+       "
+  5560 test-sp  GIO   fd 1 wrote 27 bytes
+       "  -> Large Page (PSIND: 1)
+       "
+  5560 test-sp  GIO   fd 1 wrote 18 bytes
+       "Page 10: Resident
+       "
+  5560 test-sp  GIO   fd 1 wrote 27 bytes
+       "  -> Large Page (PSIND: 1)
+       "
+  5560 test-sp  GIO   fd 1 wrote 18 bytes
+       "Page 11: Resident
+       "
+  5560 test-sp  GIO   fd 1 wrote 27 bytes
+       "  -> Large Page (PSIND: 1)
+       "
+  5560 test-sp  GIO   fd 1 wrote 18 bytes
+       "Page 12: Resident
+       "
+  5560 test-sp  GIO   fd 1 wrote 27 bytes
+       "  -> Large Page (PSIND: 1)
+       "
+  5560 test-sp  GIO   fd 1 wrote 18 bytes
+       "Page 13: Resident
+       "
+  5560 test-sp  GIO   fd 1 wrote 27 bytes
+       "  -> Large Page (PSIND: 1)
+       "
+  5560 test-sp  GIO   fd 1 wrote 18 bytes
+       "Page 14: Resident
+       "
+  5560 test-sp  GIO   fd 1 wrote 27 bytes
+       "  -> Large Page (PSIND: 1)
+       "
+  5560 test-sp  GIO   fd 1 wrote 18 bytes
+       "Page 15: Resident
+       "
+  5560 test-sp  GIO   fd 1 wrote 27 bytes
+       "  -> Large Page (PSIND: 1)
+       "
+  5560 test-sp  GIO   fd 1 wrote 18 bytes
+       "Page 16: Resident
+       "
+  5560 test-sp  GIO   fd 1 wrote 27 bytes
+       "  -> Large Page (PSIND: 1)
+       "
+  5560 test-sp  GIO   fd 1 wrote 18 bytes
+       "Page 17: Resident
+       "
+  5560 test-sp  GIO   fd 1 wrote 27 bytes
+       "  -> Large Page (PSIND: 1)
+       "
+  5560 test-sp  GIO   fd 1 wrote 18 bytes
+       "Page 18: Resident
+       "
+  5560 test-sp  GIO   fd 1 wrote 27 bytes
+       "  -> Large Page (PSIND: 1)
+       "
+  5560 test-sp  GIO   fd 1 wrote 18 bytes
+       "Page 19: Resident
+       "
+  5560 test-sp  GIO   fd 1 wrote 27 bytes
+       "  -> Large Page (PSIND: 1)
+       "
+  5560 test-sp  GIO   fd 1 wrote 18 bytes
+       "Page 20: Resident
+       "
+  5560 test-sp  GIO   fd 1 wrote 27 bytes
+       "  -> Large Page (PSIND: 1)
+       "
+  5560 test-sp  GIO   fd 1 wrote 18 bytes
+       "Page 21: Resident
+       "
+  5560 test-sp  GIO   fd 1 wrote 27 bytes
+       "  -> Large Page (PSIND: 1)
+       "
+  5560 test-sp  GIO   fd 1 wrote 18 bytes
+       "Page 22: Resident
+       "
+  5560 test-sp  GIO   fd 1 wrote 27 bytes
+       "  -> Large Page (PSIND: 1)
+       "
+  5560 test-sp  GIO   fd 1 wrote 18 bytes
+       "Page 23: Resident
+       "
+  5560 test-sp  GIO   fd 1 wrote 27 bytes
+       "  -> Large Page (PSIND: 1)
+       "
+  5560 test-sp  GIO   fd 1 wrote 18 bytes
+       "Page 24: Resident
+       "
+  5560 test-sp  GIO   fd 1 wrote 27 bytes
+       "  -> Large Page (PSIND: 1)
+       "
+  5560 test-sp  GIO   fd 1 wrote 18 bytes
+       "Page 25: Resident
+       "
+  5560 test-sp  GIO   fd 1 wrote 27 bytes
+       "  -> Large Page (PSIND: 1)
+       "
+  5560 test-sp  GIO   fd 1 wrote 18 bytes
+       "Page 26: Resident
+       "
+  5560 test-sp  GIO   fd 1 wrote 27 bytes
+       "  -> Large Page (PSIND: 1)
+       "
+  5560 test-sp  GIO   fd 1 wrote 18 bytes
+       "Page 27: Resident
+       "
+  5560 test-sp  GIO   fd 1 wrote 27 bytes
+       "  -> Large Page (PSIND: 1)
+       "
+  5560 test-sp  GIO   fd 1 wrote 18 bytes
+       "Page 28: Resident
+       "
+  5560 test-sp  GIO   fd 1 wrote 27 bytes
+       "  -> Large Page (PSIND: 1)
+       "
+  5560 test-sp  GIO   fd 1 wrote 18 bytes
+       "Page 29: Resident
+       "
+  5560 test-sp  GIO   fd 1 wrote 27 bytes
+       "  -> Large Page (PSIND: 1)
+       "
+  5560 test-sp  GIO   fd 1 wrote 18 bytes
+       "Page 30: Resident
+       "
+  5560 test-sp  GIO   fd 1 wrote 27 bytes
+       "  -> Large Page (PSIND: 1)
+       "
+  5560 test-sp  GIO   fd 1 wrote 18 bytes
+       "Page 31: Resident
+       "
+  5560 test-sp  GIO   fd 1 wrote 27 bytes
+       "  -> Large Page (PSIND: 1)
+       "

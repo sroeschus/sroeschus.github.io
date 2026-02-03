@@ -1,0 +1,12 @@
+
+
+
+rtw89_pci_ops
+
+rtw89_pci_napi_poll
+->rtw89_pci_poll_rxq_dma (RTW89_RXCH_RXQ)
+->rtw89_pci_rxbd_deliver
+->rtw89_pci_rxbd_deliver_skbs
+->rtw89_core_rx (!= RTW89_CORE_RX_TYPE_WIFI)
+->rtw89_core_rx_process_report (RTW89_CORE_RX_TYPE_C2H)
+->rtw89_fw_c2h_irqsafe

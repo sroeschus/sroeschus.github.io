@@ -1,0 +1,16 @@
+# check interface
+pciconf -lv | grep -B3 -i wireless
+# check wlan device
+sysctl net.wlan.devices
+# setup device
+ifconfig wlan0 create wlandev rtw890
+# set ssid
+ifconfig wlan0 ssid PINE_24
+# up interface
+ifconfig wlan0 up
+# scan 
+ifconfig wlan0 up scan
+# get ip address
+dhclient wlan0
+# restart network service
+service netif restart
