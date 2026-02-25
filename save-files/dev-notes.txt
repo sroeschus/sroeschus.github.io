@@ -1,8 +1,0 @@
-Print debugging messages:
-========================
-printf
-device_printf
-
-Print a call stack:
-===================
-kdb_back_trace
