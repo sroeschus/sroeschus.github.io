@@ -2,7 +2,7 @@
 title: "Measure stack usage of kernel functions"
 description: "How to measure stack usage and how to approach the stack frame exceeds limit warning"
 date: 2024-12-20T17:17:37-08:00
-featuredImage: "stack.jpg"
+featuredImage: "stack.png"
 toc:
   enable: true
 tags: ["linux", "kernel", "stack", "stackusage", "stackdelta", "gcc", "CONFIG_FRAME_WARN", "CONFIG_DEBUG_STACK_USAGE", "checkstack.pl", "stack_tracer_enabled", "frame-larger-than"]

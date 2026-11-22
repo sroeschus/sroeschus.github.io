@@ -38,7 +38,7 @@ program.</p>]]></description>
         <name>Author</name>
     </author><guid>http://localhost:1313/posts/stack_usage/</guid>
     <description><![CDATA[<div class="featured-image">
-                <img src="/posts/stack_usage/stack.jpg" referrerpolicy="no-referrer">
+                <img src="/posts/stack_usage/stack.png" referrerpolicy="no-referrer">
             </div><p>This article describes how to measure the stack usage of kernel functions and how to
 apprach the dreaded &ldquo;Stack frame exceeds limit message&rdquo;.</p>]]></description>
 </item><item>

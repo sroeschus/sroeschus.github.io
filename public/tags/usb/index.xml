@@ -3,7 +3,16 @@
         <title>USB - Tag - devkernel.io</title>
         <link>http://localhost:1313/tags/usb/</link>
         <description>USB - Tag - devkernel.io</description>
-        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 24 Jan 2026 21:48:46 -0800</lastBuildDate><atom:link href="http://localhost:1313/tags/usb/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 24 Feb 2026 20:45:55 -0800</lastBuildDate><atom:link href="http://localhost:1313/tags/usb/" rel="self" type="application/rss+xml" /><item>
+    <title>How to use USB tethering on FreeBSD</title>
+    <link>http://localhost:1313/posts/fbsd-usb-tethering/</link>
+    <pubDate>Tue, 24 Feb 2026 20:45:55 -0800</pubDate><author>
+        <name>Author</name>
+    </author><guid>http://localhost:1313/posts/fbsd-usb-tethering/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/fbsd-usb-tethering/cell.png" referrerpolicy="no-referrer">
+            </div><p>This article describes how to use USB tethering on FreeBSD.</p>]]></description>
+</item><item>
     <title>Installing FreeBSD on a USB SSD/NVME</title>
     <link>http://localhost:1313/posts/install-freebsd-on-usb-ssd/</link>
     <pubDate>Sat, 24 Jan 2026 21:48:46 -0800</pubDate><author>

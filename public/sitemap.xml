@@ -2,16 +2,20 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>http://localhost:1313/</loc><lastmod>2026-01-25T20:50:20-08:00</lastmod><changefreq>daily</changefreq><priority>1</priority></url><url>
+            <loc>http://localhost:1313/</loc><lastmod>2026-02-24T20:45:55-08:00</lastmod><changefreq>daily</changefreq><priority>1</priority></url><url>
+            <loc>http://localhost:1313/tags/freebsd/</loc><lastmod>2026-02-24T20:45:55-08:00</lastmod><changefreq>daily</changefreq><priority>1</priority></url><url>
+            <loc>http://localhost:1313/posts/fbsd-usb-tethering/</loc><lastmod>2026-02-24T20:45:55-08:00</lastmod><changefreq>daily</changefreq><priority>1</priority></url><url>
+            <loc>http://localhost:1313/tags/</loc><lastmod>2026-02-24T20:45:55-08:00</lastmod><changefreq>daily</changefreq><priority>1</priority></url><url>
+            <loc>http://localhost:1313/tags/tethering/</loc><lastmod>2026-02-24T20:45:55-08:00</lastmod><changefreq>daily</changefreq><priority>1</priority></url><url>
+            <loc>http://localhost:1313/tags/usb/</loc><lastmod>2026-02-24T20:45:55-08:00</lastmod><changefreq>daily</changefreq><priority>1</priority></url><url>
+            <loc>http://localhost:1313/tags/wifi/</loc><lastmod>2026-02-24T20:45:55-08:00</lastmod><changefreq>daily</changefreq><priority>1</priority></url><url>
+            <loc>http://localhost:1313/tags/wifibox/</loc><lastmod>2026-02-24T20:45:55-08:00</lastmod><changefreq>daily</changefreq><priority>1</priority></url><url>
             <loc>http://localhost:1313/posts/install-wifibox/</loc><lastmod>2026-01-25T20:50:20-08:00</lastmod><changefreq>daily</changefreq><priority>1</priority></url><url>
+            <loc>http://localhost:1313/tags/install/</loc><lastmod>2026-01-25T20:50:20-08:00</lastmod><changefreq>daily</changefreq><priority>1</priority></url><url>
             <loc>http://localhost:1313/tags/enclosure/</loc><lastmod>2026-01-24T21:48:46-08:00</lastmod><changefreq>daily</changefreq><priority>1</priority></url><url>
-            <loc>http://localhost:1313/tags/freebsd/</loc><lastmod>2026-01-24T21:48:46-08:00</lastmod><changefreq>daily</changefreq><priority>1</priority></url><url>
-            <loc>http://localhost:1313/tags/install/</loc><lastmod>2026-01-24T21:48:46-08:00</lastmod><changefreq>daily</changefreq><priority>1</priority></url><url>
             <loc>http://localhost:1313/posts/install-freebsd-on-usb-ssd/</loc><lastmod>2026-01-24T21:48:46-08:00</lastmod><changefreq>daily</changefreq><priority>1</priority></url><url>
             <loc>http://localhost:1313/tags/nvme/</loc><lastmod>2026-01-24T21:48:46-08:00</lastmod><changefreq>daily</changefreq><priority>1</priority></url><url>
             <loc>http://localhost:1313/tags/ssd/</loc><lastmod>2026-01-24T21:48:46-08:00</lastmod><changefreq>daily</changefreq><priority>1</priority></url><url>
-            <loc>http://localhost:1313/tags/</loc><lastmod>2026-01-24T21:48:46-08:00</lastmod><changefreq>daily</changefreq><priority>1</priority></url><url>
-            <loc>http://localhost:1313/tags/usb/</loc><lastmod>2026-01-24T21:48:46-08:00</lastmod><changefreq>daily</changefreq><priority>1</priority></url><url>
             <loc>http://localhost:1313/tags/crash/</loc><lastmod>2025-04-26T22:02:25&#43;00:00</lastmod><changefreq>daily</changefreq><priority>1</priority></url><url>
             <loc>http://localhost:1313/tags/debugging/</loc><lastmod>2025-04-26T22:02:25&#43;00:00</lastmod><changefreq>daily</changefreq><priority>1</priority></url><url>
             <loc>http://localhost:1313/tags/drgn/</loc><lastmod>2025-04-26T22:02:25&#43;00:00</lastmod><changefreq>daily</changefreq><priority>1</priority></url><url>

@@ -3,9 +3,18 @@
         <title>devkernel.io</title>
         <link>http://localhost:1313/</link>
         <description>Linux kernel development information</description>
-        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 25 Jan 2026 20:50:20 -0800</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 24 Feb 2026 20:45:55 -0800</lastBuildDate>
             <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>How to use USB tethering on FreeBSD</title>
+    <link>http://localhost:1313/posts/fbsd-usb-tethering/</link>
+    <pubDate>Tue, 24 Feb 2026 20:45:55 -0800</pubDate><author>
+        <name>Author</name>
+    </author><guid>http://localhost:1313/posts/fbsd-usb-tethering/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/posts/fbsd-usb-tethering/cell.png" referrerpolicy="no-referrer">
+            </div><p>This article describes how to use USB tethering on FreeBSD.</p>]]></description>
+</item><item>
     <title>How to install Wifibox on FreeBSD</title>
     <link>http://localhost:1313/posts/install-wifibox/</link>
     <pubDate>Sun, 25 Jan 2026 20:50:20 -0800</pubDate><author>
@@ -68,7 +77,7 @@ program.</p>]]></description>
         <name>Author</name>
     </author><guid>http://localhost:1313/posts/stack_usage/</guid>
     <description><![CDATA[<div class="featured-image">
-                <img src="/posts/stack_usage/stack.jpg" referrerpolicy="no-referrer">
+                <img src="/posts/stack_usage/stack.png" referrerpolicy="no-referrer">
             </div><p>This article describes how to measure the stack usage of kernel functions and how to
 apprach the dreaded &ldquo;Stack frame exceeds limit message&rdquo;.</p>]]></description>
 </item><item>
@@ -89,14 +98,5 @@ apprach the dreaded &ldquo;Stack frame exceeds limit message&rdquo;.</p>]]></des
     <description><![CDATA[<div class="featured-image">
                 <img src="/posts/ksm_versions/versions.jpg" referrerpolicy="no-referrer">
             </div><p>This article describes how Linux Kernel Samepage Merging (KSM) has changed.</p>]]></description>
-</item><item>
-    <title>Kernel Samepage Merging Smart Scan feature</title>
-    <link>http://localhost:1313/posts/ksm_smart_scan/</link>
-    <pubDate>Fri, 13 Sep 2024 11:51:50 -0700</pubDate><author>
-        <name>Author</name>
-    </author><guid>http://localhost:1313/posts/ksm_smart_scan/</guid>
-    <description><![CDATA[<div class="featured-image">
-                <img src="/posts/ksm_smart_scan/smart_scan.jpg" referrerpolicy="no-referrer">
-            </div><p>This article describes the Smart Scan feature of Linux Kernel Samepage Merging (KSM).</p>]]></description>
 </item></channel>
 </rss>
